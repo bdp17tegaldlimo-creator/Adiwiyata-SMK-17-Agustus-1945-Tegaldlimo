@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori 3: Kegiatan Partisipatif - SMK 17 AGUSTUS 1945 TEGALDLIMO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            width: 40px;
+            border-radius: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .progress-bar strong {
+            color: #38ef7d;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Category Overview */
+        .category-overview {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid #9b59b6;
+        }
+
+        .category-overview h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Struktur Folder Preview */
+        .struktur-preview {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            line-height: 1.8;
+        }
+
+        .struktur-preview .folder {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .struktur-preview .file {
+            color: #ecf0f1;
+        }
+
+        .struktur-preview .subfolder {
+            color: #e74c3c;
+        }
+
+        /* Indikator Item */
+        .indikator-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #9b59b6;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .indikator-header {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .indikator-header:hover {
+            background: #f3e5f5;
+        }
+
+        .indikator-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.1em;
+        }
+
+        .indikator-badge {
+            background: #9b59b6;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .indikator-desc {
+            padding: 0 20px 15px 20px;
+            color: #555;
+            font-style: italic;
+            border-bottom: 2px dashed #ddd;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            color: #9b59b6;
+        }
+
+        .indikator-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Komponen Detail */
+        .komponen-detail {
+            padding: 20px;
+            display: none;
+        }
+
+        .komponen-detail.show {
+            display: block;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Komponen Card */
+        .komponen-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .komponen-card:hover {
+            border-color: #9b59b6;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+        }
+
+        .komponen-card.uploaded {
+            border-color: #27ae60;
+            background: #e8f8f5;
+        }
+
+        .komponen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .komponen-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .komponen-num {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .komponen-name {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.05em;
+        }
+
+        .komponen-name small {
+            display: block;
+            font-weight: normal;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 3px;
+        }
+
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .status-badge.pending {
+            background: #f39c12;
+            color: white;
+        }
+
+        .status-badge.complete {
+            background: #27ae60;
+            color: white;
+        }
+
+        /* File Requirements */
+        .file-requirements {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .file-requirements h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #f39c12;
+        }
+
+        .file-format {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #1976d2;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .file-note {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .upload-section strong {
+            color: #1e3c72;
+        }
+
+        .upload-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .btn-drive {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-drive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+        }
+
+        .btn-copy {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background: #ee5a5a;
+        }
+
+        .btn-check {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background: #229954;
+        }
+
+        /* Navigation Prev/Next */
+        .nav-prev-next {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: #1e3c72;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2a5298;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #11998e;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            .komponen-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .upload-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-prev-next {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .komponen-num {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo">
+                <span>KATEGORI 3: PARTISIPATIF</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">🏠 Beranda</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link active">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">🖼️ Galeri</a>
+            </div>
+            <div class="progress-bar">
+                Progress: <strong id="progressText">0/9</strong>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>🤝 3. KEGIATAN BERBASIS PARTISIPATIF</h1>
+        <p class="subtitle">Partisipasi Aktif Warga Sekolah dalam Program Lingkungan</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Category Overview -->
+        <div class="category-overview">
+            <h2>📊 Overview Kategori 3</h2>
+            <p>Kategori ini menilai partisipasi aktif seluruh warga sekolah dalam kegiatan berbasis lingkungan, termasuk program rutin, kampanye, kaderisasi, dan kerjasama dengan pihak luar.</p>
+            
+            <div class="overview-stats">
+                <div class="stat-box">
+                    <h3>11</h3>
+                    <p>Total Indikator</p>
+                </div>
+                <div class="stat-box">
+                    <h3>9</h3>
+                    <p>Komponen</p>
+                </div>
+                <div class="stat-box">
+                    <h3>70+</h3>
+                    <p>File Dokumen</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Target Upload</p>
+                </div>
+            </div>
+
+            <!-- Struktur Folder Preview -->
+            <h3 style="margin-top: 20px; color: #1e3c72;">📁 Struktur Folder yang Diharapkan:</h3>
+            <div class="struktur-preview">
+<span class="folder"> 03_KEGIATAN_BERBASIS_PARTISIPATIF/</span>
+│
+├── <span class="folder">📂 08_PROGRAM_RUTIN_LINGKUNGAN/</span>
+│   ├── <span class="subfolder">📁 01_Perencanaan_Program_Adiwiyata_1_Tahun_4_Tahun/</span>
+│   ├── <span class="file">📄 02_Laporan_Program_Rutin.pdf</span>
+│   ├── <span class="subfolder">📁 03_Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder"> 04_Dokumentasi_Video/</span>
+│   ├── <span class="file"> 05_Perjanjian_Kerja_Sama.pdf</span>
+│   └── <span class="file">📄 06_Buku_Monitoring_Ceklis.pdf</span>
+│
+├── <span class="folder"> 09_REKAP_JUMLAH_PROGRAM_RUTIN/</span>
+│   ├── <span class="file">📊 Rekap_Program_Rutin_Lingkungan.xlsx</span>
+│   └── <span class="file">📊 Rekap_Frekuensi_Pelaksanaan.xlsx</span>
+│
+├── <span class="folder">📂 10_PROGRAM_NON_RUTIN_INSIDEN/</span>
+│   ├── <span class="file">📄 01_Laporan_Kegiatan_Insidentil.pdf</span>
+│   ├── <span class="subfolder">📁 02_Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder"> 03_Dokumentasi_Video/</span>
+│   ├── <span class="file">📄 04_Keterangan_Kegiatan.pdf</span>
+│   └── <span class="file">📄 05_Perjanjian_Kerja_Sama.pdf</span>
+│
+├── <span class="folder">📂 11_KAMPANYE_PUBLIKASI_ADIWIYATA/</span>
+│   ├── <span class="file">📄 01_Daftar_Kegiatan_Kampanye.pdf</span>
+│   ├── <span class="file"> 02_Laporan_Kegiatan.pdf</span>
+│   ├── <span class="subfolder"> 03_Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder">📁 04_Dokumentasi_Video/</span>
+│   ├── <span class="file">📄 05_Undangan_Kegiatan.pdf</span>
+│   ├── <span class="subfolder">📁 06_Brosur_Leaflet_Bahan_Kampanye/</span>
+│   └── <span class="file">📄 07_Tautan_Publikasi_Digital.pdf</span>
+│
+├── <span class="folder"> 12_MEDIA_PUBLIKASI_ADIWIYATA/</span>
+│   ├── <span class="file">📄 01_Daftar_Media_Publikasi.pdf</span>
+│   ├── <span class="subfolder">📁 02_Dokumentasi_Media_Cetak/</span>
+│   ├── <span class="subfolder">📁 03_Dokumentasi_Media_Digital/</span>
+│   ├── <span class="subfolder">📁 04_Dokumentasi_Media_Sosial/</span>
+│   └── <span class="file"> 05_Tautan_Media_Publikasi.pdf</span>
+│
+├── <span class="folder">📂 13_KADER_ADIWIYATA/</span>
+│   ├── <span class="file">📄 01_SK_Pembentukan_Kader_Adiwiyata.pdf</span>
+│   ├── <span class="file">📄 02_Struktur_Pengurus_Kader.pdf</span>
+│   ├── <span class="file">📄 03_Rencana_Kerja_Kader_Adiwiyata.pdf</span>
+│   ├── <span class="file">📄 04_Dokumen_Pembentukan.pdf</span>
+│   ├── <span class="file">📄 05_Profil_Sekolah_Jumlah_Peserta_Didik.pdf</span>
+│   ├── <span class="file"> 06_Rekap_Persentase_Kader_Adiwiyata.xlsx</span>
+│   └── <span class="subfolder"> 07_Dokumentasi_Pembentukan/</span>
+│
+├── <span class="folder">📂 14_PEMBERDAYAAN_KADER_ADIWIYATA/</span>
+│   ├── <span class="file"> 01_Rencana_Kerja_Kader.pdf</span>
+│   ├── <span class="file">📄 02_Dokumen_Kegiatan.pdf</span>
+│   ├── <span class="file">📄 03_Laporan_Kegiatan.pdf</span>
+│   ├── <span class="file">📊 04_Rekap_Kegiatan_Pemberdayaan.xlsx</span>
+│   ── <span class="subfolder">📁 05_Dokumentasi_Kegiatan/</span>
+│
+├── <span class="folder">📂 15_KEGIATAN_LINGKUNGAN_DI_LUAR_SEKOLAH/</span>
+│   ├── <span class="file">📄 01_Surat_Undangan.pdf</span>
+│   ├── <span class="file">📄 02_Surat_Tugas.pdf</span>
+│   ├── <span class="file">📄 03_Surat_Permohonan_Koordinasi.pdf</span>
+│   ├── <span class="file">📄 04_Daftar_Hadir_Absensi.pdf</span>
+│   ├── <span class="file">📄 05_Notulen_Kegiatan.pdf</span>
+│   ├── <span class="file">📄 06_Laporan_Kegiatan.pdf</span>
+│   ├── <span class="subfolder">📁 07_Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder">📁 08_Dokumentasi_Video/</span>
+│   └── <span class="file">📄 09_Keterangan_Dokumentasi.pdf</span>
+│
+└── <span class="folder">📂 16_KERJASAMA_KOMITMEN_LINGKUNGAN/</span>
+    ├── <span class="file">📄 01_MoU_PKS_Kerjasama.pdf</span>
+    ├── <span class="file">📄 02_Surat_Undangan.pdf</span>
+    ├── <span class="file">📄 03_Notulen_Pertemuan.pdf</span>
+    ├── <span class="file">📄 04_Berita_Acara_Serah_Terima.pdf</span>
+    ├── <span class="file">📄 05_Dokumen_Komitmen_Lingkungan.pdf</span>
+    ├── <span class="subfolder">📁 06_Dokumentasi_Kegiatan/</span>
+    └── <span class="file">📄 07_Tautan_Jejaring_Komunikasi.pdf</span>
+            </div>
+        </div>
+
+        <!-- INDIKATOR 1: PROGRAM RUTIN -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">📅 Indikator 1: Program Rutin Lingkungan</div>
+                <div>
+                    <span class="indikator-badge">2 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah sekolah memiliki program rutin terkait lingkungan (harian, mingguan, bulanan, tahunan)?
+            </div>
+            <div class="komponen-detail show">
+                
+                <!-- KOMPONEN 08 -->
+                <div class="komponen-card" id="komponen-08">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">08</div>
+                            <div>
+                                <div class="komponen-name">PROGRAM RUTIN LINGKUNGAN</div>
+                                <small>Program terjadwal yang melibatkan seluruh warga sekolah</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-08">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Perencanaan_Program_Adiwiyata_1_Tahun_4_Tahun/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Dokumen perencanaan program Adiwiyata jangka pendek (1 tahun) dan jangka panjang (4 tahun)</span>
+                            </li>
+                            <li>
+                                <strong>02_Laporan_Program_Rutin.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Laporan pelaksanaan program rutin (harian: piket kelas, mingguan: kerja bakti, bulanan: jum'at bersih)</span>
+                            </li>
+                            <li>
+                                <strong>03_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto kegiatan rutin (minimal 30 foto dengan keterangan tanggal & kegiatan)</span>
+                            </li>
+                            <li>
+                                <strong>04_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video kegiatan rutin (3-5 video, durasi 2-5 menit)</span>
+                            </li>
+                            <li>
+                                <strong>05_Perjanjian_Kerja_Sama.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ MoU/PKS dengan pihak luar untuk program rutin (DLH, Puskesmas, dll)</span>
+                            </li>
+                            <li>
+                                <strong>06_Buku_Monitoring_Ceklis.pdf</strong> <span class="file-format">PDF/Excel</span>
+                                <span class="file-note">→ Buku monitoring/checklist pelaksanaan program rutin harian/mingguan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1LNs91IekrW9s_DCl981Tl5STsBhObN6g?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1LNs91IekrW9s_DCl981Tl5STsBhObN6g?usp=sharing','KOMPONEN 08')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('08')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 09 -->
+                <div class="komponen-card" id="komponen-09">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">09</div>
+                            <div>
+                                <div class="komponen-name">REKAP JUMLAH PROGRAM RUTIN</div>
+                                <small>Data kuantitatif program rutin lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-09">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>Rekap_Program_Rutin_Lingkungan.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Tabel rekap: nama program, frekuensi, peserta, aspek lingkungan yang disasar</span>
+                            </li>
+                            <li>
+                                <strong>Rekap_Frekuensi_Pelaksanaan.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Data frekuensi pelaksanaan per bulan selama 1 tahun ajaran</span>
+                            </li>
+                            <li>
+                                <strong>Grafik_Pencapaian_Program.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Grafik/chart pencapaian program rutin (bisa dari Excel)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1T7Oe-iTZoVtd27wJYswFJ90jg24iZU31?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1T7Oe-iTZoVtd27wJYswFJ90jg24iZU31?usp=sharing','KOMPONEN 09')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('09')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 10 -->
+                <div class="komponen-card" id="komponen-10">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">10</div>
+                            <div>
+                                <div class="komponen-name">PROGRAM NON RUTIN/INSIDENTIL</div>
+                                <small>Kegiatan lingkungan insidentil (bencana, lomba, acara khusus)</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-10">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Laporan_Kegiatan_Insidentil.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Laporan kegiatan insidentil (response bencana, lomba lingkungan, hari bumi, dll)</span>
+                            </li>
+                            <li>
+                                <strong>02_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto kegiatan insidentil (minimal 15 foto)</span>
+                            </li>
+                            <li>
+                                <strong>03_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video kegiatan insidentil (1-2 video)</span>
+                            </li>
+                            <li>
+                                <strong>04_Keterangan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Narasi kegiatan: latar belakang, tujuan, hasil, dampak</span>
+                            </li>
+                            <li>
+                                <strong>05_Perjanjian_Kerja_Sama.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ MoU/PKS untuk kegiatan insidentil (jika ada)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/18Um7L2d33c1yDFX3N2R0TH-J3_loixTe?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/18Um7L2d33c1yDFX3N2R0TH-J3_loixTe?usp=sharing','KOMPONEN 10')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('10')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INDIKATOR 2: KAMPANYE & MEDIA PUBLIKASI -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">📢 Indikator 2: Kampanye & Publikasi Adiwiyata</div>
+                <div>
+                    <span class="indikator-badge">2 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah sekolah melakukan kampanye dan publikasi program adiwiyata melalui berbagai media?
+            </div>
+            <div class="komponen-detail">
+                
+                <!-- KOMPONEN 11 -->
+                <div class="komponen-card" id="komponen-11">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">11</div>
+                            <div>
+                                <div class="komponen-name">KAMPANYE PUBLIKASI ADIWIYATA</div>
+                                <small>Kegiatan kampanye dan sosialisasi program lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-11">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Daftar_Kegiatan_Kampanye.pdf</strong> <span class="file-format">PDF/Excel</span>
+                                <span class="file-note">→ Daftar lengkap kegiatan kampanye (nama, tanggal, peserta, tempat)</span>
+                            </li>
+                            <li>
+                                <strong>02_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Laporan pelaksanaan setiap kegiatan kampanye</span>
+                            </li>
+                            <li>
+                                <strong>03_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto kegiatan kampanye (minimal 20 foto)</span>
+                            </li>
+                            <li>
+                                <strong>04_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video kegiatan kampanye (2-3 video)</span>
+                            </li>
+                            <li>
+                                <strong>05_Undangan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Undangan resmi kegiatan kampanye ke pihak luar</span>
+                            </li>
+                            <li>
+                                <strong>06_Brosur_Leaflet_Bahan_Kampanye/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Desain brosur, leaflet, spanduk, banner kampanye (format PDF/JPG)</span>
+                            </li>
+                            <li>
+                                <strong>07_Tautan_Publikasi_Digital.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Screenshot/link publikasi digital (website, medsos, blog)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1KGOP4bWWYi2liE23RN-eO6ZjNMppun3c?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1KGOP4bWWYi2liE23RN-eO6ZjNMppun3c?usp=sharing','KOMPONEN 11')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('11')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 12 -->
+                <div class="komponen-card" id="komponen-12">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">12</div>
+                            <div>
+                                <div class="komponen-name">MEDIA PUBLIKASI ADIWIYATA</div>
+                                <small>Dokumentasi media cetak, digital, dan sosial</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-12">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Daftar_Media_Publikasi.pdf</strong> <span class="file-format">PDF/Excel</span>
+                                <span class="file-note">→ Daftar semua media yang digunakan (koran sekolah, medsos, website, dll)</span>
+                            </li>
+                            <li>
+                                <strong>02_Dokumentasi_Media_Cetak/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto/scan media cetak (mading, koran sekolah, buletin, poster)</span>
+                            </li>
+                            <li>
+                                <strong>03_Dokumentasi_Media_Digital/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Screenshot website sekolah, blog, email blast tentang Adiwiyata</span>
+                            </li>
+                            <li>
+                                <strong>04_Dokumentasi_Media_Sosial/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Screenshot Instagram, Facebook, TikTok, YouTube sekolah</span>
+                            </li>
+                            <li>
+                                <strong>05_Tautan_Media_Publikasi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Kumpulan link/URL publikasi digital (bisa diakses penilai)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1pDI7e8yH_id9vQbQJJHCRupeL6jHO_lh?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1pDI7e8yH_id9vQbQJJHCRupeL6jHO_lh?usp=sharing','KOMPONEN 12')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('12')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INDIKATOR 3: KADER ADIWIYATA -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title"> Indikator 3: Kader Adiwiyata</div>
+                <div>
+                    <span class="indikator-badge">2 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah sekolah memiliki dan memberdayakan kader adiwiyata (duta lingkungan siswa)?
+            </div>
+            <div class="komponen-detail">
+                
+                <!-- KOMPONEN 13 -->
+                <div class="komponen-card" id="komponen-13">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">13</div>
+                            <div>
+                                <div class="komponen-name">KADER ADIWIYATA</div>
+                                <small>Pembentukan dan struktur kader/duta lingkungan siswa</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-13">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_SK_Pembentukan_Kader_Adiwiyata.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ SK Kepala Sekolah tentang pembentukan kader Adiwiyata</span>
+                            </li>
+                            <li>
+                                <strong>02_Struktur_Pengurus_Kader.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Bagan struktur organisasi kader (ketua, wakil, sekretaris, bendahara, divisi)</span>
+                            </li>
+                            <li>
+                                <strong>03_Rencana_Kerja_Kader_Adiwiyata.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Proker tahunan kader Adiwiyata</span>
+                            </li>
+                            <li>
+                                <strong>04_Dokumen_Pembentukan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ BA seleksi, daftar calon, hasil pemilihan kader</span>
+                            </li>
+                            <li>
+                                <strong>05_Profil_Sekolah_Jumlah_Peserta_Didik.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Data jumlah siswa per kelas (untuk hitung persentase kader)</span>
+                            </li>
+                            <li>
+                                <strong>06_Rekap_Persentase_Kader_Adiwiyata.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Perhitungan: jumlah kader / total siswa × 100% (target minimal 10%)</span>
+                            </li>
+                            <li>
+                                <strong>07_Dokumentasi_Pembentukan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto proses seleksi, pelantikan, latihan dasar kader (minimal 15 foto)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1jep67PH9tXFOO0Xnp8eAcdm1qwy8jnJs?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1jep67PH9tXFOO0Xnp8eAcdm1qwy8jnJs?usp=sharing','KOMPONEN 13')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('13')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 14 -->
+                <div class="komponen-card" id="komponen-14">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">14</div>
+                            <div>
+                                <div class="komponen-name">PEMBERDAYAAN KADER ADIWIYATA</div>
+                                <small>Kegiatan pelatihan dan pemberdayaan kader</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-14">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4> File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Rencana_Kerja_Kader.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Proker pemberdayaan kader (pelatihan, workshop, outing)</span>
+                            </li>
+                            <li>
+                                <strong>02_Dokumen_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Proposal, rundown, daftar hadir kegiatan pemberdayaan</span>
+                            </li>
+                            <li>
+                                <strong>03_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Laporan pelaksanaan setiap kegiatan pemberdayaan</span>
+                            </li>
+                            <li>
+                                <strong>04_Rekap_Kegiatan_Pemberdayaan.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Rekap: nama kegiatan, tanggal, peserta, materi, output</span>
+                            </li>
+                            <li>
+                                <strong>05_Dokumentasi_Kegiatan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto/video kegiatan pemberdayaan (minimal 20 foto, 2 video)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1jcLoGETVm8F0xbqL1SNHRFLlZTxILLLe?usp=sharing" target="_blank" class="btn btn-drive"> Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1jcLoGETVm8F0xbqL1SNHRFLlZTxILLLe?usp=sharing','KOMPONEN 14')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('14')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INDIKATOR 4: KEGIATAN LUAR SEKOLAH & KERJASAMA -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">🌍 Indikator 4: Kegiatan Luar Sekolah & Kerjasama</div>
+                <div>
+                    <span class="indikator-badge">4 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah sekolah menginisiasi kegiatan lingkungan di luar sekolah dan memiliki kerjasama dengan pihak lain?
+            </div>
+            <div class="komponen-detail">
+                
+                <!-- KOMPONEN 15 -->
+                <div class="komponen-card" id="komponen-15">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">15</div>
+                            <div>
+                                <div class="komponen-name">KEGIATAN LINGKUNGAN DI LUAR SEKOLAH</div>
+                                <small>Inisiatif sekolah dalam kegiatan lingkungan di masyarakat</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-15">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Surat_Undangan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Surat undangan kegiatan ke pihak luar (desa, DLH, LSM)</span>
+                            </li>
+                            <li>
+                                <strong>02_Surat_Tugas.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Surat tugas guru/siswa mengikuti kegiatan luar</span>
+                            </li>
+                            <li>
+                                <strong>03_Surat_Permohonan_Koordinasi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Surat koordinasi dengan instansi terkait</span>
+                            </li>
+                            <li>
+                                <strong>04_Daftar_Hadir_Absensi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Daftar hadir peserta kegiatan luar sekolah</span>
+                            </li>
+                            <li>
+                                <strong>05_Notulen_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Notulensi/risalah kegiatan</span>
+                            </li>
+                            <li>
+                                <strong>06_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Laporan lengkap kegiatan (latar belakang, pelaksanaan, hasil, dampak)</span>
+                            </li>
+                            <li>
+                                <strong>07_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto kegiatan luar (minimal 20 foto)</span>
+                            </li>
+                            <li>
+                                <strong>08_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video kegiatan luar (2-3 video)</span>
+                            </li>
+                            <li>
+                                <strong>09_Keterangan_Dokumentasi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Narasi/keterangan setiap dokumentasi</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1VkAguGMfO0YLw8g4T8ASnbjYnFAeYJuR?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1VkAguGMfO0YLw8g4T8ASnbjYnFAeYJuR?usp=sharing','KOMPONEN 15')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('15')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 16 -->
+                <div class="komponen-card" id="komponen-16">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">16</div>
+                            <div>
+                                <div class="komponen-name">KERJASAMA & KOMITMEN LINGKUNGAN</div>
+                                <small>MoU/PKS dengan pihak luar untuk program lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-16">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_MoU_PKS_Kerjasama.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ MoU/PKS dengan DLH, Puskesmas, Desa, LSM, Universitas, dll</span>
+                            </li>
+                            <li>
+                                <strong>02_Surat_Undangan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Surat undangan kerjasama ke mitra potensial</span>
+                            </li>
+                            <li>
+                                <strong>03_Notulen_Pertemuan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Notulensi pertemuan dengan calon mitra</span>
+                            </li>
+                            <li>
+                                <strong>04_Berita_Acara_Serah_Terima.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ BA serah terima bantuan/program dari mitra</span>
+                            </li>
+                            <li>
+                                <strong>05_Dokumen_Komitmen_Lingkungan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Dokumen komitmen bersama (joint commitment) untuk lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>06_Dokumentasi_Kegiatan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto/video kegiatan kerjasama (penandatanganan MoU, implementasi)</span>
+                            </li>
+                            <li>
+                                <strong>07_Tautan_Jejaring_Komunikasi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Daftar kontak mitra, grup WhatsApp, email koordinasi</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1N5YpFWwjGEYR-WHl4v4IgOBHlNpdiTKu?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1N5YpFWwjGEYR-WHl4v4IgOBHlNpdiTKu?usp=sharing','KOMPONEN 16')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('16')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation Prev/Next -->
+        <div class="nav-prev-next">
+            <a href="kategori2.html" class="nav-btn">← Kategori 2: Pembelajaran</a>
+            <a href="kategori4.html" class="nav-btn">Kategori 4: Sarpras →</a>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('show');
+        }
+
+        // Toggle Indikator
+        function toggleIndikator(header) {
+            const detail = header.parentElement.querySelector('.komponen-detail');
+            const icon = header.querySelector('.toggle-icon');
+            
+            detail.classList.toggle('show');
+            header.classList.toggle('active');
+        }
+
+        // Copy Link
+        function copyLink(url, nama) {
+            navigator.clipboard.writeText(url).then(() => {
+                showNotification(`✅ Link ${nama} berhasil disalin!`);
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = url;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showNotification(`✅ Link ${nama} berhasil disalin!`);
+            });
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            const notif = document.createElement('div');
+            notif.className = 'notification';
+            notif.textContent = message;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 3000);
+        }
+
+        // Mark Complete
+        function markComplete(komponenNum) {
+            const card = document.getElementById(`komponen-${komponenNum}`);
+            const badge = document.getElementById(`status-${komponenNum}`);
+            
+            if (card && badge) {
+                card.classList.add('uploaded');
+                badge.classList.remove('pending');
+                badge.classList.add('complete');
+                badge.textContent = '✔️ Selesai';
+                updateProgress();
+                localStorage.setItem(`komponen-${komponenNum}`, 'complete');
+                showNotification(`✅ Komponen ${komponenNum} ditandai selesai!`);
+            }
+        }
+
+        // Update Progress
+        function updateProgress() {
+            const components = ['08', '09', '10', '11', '12', '13', '14', '15', '16'];
+            let completed = 0;
+            
+            components.forEach(num => {
+                if (localStorage.getItem(`komponen-${num}`) === 'complete') {
+                    completed++;
+                }
+            });
+            
+            document.getElementById('progressText').textContent = `${completed}/9`;
+        }
+
+        // Load saved progress on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            
+            const components = ['08', '09', '10', '11', '12', '13', '14', '15', '16'];
+            components.forEach(num => {
+                if (localStorage.getItem(`komponen-${num}`) === 'complete') {
+                    const badge = document.getElementById(`status-${num}`);
+                    const card = document.getElementById(`komponen-${num}`);
+                    if (badge && card) {
+                        badge.classList.remove('pending');
+                        badge.classList.add('complete');
+                        badge.textContent = '✔️ Selesai';
+                        card.classList.add('uploaded');
+                    }
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (navMenu && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
