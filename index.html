@@ -4,504 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK 17 AGUSTUS 1945 TEGALDLIMO - Adiwiyata 2026</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .nav-brand {
-            color: white;
-            font-weight: bold;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-brand img {
-            width: 40px;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: background 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-
-        .hero .badge-adiwiyata {
-            display: inline-block;
-            background: white;
-            color: #11998e;
-            padding: 10px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            font-size: 1.1em;
-        }
-
-        /* Sections */
-        .section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            scroll-margin-top: 80px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2em;
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        /* Beranda - Sambutan */
-        .sambutan-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 30px;
-            align-items: start;
-            margin-bottom: 30px;
-        }
-
-        .kepsek-photo {
-            width: 200px;
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4em;
-        }
-
-        .sambutan-content h3 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .sambutan-content .jabatan {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        .sambutan-content p {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-
-        /* Prestasi */
-        .prestasi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .prestasi-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid #11998e;
-            transition: transform 0.3s;
-        }
-
-        .prestasi-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .prestasi-icon {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        .prestasi-card h4 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-
-        /* Dokumen Akreditasi */
-        .kategori-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .kategori-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.3s;
-        }
-
-        .kategori-header:hover {
-            transform: translateX(5px);
-        }
-
-        .kategori-header h3 {
-            font-size: 1.2em;
-        }
-
-        .kategori-header .info {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-
-        .kategori-header .toggle-icon {
-            font-size: 1.5em;
-            transition: transform 0.3s;
-        }
-
-        .kategori-header.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .indikator-list {
-            background: white;
-            border-radius: 0 0 10px 10px;
-            padding: 20px;
-            display: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .indikator-list.show {
-            display: block;
-            animation: slideDown 0.3s;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .indikator-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .indikator-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .indikator-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .indikator-title {
-            font-weight: bold;
-            color: #1e3c72;
-            flex: 1;
-        }
-
-        .indikator-badge {
-            background: #11998e;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            white-space: nowrap;
-        }
-
-        .indikator-desc {
-            color: #555;
-            font-size: 0.9em;
-            margin-bottom: 12px;
-        }
-
-        .komponen-list {
-            display: grid;
-            gap: 8px;
-        }
-
-        .komponen-item {
-            background: white;
-            padding: 12px 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s;
-        }
-
-        .komponen-item:hover {
-            border-color: #667eea;
-            transform: translateX(5px);
-        }
-
-        .komponen-num {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .komponen-name {
-            flex: 1;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .btn-akses {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.85em;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .btn-akses:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-copy {
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85em;
-            transition: background 0.3s;
-        }
-
-        .btn-copy:hover {
-            background: #ee5a5a;
-        }
-
-        /* Galeri */
-        .galeri-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .galeri-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .galeri-item:hover {
-            transform: scale(1.03);
-        }
-
-        .galeri-img {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
-        }
-
-        .galeri-caption {
-            padding: 15px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1e3c72;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                margin-top: 10px;
-            }
-
-            .nav-menu.show {
-                display: flex;
-            }
-
-            .nav-link {
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 1.8em;
-            }
-
-            .hero .subtitle {
-                font-size: 1em;
-            }
-
-            .sambutan-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .kepsek-photo {
-                margin: 0 auto;
-                width: 150px;
-                height: 180px;
-            }
-
-            .section {
-                padding: 30px 15px;
-            }
-
-            .section-title {
-                font-size: 1.5em;
-            }
-
-            .komponen-item {
-                flex-wrap: wrap;
-            }
-
-            .btn-akses, .btn-copy {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 40px 15px;
-            }
-
-            .hero h1 {
-                font-size: 1.5em;
-            }
-
-            .prestasi-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .galeri-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -509,540 +12,112 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo">
+                <img src="assets/logo.png" alt="Logo">
                 <span>SMK 17 AGUSTUS 1945</span>
             </div>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <div class="nav-menu" id="navMenu">
-                <a href="#beranda" class="nav-link">🏠 Beranda</a>
-                <a href="#dokumen" class="nav-link">📄 Dokumen</a>
-                <a href="#galeri" class="nav-link">🖼️ Galeri</a>
-                <a href="#kontak" class="nav-link">📞 Kontak</a>
+                <a href="index.html" class="nav-link active">🏠 Beranda</a>
+                <a href="dokumen.html" class="nav-link">📄 Dokumen</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">🖼️ Galeri</a>
+                <a href="kontak.html" class="nav-link">📞 Kontak</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-        <h1>🌱 SEKOLAH ADIWIYATA 🌱</h1>
+        <h1>🌱 SEKOLAH ADIWIYATA </h1>
         <p class="subtitle">SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
         <div class="badge-adiwiyata">Peduli & Berbudaya Lingkungan</div>
     </section>
 
-    <!-- BERANDA -->
-    <section id="beranda" class="section">
-        <h2 class="section-title"> BERANDA</h2>
-        <p class="section-subtitle">Sambutan & Profil Sekolah</p>
-
-        <!-- Sambutan Kepala Sekolah -->
+    <!-- Sambutan -->
+    <section class="section">
+        <h2 class="section-title">Sambutan Kepala Sekolah</h2>
         <div class="sambutan-card">
             <div class="kepsek-photo">👤</div>
             <div class="sambutan-content">
-                <h3>Sambutan Kepala Sekolah</h3>
+                <h3>Selamat Datang di Website Adiwiyata</h3>
                 <p class="jabatan">Kepala SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
-                <p>Assalamu'alaikum Warahmatullahi Wabarakatuh.</p>
-                <p>Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya, sehingga SMK 17 AGUSTUS 1945 TEGALDLIMO dapat terus berkomitmen dalam mewujudkan sekolah yang peduli dan berbudaya lingkungan melalui program Adiwiyata.</p>
-                <p>Kami percaya bahwa pendidikan lingkungan bukan hanya tanggung jawab guru, tetapi seluruh warga sekolah. Melalui integrasi aspek lingkungan dalam pembelajaran, kegiatan partisipatif, dan pengelolaan sarana prasarana, kami berupaya mencetak generasi yang sadar akan pentingnya kelestarian alam.</p>
-                <p>Mari bersama-sama kita wujudkan sekolah yang hijau, bersih, dan berkelanjutan untuk masa depan yang lebih baik.</p>
+                <p>Puji syukur ke hadirat Tuhan YME, SMK 17 AGUSTUS 1945 TEGALDLIMO berkomitmen mewujudkan sekolah peduli lingkungan melalui program Adiwiyata.</p>
+                <p>Kami percaya pendidikan lingkungan adalah tanggung jawab seluruh warga sekolah. Mari bersama wujudkan sekolah hijau, bersih, dan berkelanjutan.</p>
                 <p><strong>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
             </div>
         </div>
+    </section>
 
-        <!-- Profil & Prestasi -->
-        <h3 style="color: #1e3c72; margin: 30px 0 15px 0; text-align: center;"> Profil & Prestasi Lingkungan</h3>
+    <!-- Prestasi -->
+    <section class="section">
+        <h2 class="section-title">Prestasi Lingkungan</h2>
         <div class="prestasi-grid">
             <div class="prestasi-card">
-                <div class="prestasi-icon"></div>
+                <div class="prestasi-icon">🏆</div>
                 <h4>Juara Lomba Lingkungan</h4>
                 <p><strong>Sumber Daya Air Sekardadu</strong></p>
-                <p>Meraih penghargaan dalam lomba pengelolaan sumber daya air tingkat regional, menunjukkan komitmen sekolah dalam konservasi air.</p>
+                <p>Penghargaan pengelolaan sumber daya air tingkat regional.</p>
+                <a href="galeri.html" class="btn-lihat">Lihat Dokumentasi →</a>
             </div>
             <div class="prestasi-card">
                 <div class="prestasi-icon">🌿</div>
                 <h4>Sekolah Adiwiyata</h4>
-                <p><strong>Tingkat Kabupaten/Kota</strong></p>
-                <p>Telah memenuhi standar sekolah peduli lingkungan dengan implementasi 5 aspek lingkungan secara terintegrasi.</p>
+                <p><strong>Tingkat Kabupaten</strong></p>
+                <p>Memenuhi standar sekolah peduli lingkungan terintegrasi.</p>
+                <a href="dokumen.html" class="btn-lihat">Lihat Dokumen →</a>
             </div>
             <div class="prestasi-card">
                 <div class="prestasi-icon">♻️</div>
-                <h4>Pengelolaan Sampah</h4>
-                <p><strong>Bank Sampah Sekolah</strong></p>
-                <p>Program bank sampah aktif dengan pemilahan dan pengomposan yang melibatkan seluruh warga sekolah.</p>
+                <h4>Bank Sampah Aktif</h4>
+                <p><strong>Pemilahan & Pengomposan</strong></p>
+                <p>Program bank sampah dengan melibatkan seluruh warga sekolah.</p>
+                <a href="kategori3.html" class="btn-lihat">Lihat Program →</a>
             </div>
             <div class="prestasi-card">
                 <div class="prestasi-icon">🌳</div>
-                <h4>TOGA & Keanekaragaman Hayati</h4>
+                <h4>TOGA & Hayati</h4>
                 <p><strong>Taman Obat Keluarga</strong></p>
-                <p>Memiliki kebun TOGA dan area konservasi keanekaragaman hayati sebagai media pembelajaran siswa.</p>
+                <p>Kebun TOGA sebagai media pembelajaran siswa.</p>
+                <a href="kategori4.html" class="btn-lihat">Lihat Sarpras →</a>
             </div>
         </div>
     </section>
 
-    <!-- DOKUMEN AKREDITASI -->
-    <section id="dokumen" class="section">
-        <h2 class="section-title">📄 DOKUMEN AKREDITASI 2026</h2>
-        <p class="section-subtitle">4 Kategori Utama - 26 Indikator - 24 Komponen</p>
-
-        <!-- KATEGORI 1: KEBIJAKAN -->
-        <div class="kategori-wrapper">
-            <div class="kategori-header" onclick="toggleKategori(this)">
-                <div>
-                    <h3>1️⃣ KEBIJAKAN</h3>
-                    <div class="info">3 Indikator • Komponen 01-03</div>
-                </div>
-                <div class="toggle-icon">▼</div>
-            </div>
-            <div class="indikator-list">
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Indikator 1: Kebijakan Sekolah (KSP)</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah kebijakan sekolah (KSP) memuat aspek lingkungan meliputi: kebersihan & sanitasi, pengelolaan sampah, keanekaragaman hayati, penghematan energi, penghematan air.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">1</div>
-                            <div class="komponen-name">KOMPONEN 01 - KSP Lengkap</div>
-                            <a href="https://drive.google.com/drive/folders/1yzvPxTfsFNj9hCgacLyAQDdawWXWLwkd?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1yzvPxTfsFNj9hCgacLyAQDdawWXWLwkd?usp=sharing','KOMPONEN 01')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">2</div>
-                            <div class="komponen-name">KOMPONEN 02 - SK & Tata Tertib</div>
-                            <a href="https://drive.google.com/drive/folders/1UVtc8kDHy-9NfUz6xHHbKl7PJ2KTcBIS?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1UVtc8kDHy-9NfUz6xHHbKl7PJ2KTcBIS?usp=sharing','KOMPONEN 02')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">3</div>
-                            <div class="komponen-name">KOMPONEN 03 - Bahan Informasi Lingkungan</div>
-                            <a href="https://drive.google.com/drive/folders/1PlZWksPWi_HY1xyAuWssxHumfPxgMnCu?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1PlZWksPWi_HY1xyAuWssxHumfPxgMnCu?usp=sharing','KOMPONEN 03')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KATEGORI 2: PROSES PEMBELAJARAN -->
-        <div class="kategori-wrapper">
-            <div class="kategori-header" onclick="toggleKategori(this)">
-                <div>
-                    <h3>2️⃣ PROSES PEMBELAJARAN</h3>
-                    <div class="info">8 Indikator (4+3+1) • Komponen 04-07</div>
-                </div>
-                <div class="toggle-icon">▼</div>
-            </div>
-            <div class="indikator-list">
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Indikator 2: RPP/Modul Terintegrasi Lingkungan</div>
-                        <div class="indikator-badge">4 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah RPP/modul mengintegrasikan aspek lingkungan dalam pembelajaran.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">4</div>
-                            <div class="komponen-name">KOMPONEN 04 - RPP/Modul Terintegrasi</div>
-                            <a href="https://drive.google.com/drive/folders/1coTJqVzUmxdaL9tPj69knjEMvYWbLbfu?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1coTJqVzUmxdaL9tPj69knjEMvYWbLbfu?usp=sharing','KOMPONEN 04')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">5</div>
-                            <div class="komponen-name">KOMPONEN 05 - Rekap Persentase RPP</div>
-                            <a href="https://drive.google.com/drive/folders/1C1oP9ohYnT7UQO3FCVx29yBwkqxl5-pe?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1C1oP9ohYnT7UQO3FCVx29yBwkqxl5-pe?usp=sharing','KOMPONEN 05')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">6</div>
-                            <div class="komponen-name">KOMPONEN 06 - Ekstrakurikuler Terintegrasi</div>
-                            <a href="https://drive.google.com/drive/folders/1OZuh4YqlE68HkvT1mlpamp5hLL6pjY6d?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1OZuh4YqlE68HkvT1mlpamp5hLL6pjY6d?usp=sharing','KOMPONEN 06')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Indikator 3: Hasil Karya Siswa Terkait Lingkungan</div>
-                        <div class="indikator-badge">3 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah hasil karya siswa terkait aspek lingkungan (poster, artikel, karya seni, produk kreatif).</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">7</div>
-                            <div class="komponen-name">KOMPONEN 07 - Hasil Karya Siswa</div>
-                            <a href="https://drive.google.com/drive/folders/105r1qdlKgru4jvmR1DCTpYh7vYh4b2j3?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/105r1qdlKgru4jvmR1DCTpYh7vYh4b2j3?usp=sharing','KOMPONEN 07')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KATEGORI 3: KEGIATAN BERBASIS PARTISIPATIF -->
-        <div class="kategori-wrapper">
-            <div class="kategori-header" onclick="toggleKategori(this)">
-                <div>
-                    <h3>3️⃣ KEGIATAN BERBASIS PARTISIPATIF</h3>
-                    <div class="info">11 Indikator • Komponen 08-16</div>
-                </div>
-                <div class="toggle-icon">▼</div>
-            </div>
-            <div class="indikator-list">
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Program Rutin Lingkungan</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah memiliki program rutin terkait lingkungan.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">8</div>
-                            <div class="komponen-name">KOMPONEN 08 - Program Rutin Lingkungan</div>
-                            <a href="https://drive.google.com/drive/folders/1LNs91IekrW9s_DCl981Tl5STsBhObN6g?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1LNs91IekrW9s_DCl981Tl5STsBhObN6g?usp=sharing','KOMPONEN 08')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">9</div>
-                            <div class="komponen-name">KOMPONEN 09 - Rekap Program Rutin</div>
-                            <a href="https://drive.google.com/drive/folders/1T7Oe-iTZoVtd27wJYswFJ90jg24iZU31?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1T7Oe-iTZoVtd27wJYswFJ90jg24iZU31?usp=sharing','KOMPONEN 09')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Program Non Rutin/Insidentil</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah memiliki program non rutin terkait lingkungan.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">10</div>
-                            <div class="komponen-name">KOMPONEN 10 - Program Non Rutin</div>
-                            <a href="https://drive.google.com/drive/folders/18Um7L2d33c1yDFX3N2R0TH-J3_loixTe?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/18Um7L2d33c1yDFX3N2R0TH-J3_loixTe?usp=sharing','KOMPONEN 10')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Kampanye & Publikasi Adiwiyata</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah melakukan kampanye dan publikasi program adiwiyata.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">11</div>
-                            <div class="komponen-name">KOMPONEN 11 - Kampanye Publikasi</div>
-                            <a href="https://drive.google.com/drive/folders/1KGOP4bWWYi2liE23RN-eO6ZjNMppun3c?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1KGOP4bWWYi2liE23RN-eO6ZjNMppun3c?usp=sharing','KOMPONEN 11')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">12</div>
-                            <div class="komponen-name">KOMPONEN 12 - Media Publikasi</div>
-                            <a href="https://drive.google.com/drive/folders/1pDI7e8yH_id9vQbQJJHCRupeL6jHO_lh?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1pDI7e8yH_id9vQbQJJHCRupeL6jHO_lh?usp=sharing','KOMPONEN 12')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Kader Adiwiyata</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah memiliki dan memberdayakan kader adiwiyata.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">13</div>
-                            <div class="komponen-name">KOMPONEN 13 - Kader Adiwiyata</div>
-                            <a href="https://drive.google.com/drive/folders/1jep67PH9tXFOO0Xnp8eAcdm1qwy8jnJs?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1jep67PH9tXFOO0Xnp8eAcdm1qwy8jnJs?usp=sharing','KOMPONEN 13')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">14</div>
-                            <div class="komponen-name">KOMPONEN 14 - Pemberdayaan Kader</div>
-                            <a href="https://drive.google.com/drive/folders/1jcLoGETVm8F0xbqL1SNHRFLlZTxILLLe?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1jcLoGETVm8F0xbqL1SNHRFLlZTxILLLe?usp=sharing','KOMPONEN 14')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Kegiatan Lingkungan di Luar Sekolah</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah pernah menginisiasi kegiatan lingkungan di luar sekolah.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">15</div>
-                            <div class="komponen-name">KOMPONEN 15 - Kegiatan Luar Sekolah</div>
-                            <a href="https://drive.google.com/drive/folders/1VkAguGMfO0YLw8g4T8ASnbjYnFAeYJuR?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1VkAguGMfO0YLw8g4T8ASnbjYnFAeYJuR?usp=sharing','KOMPONEN 15')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Kerjasama & Komitmen Lingkungan</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="indikator-desc">Apakah sekolah memiliki kerjasama dengan pihak lain terkait lingkungan.</div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">16</div>
-                            <div class="komponen-name">KOMPONEN 16 - Kerjasama Lingkungan</div>
-                            <a href="https://drive.google.com/drive/folders/1N5YpFWwjGEYR-WHl4v4IgOBHlNpdiTKu?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1N5YpFWwjGEYR-WHl4v4IgOBHlNpdiTKu?usp=sharing','KOMPONEN 16')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KATEGORI 4: PRASARANA DAN SARANA -->
-        <div class="kategori-wrapper">
-            <div class="kategori-header" onclick="toggleKategori(this)">
-                <div>
-                    <h3>4️⃣ PRASARANA DAN SARANA</h3>
-                    <div class="info">8 Indikator • Komponen 17-24</div>
-                </div>
-                <div class="toggle-icon">▼</div>
-            </div>
-            <div class="indikator-list">
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras sebagai Lingkungan Pembelajaran</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">17</div>
-                            <div class="komponen-name">KOMPONEN 17 - Sarpras Pembelajaran</div>
-                            <a href="https://drive.google.com/drive/folders/1ljJw1skbr5s7XXmKn7rq5M5m5qshZHFQ?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1ljJw1skbr5s7XXmKn7rq5M5m5qshZHFQ?usp=sharing','KOMPONEN 17')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras Sanitasi</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">18</div>
-                            <div class="komponen-name">KOMPONEN 18 - Sarpras Sanitasi</div>
-                            <a href="https://drive.google.com/drive/folders/1Im7SCy_73STrByAXDhbFfflegGXN5nFX?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1Im7SCy_73STrByAXDhbFfflegGXN5nFX?usp=sharing','KOMPONEN 18')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras Pengelolaan Sampah</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">19</div>
-                            <div class="komponen-name">KOMPONEN 19 - Pengelolaan Sampah</div>
-                            <a href="https://drive.google.com/drive/folders/176plBMfFpTpN2yB3QsUf98ZRMIophR2r?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/176plBMfFpTpN2yB3QsUf98ZRMIophR2r?usp=sharing','KOMPONEN 19')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">20</div>
-                            <div class="komponen-name">KOMPONEN 20 - Pengurangan Timbulan Sampah</div>
-                            <a href="https://drive.google.com/drive/folders/1iwDokydQmIDF_gJJCZ8z8E3-eMm0yjnX?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1iwDokydQmIDF_gJJCZ8z8E3-eMm0yjnX?usp=sharing','KOMPONEN 20')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras Keanekaragaman Hayati</div>
-                        <div class="indikator-badge">2 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">21</div>
-                            <div class="komponen-name">KOMPONEN 21 - Keanekaragaman Hayati</div>
-                            <a href="https://drive.google.com/drive/folders/1Y3Nw_y4TGf6RZklCCEfAxRXAQJiPciW3?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1Y3Nw_y4TGf6RZklCCEfAxRXAQJiPciW3?usp=sharing','KOMPONEN 21')">Copy</button>
-                        </div>
-                        <div class="komponen-item">
-                            <div class="komponen-num">22</div>
-                            <div class="komponen-name">KOMPONEN 22 - Tanaman dan Pohon</div>
-                            <a href="https://drive.google.com/drive/folders/1Zuqed56wCvHkW_OtEzM3CWrUHBwxDPIl?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1Zuqed56wCvHkW_OtEzM3CWrUHBwxDPIl?usp=sharing','KOMPONEN 22')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras Hemat Energi</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">23</div>
-                            <div class="komponen-name">KOMPONEN 23 - Hemat Konservasi Energi</div>
-                            <a href="https://drive.google.com/drive/folders/11Gm9LQdB0nFl1mbpafQK4MqFbWuuUpaQ?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/11Gm9LQdB0nFl1mbpafQK4MqFbWuuUpaQ?usp=sharing','KOMPONEN 23')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="indikator-item">
-                    <div class="indikator-header">
-                        <div class="indikator-title">Sarpras Hemat Air</div>
-                        <div class="indikator-badge">1 INDIKATOR</div>
-                    </div>
-                    <div class="komponen-list">
-                        <div class="komponen-item">
-                            <div class="komponen-num">24</div>
-                            <div class="komponen-name">KOMPONEN 24 - Hemat Konservasi Air</div>
-                            <a href="https://drive.google.com/drive/folders/1QRuiesqaVsWKViqOQtsdLA7Vmdyl5Dd-?usp=sharing" target="_blank" class="btn-akses">Akses</a>
-                            <button class="btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1QRuiesqaVsWKViqOQtsdLA7Vmdyl5Dd-?usp=sharing','KOMPONEN 24')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Quick Access -->
+    <section class="section">
+        <h2 class="section-title">Akses Cepat Dokumen</h2>
+        <div class="quick-access-grid">
+            <a href="kategori1.html" class="quick-card kategori1">
+                <div class="quick-icon">1️⃣</div>
+                <h3>KEBIJAKAN</h3>
+                <p>3 Indikator • Komponen 01-03</p>
+            </a>
+            <a href="kategori2.html" class="quick-card kategori2">
+                <div class="quick-icon">2️⃣</div>
+                <h3>PEMBELAJARAN</h3>
+                <p>8 Indikator • Komponen 04-07</p>
+            </a>
+            <a href="kategori3.html" class="quick-card kategori3">
+                <div class="quick-icon">3️⃣</div>
+                <h3>PARTISIPATIF</h3>
+                <p>11 Indikator • Komponen 08-16</p>
+            </a>
+            <a href="kategori4.html" class="quick-card kategori4">
+                <div class="quick-icon">4️⃣</div>
+                <h3>SARPRAS</h3>
+                <p>8 Indikator • Komponen 17-24</p>
+            </a>
         </div>
     </section>
 
-    <!-- GALERI -->
-    <section id="galeri" class="section">
-        <h2 class="section-title">🖼️ GALERI KEGIATAN</h2>
-        <p class="section-subtitle">Dokumentasi Kegiatan Adiwiyata</p>
-
-        <div class="galeri-grid">
-            <div class="galeri-item">
-                <div class="galeri-img">🌱</div>
-                <div class="galeri-caption">Penanaman Pohon</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">️</div>
-                <div class="galeri-caption">Bank Sampah Sekolah</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">💧</div>
-                <div class="galeri-caption">Konservasi Air</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">🌿</div>
-                <div class="galeri-caption">Taman TOGA</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img"></div>
-                <div class="galeri-caption">Hemat Energi</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">🎓</div>
-                <div class="galeri-caption">Kader Adiwiyata</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">🏆</div>
-                <div class="galeri-caption">Lomba Lingkungan Sekardadu</div>
-            </div>
-            <div class="galeri-item">
-                <div class="galeri-img">🤝</div>
-                <div class="galeri-caption">Kerjasama Lingkungan</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KONTAK -->
-    <section id="kontak" class="section">
-        <h2 class="section-title"> KONTAK KAMI</h2>
-        <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-            <h3 style="color: #1e3c72; margin-bottom: 15px;">SMK 17 AGUSTUS 1945 TEGALDLIMO</h3>
-            <p>📍 Alamat: Tegaldlimo, Banyuwangi, Jawa Timur</p>
-            <p>📧 Email: smk17agustus1945@sch.id</p>
-            <p>📱 Telepon: (0333) XXXXXXX</p>
-            <p style="margin-top: 15px;"><strong>🌱 Sekolah Adiwiyata - Peduli Lingkungan </strong></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
         <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
     </footer>
 
-    <script>
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('show');
-        }
-
-        // Toggle Kategori Accordion
-        function toggleKategori(header) {
-            const list = header.nextElementSibling;
-            const isOpen = list.classList.contains('show');
-            
-            // Tutup semua
-            document.querySelectorAll('.indikator-list').forEach(l => l.classList.remove('show'));
-            document.querySelectorAll('.kategori-header').forEach(h => h.classList.remove('active'));
-            
-            // Buka yang diklik jika sebelumnya tertutup
-            if (!isOpen) {
-                list.classList.add('show');
-                header.classList.add('active');
-            }
-        }
-
-        // Copy Link
-        function copyLink(url, nama) {
-            navigator.clipboard.writeText(url).then(() => {
-                alert(`✅ Link ${nama} berhasil disalin!`);
-            }).catch(() => {
-                const ta = document.createElement('textarea');
-                ta.value = url;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                alert(`✅ Link ${nama} berhasil disalin!`);
-            });
-        }
-
-        // Active nav link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Close menu on link click (mobile)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('show');
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
