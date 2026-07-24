@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori 2: Proses Pembelajaran - SMK 17 AGUSTUS 1945 TEGALDLIMO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            width: 40px;
+            border-radius: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .progress-bar strong {
+            color: #38ef7d;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Category Overview */
+        .category-overview {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid #3498db;
+        }
+
+        .category-overview h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Struktur Folder Preview */
+        .struktur-preview {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .struktur-preview .folder {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .struktur-preview .file {
+            color: #ecf0f1;
+            padding-left: 20px;
+        }
+
+        .struktur-preview .subfolder {
+            color: #e74c3c;
+            padding-left: 20px;
+        }
+
+        /* Indikator Item */
+        .indikator-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .indikator-header {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .indikator-header:hover {
+            background: #e3f2fd;
+        }
+
+        .indikator-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.1em;
+        }
+
+        .indikator-badge {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .indikator-desc {
+            padding: 0 20px 15px 20px;
+            color: #555;
+            font-style: italic;
+            border-bottom: 2px dashed #ddd;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            color: #3498db;
+        }
+
+        .indikator-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Komponen Detail */
+        .komponen-detail {
+            padding: 20px;
+            display: none;
+        }
+
+        .komponen-detail.show {
+            display: block;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Komponen Card */
+        .komponen-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .komponen-card:hover {
+            border-color: #3498db;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .komponen-card.uploaded {
+            border-color: #27ae60;
+            background: #e8f8f5;
+        }
+
+        .komponen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .komponen-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .komponen-num {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .komponen-name {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.05em;
+        }
+
+        .komponen-name small {
+            display: block;
+            font-weight: normal;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 3px;
+        }
+
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .status-badge.pending {
+            background: #f39c12;
+            color: white;
+        }
+
+        .status-badge.complete {
+            background: #27ae60;
+            color: white;
+        }
+
+        /* File Requirements */
+        .file-requirements {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .file-requirements h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #f39c12;
+        }
+
+        .file-format {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #1976d2;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .file-note {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .upload-section strong {
+            color: #1e3c72;
+        }
+
+        .upload-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .btn-drive {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-drive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+        }
+
+        .btn-copy {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background: #ee5a5a;
+        }
+
+        .btn-check {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background: #229954;
+        }
+
+        /* Navigation Prev/Next */
+        .nav-prev-next {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: #1e3c72;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2a5298;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #11998e;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            .komponen-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .upload-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-prev-next {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .komponen-num {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo">
+                <span>KATEGORI 2: PEMBELAJARAN</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link"> Beranda</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link active"> Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">️ Galeri</a>
+            </div>
+            <div class="progress-bar">
+                Progress: <strong id="progressText">0/4</strong>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>📚 2. PROSES PEMBELAJARAN</h1>
+        <p class="subtitle">Integrasi Lingkungan dalam Pembelajaran & Karya Siswa</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Category Overview -->
+        <div class="category-overview">
+            <h2>📊 Overview Kategori 2</h2>
+            <p>Kategori ini menilai bagaimana sekolah mengintegrasikan aspek lingkungan dalam proses pembelajaran, ekstrakurikuler, dan hasil karya siswa.</p>
+            
+            <div class="overview-stats">
+                <div class="stat-box">
+                    <h3>8</h3>
+                    <p>Total Indikator</p>
+                </div>
+                <div class="stat-box">
+                    <h3>4</h3>
+                    <p>Komponen</p>
+                </div>
+                <div class="stat-box">
+                    <h3>40+</h3>
+                    <p>File Dokumen</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Target Upload</p>
+                </div>
+            </div>
+
+            <!-- Struktur Folder Preview -->
+            <h3 style="margin-top: 20px; color: #1e3c72;">📁 Struktur Folder yang Diharapkan:</h3>
+            <div class="struktur-preview">
+<span class="folder">📂 02_PROSES_PEMBELAJARAN/</span>
+│
+├── <span class="folder">📂 04_RPP_MODUL_TERINTEGRASI_LINGKUNGAN/</span>
+│   ├── <span class="file"> RPP_Modul_01.pdf</span>
+│   ├── <span class="file"> RPP_Modul_02.pdf</span>
+│   ├── <span class="file"> ... (minimal 10 RPP)</span>
+│   └── <span class="file">📄 Matriks_Pemetaan_5_Aspek_Lingkungan.pdf</span>
+│
+├── <span class="folder">📂 05_REKAP_PERSENTASE_RPP_MODUL/</span>
+│   └── <span class="file">📊 Rekap_Persentase_RPP_Modul_Terintegrasi.xlsx</span>
+│
+├── <span class="folder">📂 06_EKSTRAKURIKULER_TERINTEGRASI_LINGKUNGAN/</span>
+│   ├── <span class="file">📄 Laporan_Jurnal_Kegiatan_Ekstrakurikuler.pdf</span>
+│   ├── <span class="file">📄 Matriks_Pemetaan_Ekstrakurikuler_5_Aspek.pdf</span>
+│   ├── <span class="subfolder">📁 Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder">📁 Dokumentasi_Video/</span>
+│   └── <span class="file">📄 Keterangan_Dokumentasi_Kegiatan.pdf</span>
+│
+── <span class="folder">📂 07_HASIL_KARYA_SISWA_LINGKUNGAN/</span>
+    ├── <span class="subfolder">📁 01_Poster_Lingkungan/</span>
+    ├── <span class="subfolder">📁 02_Tulisan_Artikel_Esai/</span>
+    ├── <span class="subfolder">📁 03_Karya_Seni_Lingkungan/</span>
+    ├── <span class="subfolder"> 04_Produk_Kreatif_Lingkungan/</span>
+    ├── <span class="subfolder">📁 05_Karya_Lainnya/</span>
+    ├── <span class="file">📊 06_Rekapitulasi_Hasil_Karya_Siswa.xlsx</span>
+    ├── <span class="file">📊 07_Matriks_Pemetaan_5_Aspek_Lingkungan.xlsx</span>
+    ── <span class="file">📄 08_Deskripsi_Hasil_Karya_Siswa.pdf</span>
+            </div>
+        </div>
+
+        <!-- INDIKATOR 1: RPP/MODUL TERINTEGRASI -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">📖 Indikator 1: RPP/Modul Pembelajaran Terintegrasi Lingkungan</div>
+                <div>
+                    <span class="indikator-badge">4 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah RPP/modul mengintegrasikan aspek lingkungan (kebersihan, sampah, hayati, energi, air) dalam pembelajaran di kelas?
+            </div>
+            <div class="komponen-detail show">
+                
+                <!-- KOMPONEN 04 -->
+                <div class="komponen-card" id="komponen-04">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">04</div>
+                            <div>
+                                <div class="komponen-name">RPP/MODUL TERINTEGRASI LINGKUNGAN</div>
+                                <small>Rencana Pelaksanaan Pembelajaran dengan integrasi 5 aspek lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-04">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>RPP_Modul_01.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ RPP Mata Pelajaran Produktif (TKRO/AKL/BD/PH) dengan integrasi lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>RPP_Modul_02.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ RPP Mata Pelajaran Umum (Matematika, B. Indonesia, dll) dengan integrasi lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>RPP_Modul_03 s/d RPP_Modul_10.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Minimal 10 RPP dari berbagai mata pelajaran (produktif & umum)</span>
+                            </li>
+                            <li>
+                                <strong>Matriks_Pemetaan_5_Aspek_Lingkungan.pdf</strong> <span class="file-format">PDF/Excel</span>
+                                <span class="file-note">→ Tabel yang menunjukkan KD mana diintegrasikan dengan aspek lingkungan apa</span>
+                            </li>
+                            <li>
+                                <strong>Daftar_RPP_Terintegrasi.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Rekap: Nama Mapel, Kelas, KD, Aspek Lingkungan yang Diintegrasikan</span>
+                            </li>
+                            <li>
+                                <strong>Contoh_Pembelajaran/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto/video kegiatan pembelajaran berbasis lingkungan (minimal 10 foto)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1coTJqVzUmxdaL9tPj69knjEMvYWbLbfu?usp=sharing" target="_blank" class="btn btn-drive"> Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1coTJqVzUmxdaL9tPj69knjEMvYWbLbfu?usp=sharing','KOMPONEN 04')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('04')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMPONEN 05 -->
+                <div class="komponen-card" id="komponen-05">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">05</div>
+                            <div>
+                                <div class="komponen-name">REKAP PERSENTASE RPP/MODUL TERINTEGRASI</div>
+                                <small>Data kuantitatif persentase RPP yang sudah terintegrasi lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-05">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>Rekap_Persentase_RPP_Modul_Terintegrasi.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Berisi: Total RPP semua mapel, RPP terintegrasi, persentase, grafik</span>
+                            </li>
+                            <li>
+                                <strong>Analisis_Pencapaian.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Analisis mengapa ada RPP yang belum terintegrasi & rencana tindak lanjut</span>
+                            </li>
+                            <li>
+                                <strong>SK_Kewajiban_RPP_Lingkungan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ SK Kepala Sekolah yang mewajibkan guru membuat RPP terintegrasi lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>Notulensi_Rapat_Koordinasi.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Notulensi rapat koordinasi dengan guru tentang integrasi lingkungan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1C1oP9ohYnT7UQO3FCVx29yBwkqxl5-pe?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1C1oP9ohYnT7UQO3FCVx29yBwkqxl5-pe?usp=sharing','KOMPONEN 05')"> Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('05')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INDIKATOR 2: EKSTRAKURIKULER -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">🎯 Indikator 2: Ekstrakurikuler Terintegrasi Lingkungan</div>
+                <div>
+                    <span class="indikator-badge">1 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah kegiatan ekstrakurikuler (Pramuka, PMR, PKS, dll) mengintegrasikan aspek lingkungan?
+            </div>
+            <div class="komponen-detail">
+                
+                <!-- KOMPONEN 06 -->
+                <div class="komponen-card" id="komponen-06">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">06</div>
+                            <div>
+                                <div class="komponen-name">EKSTRAKURIKULER TERINTEGRASI LINGKUNGAN</div>
+                                <small>Kegiatan ekstrakurikuler yang berbasis lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-06">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>Program_Kerja_Ekstrakurikuler_Lingkungan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Proker PMR, Pramuka, PKS yang berorientasi lingkungan (1 tahun)</span>
+                            </li>
+                            <li>
+                                <strong>Laporan_Jurnal_Kegiatan_Ekstrakurikuler.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Jurnal kegiatan minimal 1 tahun ajaran (bulan per bulan)</span>
+                            </li>
+                            <li>
+                                <strong>Matriks_Pemetaan_Ekstrakurikuler_5_Aspek.pdf</strong> <span class="file-format">PDF/Excel</span>
+                                <span class="file-note">→ Matriks kegiatan ekstrakurikuler yang terkait 5 aspek lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>Daftar_Hadir_Peserta.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Absensi peserta ekstrakurikuler lingkungan per kegiatan</span>
+                            </li>
+                            <li>
+                                <strong>Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Foto kegiatan (minimal 20 foto dengan keterangan tanggal & kegiatan)</span>
+                            </li>
+                            <li>
+                                <strong>Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video kegiatan (2-3 video, durasi 3-5 menit, format MP4)</span>
+                            </li>
+                            <li>
+                                <strong>Keterangan_Dokumentasi_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Narasi/deskripsi setiap dokumentasi (apa, kapan, di mana, siapa)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/1OZuh4YqlE68HkvT1mlpamp5hLL6pjY6d?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/1OZuh4YqlE68HkvT1mlpamp5hLL6pjY6d?usp=sharing','KOMPONEN 06')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('06')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INDIKATOR 3: HASIL KARYA SISWA -->
+        <div class="indikator-item">
+            <div class="indikator-header" onclick="toggleIndikator(this)">
+                <div class="indikator-title">🎨 Indikator 3: Hasil Karya Siswa Terkait Lingkungan</div>
+                <div>
+                    <span class="indikator-badge">3 INDIKATOR</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="indikator-desc">
+                Apakah siswa menghasilkan karya terkait aspek lingkungan (poster, artikel, karya seni, produk kreatif)?
+            </div>
+            <div class="komponen-detail">
+                
+                <!-- KOMPONEN 07 -->
+                <div class="komponen-card" id="komponen-07">
+                    <div class="komponen-header">
+                        <div class="komponen-title">
+                            <div class="komponen-num">07</div>
+                            <div>
+                                <div class="komponen-name">HASIL KARYA SISWA TERKAIT LINGKUNGAN</div>
+                                <small>Karya siswa dalam berbagai bentuk yang bertema lingkungan</small>
+                            </div>
+                        </div>
+                        <span class="status-badge pending" id="status-07">⏳ Belum Upload</span>
+                    </div>
+                    
+                    <div class="file-requirements">
+                        <h4>📄 File yang Harus Diupload:</h4>
+                        <ul class="file-list">
+                            <li>
+                                <strong>01_Poster_Lingkungan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Kumpulan poster karya siswa (minimal 10 poster, format JPG/PDF)</span>
+                            </li>
+                            <li>
+                                <strong>02_Tulisan_Artikel_Esai/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Artikel/esai siswa tentang lingkungan (minimal 5 tulisan, format PDF/DOC)</span>
+                            </li>
+                            <li>
+                                <strong>03_Karya_Seni_Lingkungan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Lukisan, patung, kerajinan dari barang bekas (foto + deskripsi)</span>
+                            </li>
+                            <li>
+                                <strong>04_Produk_Kreatif_Lingkungan/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Produk daur ulang, kompos, biopori, eco-enzyme karya siswa</span>
+                            </li>
+                            <li>
+                                <strong>05_Karya_Lainnya/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Video, podcast, blog, infografis lingkungan karya siswa</span>
+                            </li>
+                            <li>
+                                <strong>06_Rekapitulasi_Hasil_Karya_Siswa.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Daftar semua karya: Nama siswa, kelas, jenis karya, aspek lingkungan</span>
+                            </li>
+                            <li>
+                                <strong>07_Matriks_Pemetaan_5_Aspek_Lingkungan.xlsx</strong> <span class="file-format">Excel</span>
+                                <span class="file-note">→ Matriks yang menunjukkan karya siswa terkait aspek lingkungan mana</span>
+                            </li>
+                            <li>
+                                <strong>08_Deskripsi_Hasil_Karya_Siswa.pdf</strong> <span class="file-format">PDF</span>
+                                <span class="file-note">→ Narasi tentang proses penciptaan, makna karya, dan pembelajaran yang didapat</span>
+                            </li>
+                            <li>
+                                <strong>Foto_Pameran_Karya/</strong> <span class="file-format">FOLDER</span>
+                                <span class="file-note">→ Dokumentasi pameran/presentasi karya siswa (minimal 10 foto)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-section">
+                        <strong>📥 Upload ke Google Drive:</strong>
+                        <div class="upload-buttons">
+                            <a href="https://drive.google.com/drive/folders/105r1qdlKgru4jvmR1DCTpYh7vYh4b2j3?usp=sharing" target="_blank" class="btn btn-drive">🔗 Buka Folder Drive</a>
+                            <button class="btn btn-copy" onclick="copyLink('https://drive.google.com/drive/folders/105r1qdlKgru4jvmR1DCTpYh7vYh4b2j3?usp=sharing','KOMPONEN 07')">📋 Copy Link</button>
+                            <button class="btn btn-check" onclick="markComplete('07')">✔️ Tandai Selesai</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation Prev/Next -->
+        <div class="nav-prev-next">
+            <a href="kategori1.html" class="nav-btn">← Kategori 1: Kebijakan</a>
+            <a href="kategori3.html" class="nav-btn">Kategori 3: Partisipatif →</a>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('show');
+        }
+
+        // Toggle Indikator
+        function toggleIndikator(header) {
+            const detail = header.parentElement.querySelector('.komponen-detail');
+            const icon = header.querySelector('.toggle-icon');
+            
+            detail.classList.toggle('show');
+            header.classList.toggle('active');
+        }
+
+        // Copy Link
+        function copyLink(url, nama) {
+            navigator.clipboard.writeText(url).then(() => {
+                showNotification(`✅ Link ${nama} berhasil disalin!`);
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = url;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showNotification(`✅ Link ${nama} berhasil disalin!`);
+            });
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            const notif = document.createElement('div');
+            notif.className = 'notification';
+            notif.textContent = message;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 3000);
+        }
+
+        // Mark Complete
+        function markComplete(komponenNum) {
+            const card = document.getElementById(`komponen-${komponenNum}`);
+            const badge = document.getElementById(`status-${komponenNum}`);
+            
+            if (card && badge) {
+                card.classList.add('uploaded');
+                badge.classList.remove('pending');
+                badge.classList.add('complete');
+                badge.textContent = '✔️ Selesai';
+                updateProgress();
+                localStorage.setItem(`komponen-${komponenNum}`, 'complete');
+                showNotification(`✅ Komponen ${komponenNum} ditandai selesai!`);
+            }
+        }
+
+        // Update Progress
+        function updateProgress() {
+            const components = ['04', '05', '06', '07'];
+            let completed = 0;
+            
+            components.forEach(num => {
+                if (localStorage.getItem(`komponen-${num}`) === 'complete') {
+                    completed++;
+                }
+            });
+            
+            document.getElementById('progressText').textContent = `${completed}/4`;
+        }
+
+        // Load saved progress on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            
+            const components = ['04', '05', '06', '07'];
+            components.forEach(num => {
+                if (localStorage.getItem(`komponen-${num}`) === 'complete') {
+                    const badge = document.getElementById(`status-${num}`);
+                    const card = document.getElementById(`komponen-${num}`);
+                    if (badge && card) {
+                        badge.classList.remove('pending');
+                        badge.classList.add('complete');
+                        badge.textContent = '✔️ Selesai';
+                        card.classList.add('uploaded');
+                    }
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (navMenu && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
