@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>SMK 17 AGUSTUS 1945 TEGALDLIMO - Adiwiyata 2026</title>
-    <!-- Google Fonts untuk tampilan lebih modern -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -98,7 +98,6 @@
             cursor: pointer;
             color: var(--primary-dark);
             display: none;
-            /* disembunyikan di desktop */
             padding: 4px 8px;
             line-height: 1;
             transition: transform var(--transition);
@@ -228,14 +227,21 @@
             flex-shrink: 0;
             width: 110px;
             height: 110px;
-            background: var(--primary-light);
             border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+            background: var(--primary-light);
+            /* fallback jika gambar gagal */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4.2rem;
-            color: #fff;
-            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+        }
+
+        .kepsek-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .sambutan-content {
@@ -370,7 +376,6 @@
             margin: 0;
         }
 
-        /* variasi warna border untuk masing-masing kategori */
         .quick-card.kategori1 {
             border-left-color: #e53935;
         }
@@ -483,7 +488,6 @@
             .kepsek-photo {
                 width: 90px;
                 height: 90px;
-                font-size: 3.4rem;
             }
 
             .sambutan-content .jabatan {
@@ -548,7 +552,6 @@
             .kepsek-photo {
                 width: 76px;
                 height: 76px;
-                font-size: 2.8rem;
             }
         }
 
@@ -631,7 +634,9 @@
     <section class="section">
         <h2 class="section-title">Sambutan Kepala Sekolah</h2>
         <div class="sambutan-card">
-            <div class="https://i.ibb.co.com/Xfgh2zJ1/SUTIMIN-2.jpg">👤</div>
+            <div class="kepsek-photo">
+                <img src="https://i.ibb.co.com/Xfgh2zJ1/SUTIMIN-2.jpg" alt="Kepala Sekolah SMK 17 Agustus 1945" />
+            </div>
             <div class="sambutan-content">
                 <h3>Selamat Datang di Website Adiwiyata</h3>
                 <p class="jabatan">Kepala SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
@@ -716,15 +721,12 @@
             const menuToggle = document.getElementById('menuToggle');
             const navMenu = document.getElementById('navMenu');
 
-            // Toggle menu saat tombol diklik
             menuToggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 navMenu.classList.toggle('active');
-                // Ubah ikon hamburger menjadi X jika aktif
                 this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
             });
 
-            // Tutup menu jika klik di luar navbar (untuk mobile)
             document.addEventListener('click', function(e) {
                 const navbar = document.querySelector('.navbar');
                 if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
@@ -733,7 +735,6 @@
                 }
             });
 
-            // Tutup menu saat link diklik (untuk pengalaman lebih baik di mobile)
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
@@ -744,7 +745,6 @@
                 });
             });
 
-            // Saat window di-resize ke desktop, pastikan menu tidak aktif dan hamburger normal
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 768) {
                     navMenu.classList.remove('active');
