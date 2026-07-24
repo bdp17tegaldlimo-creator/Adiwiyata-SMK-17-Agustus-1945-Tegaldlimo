@@ -176,6 +176,7 @@
             height: 250px;
             object-fit: cover;
             display: block;
+            background: #e0e0e0;
         }
 
         .gallery-caption {
@@ -222,7 +223,7 @@
             text-decoration: underline;
         }
 
-        /* Category Filter (Optional) */
+        /* Category Filter */
         .filter-section {
             background: white;
             border-radius: 15px;
@@ -350,7 +351,7 @@
             }
 
             .gallery-grid {
-                grid-template-columns: 1fr; /* 1 kolom di HP */
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
 
@@ -402,7 +403,7 @@
                 <a href="index.html" class="nav-link">🏠 Beranda</a>
                 <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
                 <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
-                <a href="kategori3.html" class="nav-link"> Partisipatif</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
                 <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
                 <a href="galeri.html" class="nav-link active">🖼️ Galeri</a>
                 <a href="kontak.html" class="nav-link">📞 Kontak</a>
@@ -412,7 +413,7 @@
 
     <!-- Hero -->
     <section class="hero">
-        <h1>️ GALERI KEGIATAN ADIWIYATA</h1>
+        <h1>🖼️ GALERI KEGIATAN ADIWIYATA</h1>
         <p class="subtitle">Dokumentasi Program Peduli Lingkungan SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
     </section>
 
@@ -424,8 +425,8 @@
             <p>Koleksi dokumentasi kegiatan dan prestasi sekolah dalam program Adiwiyata</p>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>10</h3>
-                    <p>Foto Kegiatan</p>
+                    <h3>15</h3>
+                    <p>Foto Dokumentasi</p>
                 </div>
                 <div class="stat-item">
                     <h3>5</h3>
@@ -442,7 +443,7 @@
             </div>
         </div>
 
-        <!-- Filter Section (Optional) -->
+        <!-- Filter Section -->
         <div class="filter-section">
             <h3 class="filter-title">🔍 Filter Kategori</h3>
             <div class="filter-buttons">
@@ -458,183 +459,198 @@
         <!-- Gallery Grid -->
         <div class="gallery-grid" id="galleryGrid">
 
-            <!-- Foto 1: Penyerahan Piagam -->
+            <!-- Foto 1 -->
             <div class="gallery-item" data-category="prestasi">
                 <a href="https://ibb.co.com/Gf3pFyQ8" target="_blank">
-                    <img src="https://i.ibb.co.com/Gf3pFyQ8/KEPALA-SATUAN-PENDIDIKAN-DENGAN-BUPATI-BANYUWANGI.jpg" 
-                         alt="Penyerahan Piagam dari Bupati Banyuwangi" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/Gf3pFyQ8/KEPALA-SATUAN-PENDIDIKAN-DENGAN-BUPATI-BANYUWANGI.jpg" alt="Penyerahan Piagam" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">1</span>
                     <div class="gallery-title">Penyerahan Piagam Sekolah Rawat DAS</div>
-                    <div class="gallery-description">
-                        Penyerahan piagam penghargaan Sekolah Rawat Daerah Aliran Sungai kepada Kepala Satuan Pendidikan SMK 17 AGUSTUS 1945 TEGALDLIMO dari Bupati Banyuwangi Ibu Ipuk Fiestiandani.
-                    </div>
+                    <div class="gallery-description">Penyerahan piagam penghargaan Sekolah Rawat Daerah Aliran Sungai kepada Kepala Satuan Pendidikan dari Bupati Banyuwangi Ibu Ipuk Fiestiandani.</div>
                     <a href="https://ibb.co.com/Gf3pFyQ8" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 2: Kegiatan Sekolah Rawat DAS -->
+            <!-- Foto 2 -->
             <div class="gallery-item" data-category="kegiatan">
                 <a href="https://ibb.co.com/zTTJCpZR" target="_blank">
-                    <img src="https://i.ibb.co.com/zTTJCpZR/KEGIATAN-SEKARDADU.jpg" 
-                         alt="Kegiatan Sekolah Rawat Daerah Aliran Sungai" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/zTTJCpZR/KEGIATAN-SEKARDADU.jpg" alt="Kegiatan SEKARDADU" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">2</span>
-                    <div class="gallery-title">Kegiatan Sekolah Rawat Daerah Aliran Sungai</div>
-                    <div class="gallery-description">
-                        Dokumentasi kegiatan pemeliharaan dan perawatan Daerah Aliran Sungai (DAS) oleh siswa dan guru SMK 17 AGUSTUS 1945 TEGALDLIMO dalam program SEKARDADU.
-                    </div>
+                    <div class="gallery-title">Kegiatan Sekolah Rawat DAS</div>
+                    <div class="gallery-description">Dokumentasi kegiatan pemeliharaan dan perawatan Daerah Aliran Sungai (DAS) oleh siswa dan guru dalam program SEKARDADU.</div>
                     <a href="https://ibb.co.com/zTTJCpZR" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 3: Pengomposan -->
+            <!-- Foto 3 -->
             <div class="gallery-item" data-category="kader">
                 <a href="https://ibb.co.com/LX5fJ18n" target="_blank">
-                    <img src="https://i.ibb.co.com/LX5fJ18n/PENGOMPOSAN-OLEH-KADER-ADIWIYATA.jpg" 
-                         alt="Pengomposan oleh Kader Adiwiyata" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/LX5fJ18n/PENGOMPOSAN-OLEH-KADER-ADIWIYATA.jpg" alt="Pengomposan" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">3</span>
                     <div class="gallery-title">Pengomposan oleh Kader Adiwiyata</div>
-                    <div class="gallery-description">
-                        Kader Adiwiyata sedang melakukan proses pengomposan sampah organik sekolah. Kegiatan ini bagian dari program pengelolaan sampah berkelanjutan.
-                    </div>
+                    <div class="gallery-description">Kader Adiwiyata sedang melakukan proses pengomposan sampah organik sekolah sebagai bagian dari program pengelolaan sampah berkelanjutan.</div>
                     <a href="https://ibb.co.com/LX5fJ18n" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 4: Pemilahan Sampah -->
+            <!-- Foto 4 -->
             <div class="gallery-item" data-category="kader">
                 <a href="https://ibb.co.com/cXTLJZFS" target="_blank">
-                    <img src="https://i.ibb.co.com/cXTLJZFS/PEMILAHAN-SAMPAH-OLEH-KADER-ADIWIYATA.jpg" 
-                         alt="Pemilahan Sampah oleh Kader Adiwiyata" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/cXTLJZFS/PEMILAHAN-SAMPAH-OLEH-KADER-ADIWIYATA.jpg" alt="Pemilahan Sampah" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">4</span>
-                    <div class="gallery-title">Pemilahan Sampah oleh Kader Adiwiyata</div>
-                    <div class="gallery-description">
-                        Kader Adiwiyata melakukan pemilahan sampah organik dan anorganik di bank sampah sekolah sebagai wujud kepedulian terhadap lingkungan.
-                    </div>
+                    <div class="gallery-title">Pemilahan Sampah oleh Kader</div>
+                    <div class="gallery-description">Kader Adiwiyata melakukan pemilahan sampah organik dan anorganik di bank sampah sekolah sebagai wujud kepedulian lingkungan.</div>
                     <a href="https://ibb.co.com/cXTLJZFS" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 5: Hemat Energi -->
+            <!-- Foto 5 -->
             <div class="gallery-item" data-category="sarpras">
                 <a href="https://ibb.co.com/ZzS8DC2p" target="_blank">
-                    <img src="https://i.ibb.co.com/ZzS8DC2p/HEMAT-ENERGI.png" 
-                         alt="Program Hemat Energi" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/ZzS8DC2p/HEMAT-ENERGI.png" alt="Hemat Energi" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">5</span>
                     <div class="gallery-title">Program Hemat Energi</div>
-                    <div class="gallery-description">
-                        Implementasi program hemat energi di sekolah melalui penggunaan lampu LED, pemanfaatan cahaya alami, dan penghematan listrik di seluruh area sekolah.
-                    </div>
+                    <div class="gallery-description">Implementasi program hemat energi di sekolah melalui penggunaan lampu LED dan pemanfaatan cahaya alami di seluruh area sekolah.</div>
                     <a href="https://ibb.co.com/ZzS8DC2p" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 6: Biopori -->
+            <!-- Foto 6 -->
             <div class="gallery-item" data-category="sarpras">
                 <a href="https://ibb.co.com/4RwT1P9g" target="_blank">
-                    <img src="https://i.ibb.co.com/4RwT1P9g/BIOPORI.png" 
-                         alt="Lubang Biopori" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/4RwT1P9g/BIOPORI.png" alt="Biopori" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">6</span>
                     <div class="gallery-title">Lubang Biopori untuk Konservasi Air</div>
-                    <div class="gallery-description">
-                        Pembuatan dan pemeliharaan lubang biopori di area sekolah sebagai sarana konservasi air tanah dan pengelolaan air hujan yang berkelanjutan.
-                    </div>
+                    <div class="gallery-description">Pembuatan dan pemeliharaan lubang biopori di area sekolah sebagai sarana konservasi air tanah dan pengelolaan air hujan.</div>
                     <a href="https://ibb.co.com/4RwT1P9g" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 7: Penyiraman Tanaman Hias -->
+            <!-- Foto 7 -->
             <div class="gallery-item" data-category="kegiatan">
                 <a href="https://ibb.co.com/s98YVXCz" target="_blank">
-                    <img src="https://i.ibb.co.com/s98YVXCz/PENYIRAMAN-TANAMAN.png" 
-                         alt="Penyiraman Tanaman Hias" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/s98YVXCz/PENYIRAMAN-TANAMAN.png" alt="Penyiraman Tanaman" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">7</span>
                     <div class="gallery-title">Penyiraman Tanaman Hias</div>
-                    <div class="gallery-description">
-                        Siswa melakukan penyiraman dan perawatan tanaman hias di lingkungan sekolah sebagai bagian dari program penghijauan dan keanekaragaman hayati.
-                    </div>
+                    <div class="gallery-description">Siswa melakukan penyiraman dan perawatan tanaman hias di lingkungan sekolah sebagai bagian dari program penghijauan.</div>
                     <a href="https://ibb.co.com/s98YVXCz" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 8: Penyiraman Taman -->
+            <!-- Foto 8 -->
             <div class="gallery-item" data-category="kegiatan">
                 <a href="https://ibb.co.com/4n92Mt5y" target="_blank">
-                    <img src="https://i.ibb.co.com/4n92Mt5y/PENYIRAMAN-TAMAN.jpg" 
-                         alt="Penyiraman Taman Sekolah" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/4n92Mt5y/PENYIRAMAN-TAMAN.jpg" alt="Penyiraman Taman" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">8</span>
                     <div class="gallery-title">Penyiraman Taman Sekolah</div>
-                    <div class="gallery-description">
-                        Kegiatan rutin penyiraman taman sekolah oleh siswa untuk menjaga keindahan dan kelestarian area hijau sekolah.
-                    </div>
+                    <div class="gallery-description">Kegiatan rutin penyiraman taman sekolah oleh siswa untuk menjaga keindahan dan kelestarian area hijau sekolah.</div>
                     <a href="https://ibb.co.com/4n92Mt5y" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 9: Publikasi di Mading -->
+            <!-- Foto 9 -->
             <div class="gallery-item" data-category="publikasi">
                 <a href="https://ibb.co.com/QvH3QbNB" target="_blank">
-                    <img src="https://i.ibb.co.com/QvH3QbNB/PUBLIKASI-MADING-2.jpg" 
-                         alt="Publikasi Lingkungan Hidup di Mading" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/QvH3QbNB/PUBLIKASI-MADING-2.jpg" alt="Mading" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">9</span>
                     <div class="gallery-title">Publikasi Lingkungan Hidup di Mading</div>
-                    <div class="gallery-description">
-                        Publikasi dan sosialisasi program lingkungan hidup melalui mading sekolah untuk meningkatkan kesadaran warga sekolah akan pentingnya pelestarian lingkungan.
-                    </div>
+                    <div class="gallery-description">Publikasi dan sosialisasi program lingkungan hidup melalui mading sekolah untuk meningkatkan kesadaran warga sekolah.</div>
                     <a href="https://ibb.co.com/QvH3QbNB" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
-            <!-- Foto 10: Perawatan Tanaman -->
+            <!-- Foto 10 -->
             <div class="gallery-item" data-category="kegiatan">
                 <a href="https://ibb.co.com/kVC5DGJq" target="_blank">
-                    <img src="https://i.ibb.co.com/kVC5DGJq/PERAWATAN-TANAMAN.jpg" 
-                         alt="Perawatan Tanaman" 
-                         class="gallery-image"
-                         onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co.com/kVC5DGJq/PERAWATAN-TANAMAN.jpg" alt="Perawatan Tanaman" class="gallery-image" onclick="openLightbox(this)">
                 </a>
                 <div class="gallery-caption">
                     <span class="gallery-number">10</span>
                     <div class="gallery-title">Perawatan Tanaman</div>
-                    <div class="gallery-description">
-                        Kegiatan perawatan tanaman di area sekolah termasuk pemupukan, pemangkasan, dan pengendalian hama untuk menjaga kesehatan dan keindahan taman sekolah.
-                    </div>
+                    <div class="gallery-description">Kegiatan perawatan tanaman di area sekolah termasuk pemupukan dan pemangkasan untuk menjaga kesehatan taman sekolah.</div>
                     <a href="https://ibb.co.com/kVC5DGJq" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
+                </div>
+            </div>
+
+            <!-- FOTO BARU 11 -->
+            <div class="gallery-item" data-category="publikasi">
+                <a href="https://ibb.co.com/SwqxDJw4" target="_blank">
+                    <img src="https://i.ibb.co.com/SwqxDJw4/KURANGI-SAMPAH-PLASTIK.png" alt="Kurangi Sampah Plastik" class="gallery-image" onclick="openLightbox(this)">
+                </a>
+                <div class="gallery-caption">
+                    <span class="gallery-number">11</span>
+                    <div class="gallery-title">Kampanye Kurangi Sampah Plastik</div>
+                    <div class="gallery-description">Poster kampanye pengurangan penggunaan sampah plastik di lingkungan sekolah untuk mendorong gaya hidup ramah lingkungan.</div>
+                    <a href="https://ibb.co.com/SwqxDJw4" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
+                </div>
+            </div>
+
+            <!-- FOTO BARU 12 -->
+            <div class="gallery-item" data-category="publikasi">
+                <a href="https://ibb.co.com/Kcbts6fC" target="_blank">
+                    <img src="https://i.ibb.co.com/Kcbts6fC/HEMAT-LISTRIK.png" alt="Hemat Listrik" class="gallery-image" onclick="openLightbox(this)">
+                </a>
+                <div class="gallery-caption">
+                    <span class="gallery-number">12</span>
+                    <div class="gallery-title">Kampanye Hemat Listrik</div>
+                    <div class="gallery-description">Sosialisasi pentingnya menghemat penggunaan listrik di sekolah melalui media poster yang informatif dan menarik.</div>
+                    <a href="https://ibb.co.com/Kcbts6fC" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
+                </div>
+            </div>
+
+            <!-- FOTO BARU 13 -->
+            <div class="gallery-item" data-category="publikasi">
+                <a href="https://ibb.co.com/Jj8dh29c" target="_blank">
+                    <img src="https://i.ibb.co.com/Jj8dh29c/KEBERSIHAN-SEBAGIAN-DARI-IMAN.png" alt="Kebersihan Sebagian dari Iman" class="gallery-image" onclick="openLightbox(this)">
+                </a>
+                <div class="gallery-caption">
+                    <span class="gallery-number">13</span>
+                    <div class="gallery-title">Kebersihan Sebagian dari Iman</div>
+                    <div class="gallery-description">Publikasi nilai-nilai religius yang sejalan dengan program kebersihan sekolah, menanamkan karakter peduli lingkungan sejak dini.</div>
+                    <a href="https://ibb.co.com/Jj8dh29c" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
+                </div>
+            </div>
+
+            <!-- FOTO BARU 14 -->
+            <div class="gallery-item" data-category="publikasi">
+                <a href="https://ibb.co.com/SDCBjLtm" target="_blank">
+                    <img src="https://i.ibb.co.com/SDCBjLtm/HARI-BUMI.png" alt="Hari Bumi" class="gallery-image" onclick="openLightbox(this)">
+                </a>
+                <div class="gallery-caption">
+                    <span class="gallery-number">14</span>
+                    <div class="gallery-title">Peringatan Hari Bumi</div>
+                    <div class="gallery-description">Dokumentasi publikasi dan kampanye sekolah dalam rangka memperingati Hari Bumi untuk meningkatkan kesadaran ekologis.</div>
+                    <a href="https://ibb.co.com/SDCBjLtm" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
+                </div>
+            </div>
+
+            <!-- FOTO BARU 15 -->
+            <div class="gallery-item" data-category="publikasi">
+                <a href="https://ibb.co.com/fJfVdhY" target="_blank">
+                    <img src="https://i.ibb.co.com/fJfVdhY/JAGA-LINGKUNGAN.png" alt="Jaga Lingkungan" class="gallery-image" onclick="openLightbox(this)">
+                </a>
+                <div class="gallery-caption">
+                    <span class="gallery-number">15</span>
+                    <div class="gallery-title">Kampanye Jaga Lingkungan</div>
+                    <div class="gallery-description">Poster ajakan untuk seluruh warga sekolah agar bersama-sama menjaga kelestarian dan kebersihan lingkungan sekolah.</div>
+                    <a href="https://ibb.co.com/fJfVdhY" target="_blank" class="gallery-link">Lihat Foto Penuh →</a>
                 </div>
             </div>
 
@@ -642,7 +658,7 @@
 
         <!-- Navigation to Other Pages -->
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="display: inline-block; background: #1e3c72; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 5px;"> Kembali ke Beranda</a>
+            <a href="index.html" style="display: inline-block; background: #1e3c72; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 5px;">🏠 Kembali ke Beranda</a>
             <a href="kontak.html" style="display: inline-block; background: #11998e; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 5px;">📞 Hubungi Kami</a>
         </div>
 
@@ -671,16 +687,13 @@
             const items = document.querySelectorAll('.gallery-item');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            // Update active button
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.textContent.toLowerCase().includes(category) || 
-                    (category === 'all' && btn.textContent === 'Semua')) {
+                if (btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent === 'Semua')) {
                     btn.classList.add('active');
                 }
             });
             
-            // Filter items
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
@@ -698,8 +711,6 @@
             const lightboxCaption = document.getElementById('lightbox-caption');
             
             lightboxImg.src = img.src;
-            
-            // Get caption from parent
             const caption = img.closest('.gallery-item').querySelector('.gallery-title').textContent;
             lightboxCaption.textContent = caption;
             
@@ -713,14 +724,10 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close lightbox with Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
+            if (e.key === 'Escape') closeLightbox();
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const navMenu = document.getElementById('navMenu');
             const menuToggle = document.querySelector('.menu-toggle');
@@ -729,7 +736,6 @@
             }
         });
 
-        // Add fadeIn animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeIn {
