@@ -19,7 +19,6 @@
             position: relative;
         }
 
-        /* Background decoration */
         body::before {
             content: '🌿';
             position: fixed;
@@ -47,7 +46,6 @@
             margin: 0 auto;
         }
 
-        /* ===== HEADER ===== */
         .school-header {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
@@ -196,7 +194,6 @@
             box-shadow: 0 4px 15px rgba(247, 151, 30, 0.3);
         }
 
-        /* ===== PROGRAMS ===== */
         .programs-section {
             margin-top: 15px;
             padding-top: 15px;
@@ -267,7 +264,6 @@
             margin-bottom: 8px;
         }
 
-        /* ===== DRIVE SECTION ===== */
         .drive-section {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
@@ -314,11 +310,6 @@
             line-height: 1.6;
         }
 
-        .drive-description strong {
-            color: #0c2461;
-        }
-
-        /* ===== STATS ===== */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -371,7 +362,6 @@
             background: linear-gradient(135deg, #ee5a6f 0%, #f093fb 100%);
         }
 
-        /* ===== SEARCH ===== */
         .search-box {
             margin-bottom: 22px;
             position: relative;
@@ -416,7 +406,6 @@
             border-radius: 20px;
         }
 
-        /* ===== COMPONENTS ===== */
         .components-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -549,7 +538,6 @@
             color: #fff;
         }
 
-        /* ===== INFO BANNER ===== */
         .info-banner {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -585,7 +573,6 @@
             color: #0c2461;
         }
 
-        /* ===== FOOTER ===== */
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -613,12 +600,10 @@
             color: #38ef7d;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .info-banner {
                 grid-template-columns: 1fr;
             }
@@ -628,80 +613,63 @@
             body {
                 padding: 12px;
             }
-
             .school-header {
                 padding: 20px 16px;
             }
-
             .school-name {
                 font-size: 1.2rem;
             }
-
             .logo-wrapper img {
                 width: 70px;
             }
-
             .adiwiyata-badge {
                 font-size: 0.85rem;
                 padding: 8px 20px;
             }
-
             .programs-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-
             .program-card {
                 font-size: 0.78rem;
                 padding: 14px 10px;
             }
-
             .program-icon {
                 font-size: 2rem;
             }
-
             .drive-title {
                 font-size: 1.3rem;
             }
-
             .drive-description {
                 font-size: 0.85rem;
                 padding: 12px 14px;
             }
-
             .stats {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-
             .stat-card .number {
                 font-size: 1.6rem;
             }
-
             .components-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
-
             .component-card {
                 padding: 14px;
                 flex-wrap: wrap;
             }
-
             .component-number {
                 width: 40px;
                 height: 40px;
                 font-size: 0.9rem;
             }
-
             .component-info {
                 width: 100%;
             }
-
             .btn-wrapper {
                 flex-wrap: wrap;
             }
-
             .btn-access,
             .btn-copy {
                 flex: 1;
@@ -714,30 +682,24 @@
             .school-name {
                 font-size: 1rem;
             }
-
             .programs-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 8px;
             }
-
             .stats {
                 grid-template-columns: 1fr 1fr;
             }
-
             .component-card {
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
             }
-
             .component-number {
                 align-self: center;
             }
-
             .btn-wrapper {
                 justify-content: center;
             }
-
             .search-box input {
                 padding: 12px 16px 12px 42px;
                 font-size: 0.9rem;
@@ -748,7 +710,6 @@
 <body>
     <div class="container">
 
-        <!-- ===== HEADER ===== -->
         <header class="school-header">
             <div class="logo-section">
                 <div class="logo-wrapper">
@@ -791,7 +752,6 @@
             </div>
         </header>
 
-        <!-- ===== DRIVE SECTION ===== -->
         <section class="drive-section">
             <div class="drive-header">
                 <h2 class="drive-title">
@@ -801,16 +761,11 @@
                 <p class="drive-subtitle">Akses 24 Komponen File Pendukung</p>
             </div>
 
+            <!-- DESKRIPSI BARU -->
             <div class="drive-description">
-                <strong>📌 Informasi Penting:</strong> Portal ini menyediakan akses cepat ke seluruh komponen pembelajaran
-                dan administrasi <strong>SMK 17 Agustus 1945 Tegaldlimo</strong>. Setiap komponen telah dikelompokkan
-                berdasarkan kode dan dapat diakses melalui tautan Google Drive di bawah ini.
-                <span style="display:block; margin-top:6px; font-size:0.9rem; color:#666;">
-                    💡 <em>Klik "Akses Drive" untuk membuka folder, atau "Copy" untuk menyalin tautan.</em>
-                </span>
+                Dokumentasi dan digitalisasi Program Adiwiyata SMK 17 Agustus 1945 Tegaldlimo menuju sekolah berbudaya lingkungan, bersih, sehat, dan berkelanjutan.
             </div>
 
-            <!-- STATS -->
             <div class="stats">
                 <div class="stat-card">
                     <span class="number">24</span>
@@ -834,14 +789,12 @@
                 </div>
             </div>
 
-            <!-- SEARCH -->
             <div class="search-box">
                 <span class="search-icon">🔍</span>
                 <input type="text" id="searchInput" placeholder="Cari komponen (ketik nama atau nomor)..." onkeyup="filterLinks()">
                 <span class="search-counter" id="searchCounter">24 komponen</span>
             </div>
 
-            <!-- INFO BANNER -->
             <div class="info-banner">
                 <div class="info-item">
                     <span class="icon">📋</span>
@@ -859,13 +812,11 @@
                 </div>
             </div>
 
-            <!-- COMPONENTS GRID -->
             <div class="components-grid" id="componentsGrid">
                 <!-- Akan diisi oleh JavaScript -->
             </div>
         </section>
 
-        <!-- ===== FOOTER ===== -->
         <footer class="footer">
             <p>
                 © 2026 <strong>SMK 17 AGUSTUS 1945 TEGALDLIMO</strong> — Sekolah Adiwiyata
@@ -882,7 +833,6 @@
     </div>
 
     <script>
-        // ===== DATA KOMPONEN =====
         const components = [
             { id: 1, name: 'KOMPONEN 01', url: 'https://drive.google.com/drive/folders/1yzvPxTfsFNj9hCgacLyAQDdawWXWLwkd?usp=sharing' },
             { id: 2, name: 'KOMPONEN 02', url: 'https://drive.google.com/drive/folders/1UVtc8kDHy-9NfUz6xHHbKl7PJ2KTcBIS?usp=sharing' },
@@ -910,7 +860,6 @@
             { id: 24, name: 'KOMPONEN 24', url: 'https://drive.google.com/drive/folders/1QRuiesqaVsWKViqOQtsdLA7Vmdyl5Dd-?usp=sharing' }
         ];
 
-        // ===== RENDER COMPONENTS =====
         const grid = document.getElementById('componentsGrid');
 
         components.forEach(comp => {
@@ -919,7 +868,6 @@
             card.setAttribute('data-komponen', comp.name);
             card.setAttribute('data-id', comp.id);
 
-            // Tandai komponen 1-5 sebagai "baru"
             const isNew = comp.id <= 5;
             const newBadge = isNew ? '<span class="badge-new">NEW</span>' : '';
 
@@ -940,7 +888,6 @@
             grid.appendChild(card);
         });
 
-        // ===== FUNGSI FILTER =====
         function filterLinks() {
             const input = document.getElementById('searchInput');
             const filter = input.value.toLowerCase().trim();
@@ -960,19 +907,16 @@
                 }
             });
 
-            // Update counter
             document.getElementById('searchCounter').textContent =
                 visibleCount === components.length
                     ? `${components.length} komponen`
                     : `${visibleCount} dari ${components.length} komponen`;
         }
 
-        // ===== FUNGSI COPY =====
         function copyLink(url, nama, button) {
             navigator.clipboard.writeText(url).then(() => {
                 showCopiedFeedback(button, nama);
             }).catch(() => {
-                // Fallback
                 const textArea = document.createElement('textarea');
                 textArea.value = url;
                 document.body.appendChild(textArea);
@@ -993,7 +937,6 @@
                 button.classList.remove('copied');
             }, 2000);
 
-            // Tampilkan notifikasi ringan
             const toast = document.createElement('div');
             toast.style.cssText = `
                 position: fixed;
@@ -1014,7 +957,6 @@
             `;
             toast.textContent = `✅ Link ${nama} berhasil disalin!`;
 
-            // Tambahkan animasi
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes fadeUp {
@@ -1032,7 +974,6 @@
             }, 2500);
         }
 
-        // ===== INISIALISASI COUNTER =====
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('searchCounter').textContent = `${components.length} komponen`;
         });
