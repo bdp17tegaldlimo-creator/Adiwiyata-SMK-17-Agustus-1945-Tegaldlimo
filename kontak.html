@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Hubungi Kami - SMK 17 AGUSTUS 1945 TEGALDLIMO</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & GLOBAL ----- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #f9a825;
+            --bg-light: #f1f8e9;
+            --bg-white: #ffffff;
+            --text-dark: #1e2a3a;
+            --text-muted: #546e7a;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: 0.3s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ----- NAVBAR ----- */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 12px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            height: 44px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+            display: none;
+            padding: 4px 8px;
+            line-height: 1;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: background var(--transition), color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 50px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* ----- CONTACT SECTION ----- */
+        .section {
+            max-width: 800px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+            flex: 1;
+        }
+
+        .contact-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            text-align: center;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .contact-photo {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary-light);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+            background: #e0e0e0;
+        }
+
+        .contact-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center; /* Fokus ke bagian wajah */
+        }
+
+        .contact-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .contact-role {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 30px;
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: transform var(--transition), background var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: #e8f5e9;
+        }
+
+        .contact-item .icon {
+            font-size: 1.5rem;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 16px 32px;
+            border-radius: 40px;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+            transition: transform var(--transition), box-shadow var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+            background: #20bd5a;
+        }
+
+        .school-address {
+            border-top: 2px dashed #e0e0e0;
+            padding-top: 25px;
+            margin-top: 10px;
+        }
+
+        .school-address h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .school-address p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 24px 20px;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-white);
+                padding: 16px 12px 20px;
+                border-radius: 0 0 var(--radius) var(--radius);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                margin-top: 12px;
+            }
+
+            .nav-menu.active { display: flex; }
+
+            .nav-link {
+                padding: 12px 16px;
+                width: 100%;
+                border-radius: 12px;
+                background: var(--bg-light);
+                margin-bottom: 4px;
+            }
+
+            .hero h1 { font-size: 1.8rem; }
+            .contact-name { font-size: 1.5rem; }
+            .contact-item { font-size: 1.1rem; }
+            .btn-wa { font-size: 1rem; padding: 14px 24px; }
+            .contact-photo { width: 130px; height: 130px; }
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo SMK 17 Agustus 1945" />
+                <span>SMK 17 AGUSTUS 1945</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">🏠 Beranda</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">🖼️ Galeri</a>
+                <a href="kontak.html" class="nav-link active">📞 Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>📞 Hubungi Kami</h1>
+        <p class="subtitle">Kami siap membantu dan berdiskusi tentang Program Adiwiyata</p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+        <div class="contact-card">
+            
+            <!-- FOTO SAMUDI S.Pd.I (SUDAH DIPERBARUI) -->
+            <div class="contact-photo">
+                <img src="https://i.ibb.co.com/hJPrpz3w/Samudi-S-Pd-I.jpg" alt="Foto Samudi S.Pd.I" />
+            </div>
+
+            <h2 class="contact-name">SAMUDI S.Pd.I</h2>
+            <span class="contact-role">Koordinator Program Adiwiyata</span>
+
+            <div class="contact-info">
+                <a href="tel:085236765609" class="contact-item">
+                    <span class="icon">📱</span>
+                    0852-3676-5609
+                </a>
+            </div>
+
+            <!-- Tombol WhatsApp (Format nomor internasional: 62852...) -->
+            <a href="https://wa.me/6285236765609?text=Halo%20Pak%20Samudi,%20saya%20ingin%20bertanya%20tentang%20program%20Adiwiyata%20SMK%2017%20Agustus%201945%20Tegaldlimo." 
+               target="_blank" 
+               class="btn-wa">
+                💬 Chat via WhatsApp
+            </a>
+
+            <div class="school-address">
+                <h3>📍 Alamat Sekolah</h3>
+                <p>
+                    <strong>SMK 17 AGUSTUS 1945 TEGALDLIMO</strong><br>
+                    Kecamatan Tegaldlimo, Kabupaten Banyuwangi<br>
+                    Jawa Timur, Indonesia
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            document.addEventListener('click', function(e) {
+                const navbar = document.querySelector('.navbar');
+                if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        menuToggle.textContent = '☰';
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
