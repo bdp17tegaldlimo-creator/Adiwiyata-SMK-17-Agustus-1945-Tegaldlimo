@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Kategori 3: Kegiatan Partisipatif - SMK 17 AGUSTUS 1945 TEGALDLIMO</title>
     <style>
         /* ===== RESET & BASE ===== */
@@ -43,7 +43,7 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: #f0f2f5;
             color: #2d3748;
-            line-height: 1.7;
+            line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -51,7 +51,7 @@
 
         /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #e2e8f0;
@@ -60,19 +60,15 @@
             background: var(--accent);
             border-radius: 10px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-dark);
-        }
 
         /* ===== NAVIGATION ===== */
         .navbar {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 12px 20px;
+            padding: 8px 12px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(4px);
         }
 
         .nav-container {
@@ -82,30 +78,30 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px 16px;
+            gap: 6px 10px;
         }
 
         .nav-brand {
             color: #fff;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
         }
 
         .nav-brand img {
-            width: 38px;
-            height: 38px;
+            width: 32px;
+            height: 32px;
             border-radius: 8px;
             object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-menu {
             display: flex;
-            gap: 4px;
+            gap: 3px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -113,27 +109,25 @@
         .nav-link {
             color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
-            padding: 7px 16px;
+            padding: 5px 10px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.72rem;
             font-weight: 500;
-            transition: background var(--transition), color var(--transition), transform 0.15s;
+            transition: background var(--transition), color var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             white-space: nowrap;
         }
 
         .nav-link:hover {
             background: rgba(255, 255, 255, 0.18);
             color: #fff;
-            transform: translateY(-1px);
         }
 
         .nav-link.active {
             background: rgba(255, 255, 255, 0.25);
             color: #fff;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
         }
 
         .menu-toggle {
@@ -141,11 +135,11 @@
             background: none;
             border: none;
             color: #fff;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             cursor: pointer;
             padding: 4px 8px;
             border-radius: 6px;
-            transition: background 0.2s;
+            line-height: 1;
         }
         .menu-toggle:hover {
             background: rgba(255, 255, 255, 0.15);
@@ -154,23 +148,21 @@
         .progress-bar {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 30px;
-            padding: 4px 18px 4px 14px;
+            padding: 2px 10px 2px 10px;
             color: #fff;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(2px);
         }
 
         .progress-bar .progress-track {
-            width: 80px;
-            height: 6px;
+            width: 50px;
+            height: 4px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
         }
 
         .progress-bar .progress-track .progress-fill {
@@ -183,16 +175,17 @@
 
         .progress-bar .progress-label {
             font-weight: 600;
-            min-width: 36px;
+            min-width: 28px;
             text-align: center;
             color: #38ef7d;
+            font-size: 0.7rem;
         }
 
         /* ===== HERO ===== */
         .hero {
             background: linear-gradient(135deg, #8e44ad 0%, #6c3483 100%);
             color: #fff;
-            padding: 36px 20px 32px;
+            padding: 24px 16px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -203,7 +196,7 @@
             position: absolute;
             inset: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
         .hero * {
@@ -212,15 +205,15 @@
         }
 
         .hero h1 {
-            font-size: 2.1rem;
+            font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
         }
 
         .hero .subtitle {
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             opacity: 0.92;
             font-weight: 400;
         }
@@ -229,7 +222,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 28px 20px 20px;
+            padding: 16px 12px 16px;
             flex: 1;
         }
 
@@ -237,64 +230,53 @@
         .category-overview {
             background: #fff;
             border-radius: var(--radius);
-            padding: 28px 28px 24px;
-            margin-bottom: 32px;
+            padding: 18px 14px 16px;
+            margin-bottom: 24px;
             box-shadow: var(--shadow);
-            border-top: 5px solid var(--accent);
-            transition: box-shadow var(--transition);
-        }
-
-        .category-overview:hover {
-            box-shadow: var(--shadow-hover);
+            border-top: 4px solid var(--accent);
         }
 
         .category-overview h2 {
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 8px;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .category-overview>p {
             color: var(--gray-600);
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+            font-size: 0.88rem;
         }
 
         .overview-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 14px;
-            margin-top: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .stat-box {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: #fff;
-            padding: 18px 14px;
+            padding: 12px 8px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(155, 89, 182, 0.25);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(155, 89, 182, 0.35);
         }
 
         .stat-box h3 {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 2px;
         }
 
         .stat-box p {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             opacity: 0.92;
-            font-weight: 400;
         }
 
         /* ===== FOLDER STRUCTURE ===== */
@@ -302,55 +284,47 @@
             background: #1e293b;
             color: #e2e8f0;
             border-radius: 10px;
-            padding: 20px 24px;
-            margin: 18px 0 4px;
+            padding: 14px 12px;
+            margin: 12px 0 2px;
             font-family: 'JetBrains Mono', 'Courier New', monospace;
-            font-size: 0.82rem;
+            font-size: 0.62rem;
             overflow-x: auto;
-            line-height: 1.9;
+            line-height: 1.7;
             border: 1px solid #334155;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .struktur-preview .folder {
             color: #fbbf24;
             font-weight: 600;
         }
-
         .struktur-preview .file {
             color: #93c5fd;
-            padding-left: 8px;
+            padding-left: 4px;
         }
-
         .struktur-preview .subfolder {
             color: #f87171;
-            padding-left: 8px;
+            padding-left: 4px;
         }
 
         /* ===== INDIKATOR ITEM ===== */
         .indikator-item {
             background: #fff;
             border-radius: var(--radius);
-            margin-bottom: 24px;
-            border-left: 5px solid var(--accent);
+            margin-bottom: 18px;
+            border-left: 4px solid var(--accent);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: box-shadow var(--transition), border-color var(--transition);
-        }
-
-        .indikator-item:hover {
-            box-shadow: var(--shadow-hover);
         }
 
         .indikator-header {
-            padding: 18px 24px;
+            padding: 12px 14px;
             background: var(--gray-100);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px 16px;
+            gap: 6px 10px;
             transition: background var(--transition);
             user-select: none;
             -webkit-tap-highlight-color: transparent;
@@ -360,47 +334,43 @@
             background: #f3e5f5;
         }
 
-        .indikator-header:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: -2px;
-        }
-
         .indikator-title {
             font-weight: 700;
             color: var(--primary);
-            font-size: 1.08rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
+            flex: 1;
+            min-width: 140px;
         }
 
         .indikator-badge-group {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .indikator-badge {
             background: var(--accent);
             color: #fff;
-            padding: 3px 16px;
+            padding: 2px 10px;
             border-radius: 30px;
-            font-size: 0.78rem;
+            font-size: 0.6rem;
             font-weight: 700;
-            letter-spacing: 0.3px;
             white-space: nowrap;
         }
 
         .toggle-icon {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             transition: transform 0.35s ease;
             color: var(--accent);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             background: rgba(155, 89, 182, 0.1);
         }
@@ -410,21 +380,20 @@
         }
 
         .indikator-desc {
-            padding: 6px 24px 18px 24px;
+            padding: 4px 14px 12px 14px;
             color: var(--gray-600);
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.78rem;
             border-bottom: 2px dashed var(--gray-200);
             background: #fafbfc;
         }
-
         .indikator-desc::before {
             content: '📌 ';
         }
 
         /* ===== KOMPONEN DETAIL ===== */
         .komponen-detail {
-            padding: 0 24px 24px;
+            padding: 0 12px 16px;
             display: none;
             animation: slideDown 0.35s ease;
         }
@@ -436,7 +405,7 @@
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-12px);
+                transform: translateY(-10px);
             }
             to {
                 opacity: 1;
@@ -449,25 +418,19 @@
             background: #fff;
             border: 2px solid var(--gray-200);
             border-radius: 10px;
-            padding: 20px 22px;
-            margin-top: 18px;
-            transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+            padding: 14px 12px;
+            margin-top: 12px;
+            transition: border-color var(--transition), background var(--transition);
         }
 
         .komponen-card:first-of-type {
-            margin-top: 20px;
-        }
-
-        .komponen-card:hover {
-            border-color: var(--accent-light);
-            box-shadow: 0 4px 16px rgba(155, 89, 182, 0.08);
+            margin-top: 14px;
         }
 
         .komponen-card.uploaded {
             border-color: var(--success);
             background: #f0faf5;
         }
-
         .komponen-card.uploaded .komponen-num {
             background: linear-gradient(135deg, var(--success) 0%, #1e8449 100%);
         }
@@ -476,66 +439,63 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 14px;
+            margin-bottom: 8px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 6px;
         }
 
         .komponen-title {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 8px;
             flex: 1;
-            min-width: 200px;
+            min-width: 140px;
         }
 
         .komponen-num {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: #fff;
-            width: 44px;
-            height: 44px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.75rem;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
-            transition: background var(--transition);
         }
 
         .komponen-name {
             font-weight: 700;
             color: var(--primary);
-            font-size: 1.02rem;
+            font-size: 0.82rem;
         }
 
         .komponen-name small {
             display: block;
             font-weight: 400;
             color: var(--gray-600);
-            font-size: 0.82rem;
-            margin-top: 2px;
+            font-size: 0.65rem;
+            margin-top: 1px;
         }
 
         .status-badge {
-            padding: 4px 16px;
+            padding: 2px 10px;
             border-radius: 30px;
-            font-size: 0.78rem;
+            font-size: 0.6rem;
             font-weight: 700;
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            transition: background var(--transition), color var(--transition);
+            gap: 4px;
         }
 
         .status-badge.pending {
             background: #fef3e2;
             color: #b7791f;
         }
-
         .status-badge.complete {
             background: #d4edda;
             color: #155724;
@@ -546,17 +506,17 @@
             background: #fffbeb;
             border: 1px solid #fcd34d;
             border-radius: 8px;
-            padding: 16px 18px;
-            margin-bottom: 16px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
         }
 
         .file-requirements h4 {
             color: #92400e;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
+            gap: 6px;
         }
 
         .file-list {
@@ -565,82 +525,74 @@
         }
 
         .file-list li {
-            margin-bottom: 8px;
-            padding: 8px 14px;
+            margin-bottom: 4px;
+            padding: 5px 8px;
             background: #fff;
             border-radius: 6px;
             border-left: 3px solid #f59e0b;
-            font-size: 0.92rem;
-            transition: background 0.2s;
-        }
-
-        .file-list li:hover {
-            background: #fef9e7;
+            font-size: 0.72rem;
+            word-break: break-word;
         }
 
         .file-format {
             background: #e0f2fe;
-            padding: 1px 10px;
+            padding: 1px 6px;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.55rem;
             color: #0369a1;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
         }
 
         .file-note {
             display: block;
-            font-size: 0.82rem;
+            font-size: 0.65rem;
             color: var(--gray-600);
-            margin-top: 3px;
+            margin-top: 2px;
             font-style: italic;
-            padding-left: 4px;
         }
 
         /* ===== UPLOAD SECTION ===== */
         .upload-section {
             background: var(--gray-100);
             border-radius: 8px;
-            padding: 16px 18px;
+            padding: 10px 12px;
         }
 
         .upload-section strong {
             color: var(--primary);
             display: block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
         }
 
         .upload-buttons {
             display: flex;
-            gap: 10px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 9px 22px;
+            padding: 6px 14px;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.88rem;
+            font-size: 0.7rem;
             transition: all var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
             justify-content: center;
             background: var(--gray-200);
             color: var(--gray-800);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
         }
-
         .btn:active {
             transform: translateY(0);
         }
@@ -649,7 +601,6 @@
             background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
             color: #fff;
         }
-
         .btn-drive:hover {
             box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
         }
@@ -672,34 +623,27 @@
             box-shadow: 0 6px 20px rgba(39, 174, 96, 0.35);
         }
 
-        .btn-check:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
-            box-shadow: none !important;
-        }
-
         /* ===== NAV PREV/NEXT ===== */
         .nav-prev-next {
             display: flex;
             justify-content: space-between;
-            margin-top: 36px;
+            margin-top: 24px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
         .nav-btn {
             background: var(--primary);
             color: #fff;
-            padding: 12px 28px;
+            padding: 8px 16px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.78rem;
             transition: all var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: 0 2px 8px rgba(30, 60, 114, 0.25);
         }
 
@@ -709,27 +653,22 @@
             box-shadow: 0 6px 24px rgba(30, 60, 114, 0.35);
         }
 
-        .nav-btn:active {
-            transform: translateY(0);
-        }
-
         /* ===== FOOTER ===== */
         .footer {
             background: var(--primary-dark);
             color: rgba(255, 255, 255, 0.8);
             text-align: center;
-            padding: 28px 20px 24px;
-            margin-top: 40px;
+            padding: 20px 16px 16px;
+            margin-top: 28px;
             border-top: 4px solid var(--accent);
         }
 
         .footer p {
-            margin-bottom: 4px;
-            font-size: 0.92rem;
+            margin-bottom: 2px;
+            font-size: 0.78rem;
         }
-
         .footer p:last-child {
-            font-size: 0.82rem;
+            font-size: 0.68rem;
             opacity: 0.7;
             margin-bottom: 0;
         }
@@ -737,21 +676,21 @@
         /* ===== NOTIFICATION ===== */
         .notification {
             position: fixed;
-            top: 80px;
-            right: 24px;
+            top: 68px;
+            right: 12px;
             background: #0d9488;
             color: #fff;
-            padding: 14px 24px;
+            padding: 10px 16px;
             border-radius: 10px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
             z-index: 9999;
             font-weight: 500;
             animation: notifSlideIn 0.4s ease;
-            max-width: 380px;
+            max-width: 320px;
+            font-size: 0.82rem;
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .notification.error {
             background: #e11d48;
         }
@@ -766,11 +705,9 @@
                 opacity: 1;
             }
         }
-
         .notification.removing {
             animation: notifSlideOut 0.35s ease forwards;
         }
-
         @keyframes notifSlideOut {
             to {
                 transform: translateX(100%);
@@ -778,7 +715,10 @@
             }
         }
 
+        /* ============================================================ */
         /* ===== RESPONSIVE ===== */
+        /* ============================================================ */
+
         @media (max-width: 820px) {
             .menu-toggle {
                 display: block;
@@ -789,10 +729,10 @@
                 width: 100%;
                 flex-direction: column;
                 align-items: stretch;
-                padding: 12px 0 4px;
-                gap: 4px;
+                padding: 8px 0 4px;
+                gap: 2px;
                 border-top: 1px solid rgba(255, 255, 255, 0.08);
-                margin-top: 10px;
+                margin-top: 6px;
             }
 
             .nav-menu.show {
@@ -803,19 +743,19 @@
                 width: 100%;
                 text-align: center;
                 justify-content: center;
-                padding: 10px 16px;
+                padding: 7px 10px;
+                font-size: 0.78rem;
             }
 
             .progress-bar .progress-track {
-                width: 60px;
+                width: 40px;
             }
 
             .hero h1 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
-
             .hero .subtitle {
-                font-size: 0.95rem;
+                font-size: 0.75rem;
             }
 
             .komponen-header {
@@ -827,7 +767,6 @@
                 flex-direction: column;
                 width: 100%;
             }
-
             .upload-buttons .btn {
                 width: 100%;
                 justify-content: center;
@@ -836,64 +775,169 @@
             .nav-prev-next {
                 flex-direction: column;
             }
-
             .nav-prev-next .nav-btn {
                 width: 100%;
                 justify-content: center;
             }
 
             .indikator-header {
-                padding: 14px 18px;
+                padding: 10px 12px;
             }
-
             .komponen-detail {
-                padding: 0 16px 18px;
+                padding: 0 10px 14px;
             }
-
             .komponen-card {
-                padding: 16px 16px;
+                padding: 12px 10px;
             }
-
             .category-overview {
-                padding: 20px 18px;
+                padding: 14px 12px;
+            }
+            .overview-stats {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 0.7rem;
+            }
+            .nav-brand img {
+                width: 26px;
+                height: 26px;
+            }
+            .menu-toggle {
+                font-size: 1.2rem;
+            }
+
+            .hero {
+                padding: 16px 12px 14px;
+            }
+            .hero h1 {
+                font-size: 1rem;
+            }
+            .hero .subtitle {
+                font-size: 0.7rem;
+            }
+
+            .container {
+                padding: 10px 8px 10px;
+            }
+
+            .category-overview h2 {
+                font-size: 1rem;
+            }
+            .category-overview>p {
+                font-size: 0.78rem;
+            }
+
             .overview-stats {
                 grid-template-columns: 1fr 1fr;
+                gap: 5px;
             }
-
+            .stat-box {
+                padding: 8px 4px;
+            }
             .stat-box h3 {
-                font-size: 1.5rem;
+                font-size: 1.1rem;
             }
-
-            .komponen-num {
-                width: 36px;
-                height: 36px;
-                font-size: 0.85rem;
-            }
-
-            .komponen-name {
-                font-size: 0.92rem;
+            .stat-box p {
+                font-size: 0.6rem;
             }
 
             .struktur-preview {
-                font-size: 0.68rem;
-                padding: 14px 14px;
+                font-size: 0.5rem;
+                padding: 10px 8px;
+                line-height: 1.6;
+            }
+
+            .indikator-title {
+                font-size: 0.78rem;
+                min-width: 100px;
+            }
+            .indikator-badge {
+                font-size: 0.55rem;
+                padding: 1px 8px;
+            }
+            .toggle-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 0.9rem;
+            }
+            .indikator-desc {
+                font-size: 0.7rem;
+                padding: 4px 10px 8px 10px;
+            }
+
+            .komponen-detail {
+                padding: 0 6px 10px;
+            }
+            .komponen-card {
+                padding: 10px 8px;
+                margin-top: 8px;
+            }
+            .komponen-num {
+                width: 26px;
+                height: 26px;
+                font-size: 0.65rem;
+            }
+            .komponen-name {
+                font-size: 0.72rem;
+            }
+            .komponen-name small {
+                font-size: 0.6rem;
+            }
+            .status-badge {
+                font-size: 0.55rem;
+                padding: 1px 8px;
+            }
+            .file-requirements {
+                padding: 8px 8px;
+            }
+            .file-requirements h4 {
+                font-size: 0.7rem;
+            }
+            .file-list li {
+                font-size: 0.65rem;
+                padding: 4px 6px;
+            }
+            .file-format {
+                font-size: 0.5rem;
+                padding: 1px 4px;
+            }
+            .file-note {
+                font-size: 0.58rem;
+            }
+
+            .upload-section {
+                padding: 8px 8px;
+            }
+            .upload-section strong {
+                font-size: 0.7rem;
+            }
+            .btn {
+                font-size: 0.62rem;
+                padding: 5px 10px;
+            }
+
+            .nav-btn {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+            }
+
+            .footer p {
+                font-size: 0.7rem;
+            }
+            .footer p:last-child {
+                font-size: 0.6rem;
             }
 
             .notification {
-                right: 12px;
-                left: 12px;
+                right: 6px;
+                left: 6px;
                 max-width: none;
-                font-size: 0.9rem;
-                padding: 12px 18px;
-            }
-
-            .file-list li {
-                font-size: 0.85rem;
-                padding: 6px 10px;
+                font-size: 0.74rem;
+                padding: 8px 14px;
+                top: 60px;
             }
         }
 
@@ -903,11 +947,24 @@
             }
 
             .indikator-title {
-                font-size: 0.95rem;
+                font-size: 0.7rem;
+                min-width: 80px;
             }
 
-            .nav-brand span {
-                font-size: 0.85rem;
+            .nav-brand {
+                font-size: 0.6rem;
+            }
+            .nav-brand img {
+                width: 22px;
+                height: 22px;
+            }
+
+            .komponen-title {
+                gap: 5px;
+                min-width: 100px;
+            }
+            .komponen-name {
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -980,7 +1037,7 @@
             </div>
 
             <!-- Struktur Folder -->
-            <h3 style="margin-top: 22px; color: var(--primary); font-size: 1.1rem;">📁 Struktur Folder yang Diharapkan:</h3>
+            <h3 style="margin-top: 16px; color: var(--primary); font-size: 0.9rem;">📁 Struktur Folder yang Diharapkan:</h3>
             <div class="struktur-preview" role="img" aria-label="Struktur folder untuk kategori partisipatif">
                 <span class="folder">📂 03_KEGIATAN_BERBASIS_PARTISIPATIF/</span><br />
                 │<br />
@@ -1078,7 +1135,7 @@
                             <div class="komponen-num">08</div>
                             <div>
                                 <div class="komponen-name">PROGRAM RUTIN LINGKUNGAN</div>
-                                <small>Program terjadwal yang melibatkan seluruh warga sekolah</small>
+                                <small>Program terjadwal seluruh warga sekolah</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-08">⏳ Belum Upload</span>
@@ -1088,22 +1145,22 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Perencanaan_Program_Adiwiyata_1_Tahun_4_Tahun/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Dokumen perencanaan program Adiwiyata jangka pendek (1 tahun) dan jangka panjang (4 tahun)</span>
+                                <span class="file-note">→ Dokumen perencanaan jangka pendek &amp; panjang</span>
                             </li>
                             <li><strong>02_Laporan_Program_Rutin.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Laporan pelaksanaan program rutin (harian: piket kelas, mingguan: kerja bakti, bulanan: Jum'at bersih)</span>
+                                <span class="file-note">→ Laporan pelaksanaan program rutin</span>
                             </li>
                             <li><strong>03_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto kegiatan rutin (minimal 30 foto dengan keterangan tanggal &amp; kegiatan)</span>
+                                <span class="file-note">→ Foto kegiatan rutin (minimal 30 foto)</span>
                             </li>
                             <li><strong>04_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Video kegiatan rutin (3-5 video, durasi 2-5 menit)</span>
+                                <span class="file-note">→ Video kegiatan rutin (3-5 video)</span>
                             </li>
                             <li><strong>05_Perjanjian_Kerja_Sama.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ MoU/PKS dengan pihak luar untuk program rutin (DLH, Puskesmas, dll)</span>
+                                <span class="file-note">→ MoU/PKS untuk program rutin</span>
                             </li>
                             <li><strong>06_Buku_Monitoring_Ceklis.pdf</strong> <span class="file-format">PDF/Excel</span>
-                                <span class="file-note">→ Buku monitoring/checklist pelaksanaan program rutin harian/mingguan</span>
+                                <span class="file-note">→ Buku monitoring/checklist pelaksanaan</span>
                             </li>
                         </ul>
                     </div>
@@ -1125,7 +1182,7 @@
                             <div class="komponen-num">09</div>
                             <div>
                                 <div class="komponen-name">REKAP JUMLAH PROGRAM RUTIN</div>
-                                <small>Data kuantitatif program rutin lingkungan</small>
+                                <small>Data kuantitatif program rutin</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-09">⏳ Belum Upload</span>
@@ -1135,13 +1192,13 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>Rekap_Program_Rutin_Lingkungan.xlsx</strong> <span class="file-format">Excel</span>
-                                <span class="file-note">→ Tabel rekap: nama program, frekuensi, peserta, aspek lingkungan yang disasar</span>
+                                <span class="file-note">→ Tabel rekap program, frekuensi, peserta, aspek lingkungan</span>
                             </li>
                             <li><strong>Rekap_Frekuensi_Pelaksanaan.xlsx</strong> <span class="file-format">Excel</span>
-                                <span class="file-note">→ Data frekuensi pelaksanaan per bulan selama 1 tahun ajaran</span>
+                                <span class="file-note">→ Data frekuensi per bulan selama 1 tahun</span>
                             </li>
                             <li><strong>Grafik_Pencapaian_Program.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Grafik/chart pencapaian program rutin (bisa dari Excel)</span>
+                                <span class="file-note">→ Grafik/chart pencapaian</span>
                             </li>
                         </ul>
                     </div>
@@ -1163,7 +1220,7 @@
                             <div class="komponen-num">10</div>
                             <div>
                                 <div class="komponen-name">PROGRAM NON RUTIN/INSIDENTIL</div>
-                                <small>Kegiatan lingkungan insidentil (bencana, lomba, acara khusus)</small>
+                                <small>Kegiatan insidentil (bencana, lomba, dll)</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-10">⏳ Belum Upload</span>
@@ -1173,19 +1230,19 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Laporan_Kegiatan_Insidentil.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Laporan kegiatan insidentil (response bencana, lomba lingkungan, hari bumi, dll)</span>
+                                <span class="file-note">→ Laporan kegiatan insidentil</span>
                             </li>
                             <li><strong>02_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto kegiatan insidentil (minimal 15 foto)</span>
+                                <span class="file-note">→ Foto kegiatan (minimal 15 foto)</span>
                             </li>
                             <li><strong>03_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Video kegiatan insidentil (1-2 video)</span>
+                                <span class="file-note">→ Video kegiatan (1-2 video)</span>
                             </li>
                             <li><strong>04_Keterangan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Narasi kegiatan: latar belakang, tujuan, hasil, dampak</span>
+                                <span class="file-note">→ Narasi kegiatan</span>
                             </li>
                             <li><strong>05_Perjanjian_Kerja_Sama.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ MoU/PKS untuk kegiatan insidentil (jika ada)</span>
+                                <span class="file-note">→ MoU/PKS jika ada</span>
                             </li>
                         </ul>
                     </div>
@@ -1224,7 +1281,7 @@
                             <div class="komponen-num">11</div>
                             <div>
                                 <div class="komponen-name">KAMPANYE PUBLIKASI ADIWIYATA</div>
-                                <small>Kegiatan kampanye dan sosialisasi program lingkungan</small>
+                                <small>Kegiatan kampanye &amp; sosialisasi</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-11">⏳ Belum Upload</span>
@@ -1234,25 +1291,25 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Daftar_Kegiatan_Kampanye.pdf</strong> <span class="file-format">PDF/Excel</span>
-                                <span class="file-note">→ Daftar lengkap kegiatan kampanye (nama, tanggal, peserta, tempat)</span>
+                                <span class="file-note">→ Daftar lengkap kegiatan kampanye</span>
                             </li>
                             <li><strong>02_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Laporan pelaksanaan setiap kegiatan kampanye</span>
+                                <span class="file-note">→ Laporan pelaksanaan setiap kegiatan</span>
                             </li>
                             <li><strong>03_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto kegiatan kampanye (minimal 20 foto)</span>
+                                <span class="file-note">→ Foto kegiatan (minimal 20 foto)</span>
                             </li>
                             <li><strong>04_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Video kegiatan kampanye (2-3 video)</span>
+                                <span class="file-note">→ Video kegiatan (2-3 video)</span>
                             </li>
                             <li><strong>05_Undangan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Undangan resmi kegiatan kampanye ke pihak luar</span>
+                                <span class="file-note">→ Undangan resmi ke pihak luar</span>
                             </li>
                             <li><strong>06_Brosur_Leaflet_Bahan_Kampanye/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Desain brosur, leaflet, spanduk, banner kampanye (format PDF/JPG)</span>
+                                <span class="file-note">→ Desain brosur, leaflet, spanduk</span>
                             </li>
                             <li><strong>07_Tautan_Publikasi_Digital.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Screenshot/link publikasi digital (website, medsos, blog)</span>
+                                <span class="file-note">→ Screenshot/link publikasi digital</span>
                             </li>
                         </ul>
                     </div>
@@ -1274,7 +1331,7 @@
                             <div class="komponen-num">12</div>
                             <div>
                                 <div class="komponen-name">MEDIA PUBLIKASI ADIWIYATA</div>
-                                <small>Dokumentasi media cetak, digital, dan sosial</small>
+                                <small>Dokumentasi media cetak, digital, sosial</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-12">⏳ Belum Upload</span>
@@ -1284,19 +1341,19 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Daftar_Media_Publikasi.pdf</strong> <span class="file-format">PDF/Excel</span>
-                                <span class="file-note">→ Daftar semua media yang digunakan (koran sekolah, medsos, website, dll)</span>
+                                <span class="file-note">→ Daftar semua media yang digunakan</span>
                             </li>
                             <li><strong>02_Dokumentasi_Media_Cetak/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto/scan media cetak (mading, koran sekolah, buletin, poster)</span>
+                                <span class="file-note">→ Foto/scan media cetak (mading, koran, buletin)</span>
                             </li>
                             <li><strong>03_Dokumentasi_Media_Digital/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Screenshot website sekolah, blog, email blast tentang Adiwiyata</span>
+                                <span class="file-note">→ Screenshot website, blog, email blast</span>
                             </li>
                             <li><strong>04_Dokumentasi_Media_Sosial/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Screenshot Instagram, Facebook, TikTok, YouTube sekolah</span>
+                                <span class="file-note">→ Screenshot Instagram, FB, TikTok, YouTube</span>
                             </li>
                             <li><strong>05_Tautan_Media_Publikasi.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Kumpulan link/URL publikasi digital (bisa diakses penilai)</span>
+                                <span class="file-note">→ Kumpulan link/URL publikasi</span>
                             </li>
                         </ul>
                     </div>
@@ -1335,7 +1392,7 @@
                             <div class="komponen-num">13</div>
                             <div>
                                 <div class="komponen-name">KADER ADIWIYATA</div>
-                                <small>Pembentukan dan struktur kader/duta lingkungan siswa</small>
+                                <small>Pembentukan &amp; struktur kader siswa</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-13">⏳ Belum Upload</span>
@@ -1345,25 +1402,25 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_SK_Pembentukan_Kader_Adiwiyata.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ SK Kepala Sekolah tentang pembentukan kader Adiwiyata</span>
+                                <span class="file-note">→ SK Kepala Sekolah</span>
                             </li>
                             <li><strong>02_Struktur_Pengurus_Kader.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Bagan struktur organisasi kader (ketua, wakil, sekretaris, bendahara, divisi)</span>
+                                <span class="file-note">→ Bagan struktur organisasi kader</span>
                             </li>
                             <li><strong>03_Rencana_Kerja_Kader_Adiwiyata.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Proker tahunan kader Adiwiyata</span>
+                                <span class="file-note">→ Proker tahunan kader</span>
                             </li>
                             <li><strong>04_Dokumen_Pembentukan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ BA seleksi, daftar calon, hasil pemilihan kader</span>
+                                <span class="file-note">→ BA seleksi, daftar calon, hasil pemilihan</span>
                             </li>
                             <li><strong>05_Profil_Sekolah_Jumlah_Peserta_Didik.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Data jumlah siswa per kelas (untuk hitung persentase kader)</span>
+                                <span class="file-note">→ Data jumlah siswa per kelas</span>
                             </li>
                             <li><strong>06_Rekap_Persentase_Kader_Adiwiyata.xlsx</strong> <span class="file-format">Excel</span>
-                                <span class="file-note">→ Perhitungan: jumlah kader / total siswa × 100% (target minimal 10%)</span>
+                                <span class="file-note">→ Hitung persentase kader (target ≥10%)</span>
                             </li>
                             <li><strong>07_Dokumentasi_Pembentukan/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto proses seleksi, pelantikan, latihan dasar kader (minimal 15 foto)</span>
+                                <span class="file-note">→ Foto proses seleksi, pelantikan (minimal 15 foto)</span>
                             </li>
                         </ul>
                     </div>
@@ -1385,7 +1442,7 @@
                             <div class="komponen-num">14</div>
                             <div>
                                 <div class="komponen-name">PEMBERDAYAAN KADER ADIWIYATA</div>
-                                <small>Kegiatan pelatihan dan pemberdayaan kader</small>
+                                <small>Pelatihan &amp; pemberdayaan kader</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-14">⏳ Belum Upload</span>
@@ -1395,19 +1452,19 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Rencana_Kerja_Kader.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Proker pemberdayaan kader (pelatihan, workshop, outing)</span>
+                                <span class="file-note">→ Proker pemberdayaan kader</span>
                             </li>
                             <li><strong>02_Dokumen_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Proposal, rundown, daftar hadir kegiatan pemberdayaan</span>
+                                <span class="file-note">→ Proposal, rundown, daftar hadir</span>
                             </li>
                             <li><strong>03_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Laporan pelaksanaan setiap kegiatan pemberdayaan</span>
+                                <span class="file-note">→ Laporan pelaksanaan</span>
                             </li>
                             <li><strong>04_Rekap_Kegiatan_Pemberdayaan.xlsx</strong> <span class="file-format">Excel</span>
-                                <span class="file-note">→ Rekap: nama kegiatan, tanggal, peserta, materi, output</span>
+                                <span class="file-note">→ Rekap: nama, tanggal, peserta, materi</span>
                             </li>
                             <li><strong>05_Dokumentasi_Kegiatan/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto/video kegiatan pemberdayaan (minimal 20 foto, 2 video)</span>
+                                <span class="file-note">→ Foto/video (minimal 20 foto, 2 video)</span>
                             </li>
                         </ul>
                     </div>
@@ -1428,7 +1485,7 @@
         <!-- ===== INDIKATOR 4: KEGIATAN LUAR & KERJASAMA ===== -->
         <section class="indikator-item" aria-labelledby="indikator4-title">
             <div class="indikator-header" id="indikator4-title" role="button" tabindex="0" aria-expanded="false" aria-controls="detail4">
-                <div class="indikator-title">🌍 Indikator 4: Kegiatan Luar Sekolah &amp; Kerjasama</div>
+                <div class="indikator-title">🌍 Indikator 4: Kegiatan Luar &amp; Kerjasama</div>
                 <div class="indikator-badge-group">
                     <span class="indikator-badge">4 SUB-INDIKATOR</span>
                     <span class="toggle-icon" aria-hidden="true">▼</span>
@@ -1446,7 +1503,7 @@
                             <div class="komponen-num">15</div>
                             <div>
                                 <div class="komponen-name">KEGIATAN LINGKUNGAN DI LUAR SEKOLAH</div>
-                                <small>Inisiatif sekolah dalam kegiatan lingkungan di masyarakat</small>
+                                <small>Inisiatif sekolah di masyarakat</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-15">⏳ Belum Upload</span>
@@ -1456,28 +1513,28 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_Surat_Undangan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Surat undangan kegiatan ke pihak luar (desa, DLH, LSM)</span>
+                                <span class="file-note">→ Surat undangan ke pihak luar</span>
                             </li>
                             <li><strong>02_Surat_Tugas.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Surat tugas guru/siswa mengikuti kegiatan luar</span>
+                                <span class="file-note">→ Surat tugas guru/siswa</span>
                             </li>
                             <li><strong>03_Surat_Permohonan_Koordinasi.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Surat koordinasi dengan instansi terkait</span>
+                                <span class="file-note">→ Surat koordinasi dengan instansi</span>
                             </li>
                             <li><strong>04_Daftar_Hadir_Absensi.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Daftar hadir peserta kegiatan luar sekolah</span>
+                                <span class="file-note">→ Daftar hadir peserta</span>
                             </li>
                             <li><strong>05_Notulen_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
                                 <span class="file-note">→ Notulensi/risalah kegiatan</span>
                             </li>
                             <li><strong>06_Laporan_Kegiatan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Laporan lengkap kegiatan (latar belakang, pelaksanaan, hasil, dampak)</span>
+                                <span class="file-note">→ Laporan lengkap kegiatan</span>
                             </li>
                             <li><strong>07_Dokumentasi_Foto/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto kegiatan luar (minimal 20 foto)</span>
+                                <span class="file-note">→ Foto kegiatan (minimal 20 foto)</span>
                             </li>
                             <li><strong>08_Dokumentasi_Video/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Video kegiatan luar (2-3 video)</span>
+                                <span class="file-note">→ Video kegiatan (2-3 video)</span>
                             </li>
                             <li><strong>09_Keterangan_Dokumentasi.pdf</strong> <span class="file-format">PDF</span>
                                 <span class="file-note">→ Narasi/keterangan setiap dokumentasi</span>
@@ -1502,7 +1559,7 @@
                             <div class="komponen-num">16</div>
                             <div>
                                 <div class="komponen-name">KERJASAMA &amp; KOMITMEN LINGKUNGAN</div>
-                                <small>MoU/PKS dengan pihak luar untuk program lingkungan</small>
+                                <small>MoU/PKS dengan pihak luar</small>
                             </div>
                         </div>
                         <span class="status-badge pending" id="status-16">⏳ Belum Upload</span>
@@ -1512,25 +1569,25 @@
                         <h4>📄 File yang Harus Diupload:</h4>
                         <ul class="file-list">
                             <li><strong>01_MoU_PKS_Kerjasama.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ MoU/PKS dengan DLH, Puskesmas, Desa, LSM, Universitas, dll</span>
+                                <span class="file-note">→ MoU/PKS dengan DLH, Puskesmas, Desa, LSM, dll</span>
                             </li>
                             <li><strong>02_Surat_Undangan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Surat undangan kerjasama ke mitra potensial</span>
+                                <span class="file-note">→ Surat undangan kerjasama</span>
                             </li>
                             <li><strong>03_Notulen_Pertemuan.pdf</strong> <span class="file-format">PDF</span>
                                 <span class="file-note">→ Notulensi pertemuan dengan calon mitra</span>
                             </li>
                             <li><strong>04_Berita_Acara_Serah_Terima.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ BA serah terima bantuan/program dari mitra</span>
+                                <span class="file-note">→ BA serah terima bantuan/program</span>
                             </li>
                             <li><strong>05_Dokumen_Komitmen_Lingkungan.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Dokumen komitmen bersama (joint commitment) untuk lingkungan</span>
+                                <span class="file-note">→ Dokumen komitmen bersama</span>
                             </li>
                             <li><strong>06_Dokumentasi_Kegiatan/</strong> <span class="file-format">FOLDER</span>
-                                <span class="file-note">→ Foto/video kegiatan kerjasama (penandatanganan MoU, implementasi)</span>
+                                <span class="file-note">→ Foto/video kegiatan kerjasama</span>
                             </li>
                             <li><strong>07_Tautan_Jejaring_Komunikasi.pdf</strong> <span class="file-format">PDF</span>
-                                <span class="file-note">→ Daftar kontak mitra, grup WhatsApp, email koordinasi</span>
+                                <span class="file-note">→ Daftar kontak mitra, grup WA, email</span>
                             </li>
                         </ul>
                     </div>
