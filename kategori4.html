@@ -2,13 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#1e3c72" />
     <title>Kategori 4: Prasarana & Sarana - SMK 17 AGUSTUS 1945 TEGALDLIMO</title>
     <style>
         /* ===== RESET & BASE ===== */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -37,21 +36,31 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             background: #f0f2f5;
             color: #2d3748;
-            line-height: 1.7;
+            line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden; /* Mencegah scroll horizontal tidak sengaja */
+        }
+
+        /* Mencegah gambar merusak layout */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
             background: #e2e8f0;
@@ -67,32 +76,36 @@
         /* ===== NAVIGATION ===== */
         .navbar {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 12px 20px;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .nav-container {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 clamp(16px, 4vw, 40px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px 16px;
+            gap: 12px;
         }
 
         .nav-brand {
             color: #fff;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             display: flex;
             align-items: center;
             gap: 10px;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
 
         .nav-brand img {
@@ -105,15 +118,16 @@
 
         .nav-menu {
             display: flex;
-            gap: 4px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
         }
 
         .nav-link {
             color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
-            padding: 7px 16px;
+            padding: 8px 16px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 500;
@@ -122,12 +136,14 @@
             align-items: center;
             gap: 6px;
             white-space: nowrap;
+            touch-action: manipulation;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .nav-link:focus-visible {
             background: rgba(255, 255, 255, 0.18);
             color: #fff;
             transform: translateY(-1px);
+            outline: none;
         }
 
         .nav-link.active {
@@ -143,9 +159,12 @@
             color: #fff;
             font-size: 1.6rem;
             cursor: pointer;
-            padding: 4px 8px;
+            padding: 8px;
             border-radius: 6px;
             transition: background 0.2s;
+            touch-action: manipulation;
+            min-width: 44px;
+            min-height: 44px;
         }
         .menu-toggle:hover {
             background: rgba(255, 255, 255, 0.15);
@@ -154,7 +173,7 @@
         .progress-bar {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 30px;
-            padding: 4px 18px 4px 14px;
+            padding: 6px 16px;
             color: #fff;
             font-size: 0.85rem;
             display: flex;
@@ -162,15 +181,15 @@
             gap: 10px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(2px);
+            flex-shrink: 0;
         }
 
         .progress-bar .progress-track {
-            width: 80px;
+            width: clamp(60px, 10vw, 100px);
             height: 6px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
         }
 
         .progress-bar .progress-track .progress-fill {
@@ -185,14 +204,14 @@
             font-weight: 600;
             min-width: 36px;
             text-align: center;
-            color: #f39c12;
+            color: #fbbf24;
         }
 
         /* ===== HERO ===== */
         .hero {
             background: linear-gradient(135deg, #d68910 0%, #b9770e 100%);
             color: #fff;
-            padding: 36px 20px 32px;
+            padding: clamp(32px, 6vw, 48px) clamp(16px, 4vw, 40px);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -204,6 +223,7 @@
             inset: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.4;
+            pointer-events: none;
         }
 
         .hero * {
@@ -212,24 +232,28 @@
         }
 
         .hero h1 {
-            font-size: 2.1rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
         }
 
         .hero .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.92;
+            font-size: clamp(0.95rem, 3vw, 1.2rem);
+            opacity: 0.95;
             font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* ===== CONTAINER ===== */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 28px 20px 20px;
+            padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 40px);
             flex: 1;
         }
 
@@ -237,7 +261,7 @@
         .category-overview {
             background: #fff;
             border-radius: var(--radius);
-            padding: 28px 28px 24px;
+            padding: clamp(20px, 4vw, 32px);
             margin-bottom: 32px;
             box-shadow: var(--shadow);
             border-top: 5px solid var(--accent);
@@ -250,29 +274,30 @@
 
         .category-overview h2 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .category-overview>p {
+        .category-overview > p {
             color: var(--gray-600);
             margin-bottom: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .overview-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+            gap: 16px;
             margin-top: 16px;
         }
 
         .stat-box {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: #fff;
-            padding: 18px 14px;
+            padding: 20px 16px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
@@ -285,16 +310,16 @@
         }
 
         .stat-box h3 {
-            font-size: 2rem;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .stat-box p {
             font-size: 0.85rem;
-            opacity: 0.92;
-            font-weight: 400;
+            opacity: 0.95;
+            font-weight: 500;
         }
 
         /* ===== FOLDER STRUCTURE ===== */
@@ -302,30 +327,21 @@
             background: #1e293b;
             color: #e2e8f0;
             border-radius: 10px;
-            padding: 20px 24px;
-            margin: 18px 0 4px;
+            padding: clamp(16px, 3vw, 24px);
+            margin: 24px 0 8px;
             font-family: 'JetBrains Mono', 'Courier New', monospace;
-            font-size: 0.8rem;
+            font-size: clamp(0.7rem, 2vw, 0.85rem);
             overflow-x: auto;
-            line-height: 1.9;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+            line-height: 1.8;
             border: 1px solid #334155;
             box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+            white-space: pre; /* Menjaga format ASCII art */
         }
 
-        .struktur-preview .folder {
-            color: #fbbf24;
-            font-weight: 600;
-        }
-
-        .struktur-preview .file {
-            color: #93c5fd;
-            padding-left: 8px;
-        }
-
-        .struktur-preview .subfolder {
-            color: #f87171;
-            padding-left: 8px;
-        }
+        .struktur-preview .folder { color: #fbbf24; font-weight: 600; }
+        .struktur-preview .file { color: #93c5fd; padding-left: 8px; }
+        .struktur-preview .subfolder { color: #f87171; padding-left: 8px; }
 
         /* ===== INDIKATOR ITEM ===== */
         .indikator-item {
@@ -343,17 +359,18 @@
         }
 
         .indikator-header {
-            padding: 18px 24px;
+            padding: clamp(16px, 3vw, 20px) clamp(16px, 3vw, 24px);
             background: var(--gray-100);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px 16px;
+            gap: 12px;
             transition: background var(--transition);
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .indikator-header:hover {
@@ -368,7 +385,7 @@
         .indikator-title {
             font-weight: 700;
             color: var(--primary);
-            font-size: 1.08rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -384,16 +401,16 @@
         .indikator-badge {
             background: var(--accent);
             color: #fff;
-            padding: 3px 16px;
+            padding: 4px 14px;
             border-radius: 30px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
 
         .toggle-icon {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             transition: transform 0.35s ease;
             color: var(--accent);
             display: inline-flex;
@@ -403,6 +420,7 @@
             height: 32px;
             border-radius: 50%;
             background: rgba(243, 156, 18, 0.1);
+            flex-shrink: 0;
         }
 
         .indikator-header.active .toggle-icon {
@@ -410,10 +428,10 @@
         }
 
         .indikator-desc {
-            padding: 6px 24px 18px 24px;
+            padding: 8px clamp(16px, 3vw, 24px) 18px;
             color: var(--gray-600);
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
             border-bottom: 2px dashed var(--gray-200);
             background: #fafbfc;
         }
@@ -424,7 +442,7 @@
 
         /* ===== KOMPONEN DETAIL ===== */
         .komponen-detail {
-            padding: 0 24px 24px;
+            padding: 0 clamp(16px, 3vw, 24px) clamp(20px, 4vw, 28px);
             display: none;
             animation: slideDown 0.35s ease;
         }
@@ -434,14 +452,8 @@
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ===== KOMPONEN CARD ===== */
@@ -449,18 +461,9 @@
             background: #fff;
             border: 2px solid var(--gray-200);
             border-radius: 10px;
-            padding: 20px 22px;
-            margin-top: 18px;
-            transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
-        }
-
-        .komponen-card:first-of-type {
+            padding: clamp(16px, 3vw, 24px);
             margin-top: 20px;
-        }
-
-        .komponen-card:hover {
-            border-color: var(--accent-light);
-            box-shadow: 0 4px 16px rgba(243, 156, 18, 0.08);
+            transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
         }
 
         .komponen-card.uploaded {
@@ -476,9 +479,9 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .komponen-title {
@@ -502,13 +505,13 @@
             font-size: 1rem;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
-            transition: background var(--transition);
         }
 
         .komponen-name {
             font-weight: 700;
             color: var(--primary);
-            font-size: 1.02rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            line-height: 1.3;
         }
 
         .komponen-name small {
@@ -516,43 +519,35 @@
             font-weight: 400;
             color: var(--gray-600);
             font-size: 0.82rem;
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         .status-badge {
-            padding: 4px 16px;
+            padding: 5px 16px;
             border-radius: 30px;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 700;
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: background var(--transition), color var(--transition);
         }
 
-        .status-badge.pending {
-            background: #fef3e2;
-            color: #b7791f;
-        }
-
-        .status-badge.complete {
-            background: #d4edda;
-            color: #155724;
-        }
+        .status-badge.pending { background: #fef3e2; color: #b7791f; }
+        .status-badge.complete { background: #d4edda; color: #155724; }
 
         /* ===== FILE REQUIREMENTS ===== */
         .file-requirements {
             background: #fffbeb;
             border: 1px solid #fcd34d;
             border-radius: 8px;
-            padding: 16px 18px;
-            margin-bottom: 16px;
+            padding: clamp(16px, 3vw, 20px);
+            margin-bottom: 20px;
         }
 
         .file-requirements h4 {
             color: #92400e;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -561,17 +556,21 @@
 
         .file-list {
             list-style: none;
-            padding-left: 0;
         }
 
         .file-list li {
-            margin-bottom: 8px;
-            padding: 8px 14px;
+            margin-bottom: 10px;
+            padding: 10px 14px;
             background: #fff;
             border-radius: 6px;
             border-left: 3px solid #f59e0b;
-            font-size: 0.92rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.92rem);
             transition: background 0.2s;
+            word-wrap: break-word;
+        }
+
+        .file-list li:last-child {
+            margin-bottom: 0;
         }
 
         .file-list li:hover {
@@ -580,35 +579,37 @@
 
         .file-format {
             background: #e0f2fe;
-            padding: 1px 10px;
+            padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.7rem;
             color: #0369a1;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         .file-note {
             display: block;
             font-size: 0.82rem;
             color: var(--gray-600);
-            margin-top: 3px;
+            margin-top: 4px;
             font-style: italic;
             padding-left: 4px;
+            line-height: 1.4;
         }
 
         /* ===== UPLOAD SECTION ===== */
         .upload-section {
             background: var(--gray-100);
             border-radius: 8px;
-            padding: 16px 18px;
+            padding: clamp(16px, 3vw, 20px);
         }
 
-        .upload-section strong {
+        .upload-section > strong {
             color: var(--primary);
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 0.95rem;
         }
 
@@ -619,21 +620,26 @@
         }
 
         .btn {
-            padding: 9px 22px;
+            padding: 10px 20px;
+            min-height: 44px; /* Standar touch target */
             border: none;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             transition: all var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
             justify-content: center;
+            gap: 8px;
             background: var(--gray-200);
             color: var(--gray-800);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            touch-action: manipulation;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 140px;
         }
 
         .btn:hover {
@@ -649,10 +655,7 @@
             background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
             color: #fff;
         }
-
-        .btn-drive:hover {
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
-        }
+        .btn-drive:hover { box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35); }
 
         .btn-copy {
             background: #f43f5e;
@@ -683,9 +686,9 @@
         .nav-prev-next {
             display: flex;
             justify-content: space-between;
-            margin-top: 36px;
+            margin-top: 40px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 16px;
         }
 
         .nav-btn {
@@ -699,8 +702,12 @@
             transition: all var(--transition);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             box-shadow: 0 2px 8px rgba(30, 60, 114, 0.25);
+            flex: 1;
+            min-height: 48px;
+            touch-action: manipulation;
         }
 
         .nav-btn:hover {
@@ -716,20 +723,20 @@
         /* ===== FOOTER ===== */
         .footer {
             background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             text-align: center;
-            padding: 28px 20px 24px;
-            margin-top: 40px;
+            padding: 32px 20px;
+            margin-top: auto;
             border-top: 4px solid var(--accent);
         }
 
         .footer p {
-            margin-bottom: 4px;
-            font-size: 0.92rem;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
         }
 
         .footer p:last-child {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             opacity: 0.7;
             margin-bottom: 0;
         }
@@ -737,34 +744,41 @@
         /* ===== NOTIFICATION ===== */
         .notification {
             position: fixed;
-            top: 80px;
-            right: 24px;
+            top: 90px;
+            right: clamp(16px, 5vw, 24px);
+            left: clamp(16px, 5vw, 24px);
+            max-width: 400px;
+            margin: 0 auto;
             background: #0d9488;
             color: #fff;
-            padding: 14px 24px;
+            padding: 14px 20px;
             border-radius: 10px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
             z-index: 9999;
             font-weight: 500;
+            font-size: 0.95rem;
             animation: notifSlideIn 0.4s ease;
-            max-width: 380px;
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         .notification.error {
             background: #e11d48;
         }
 
+        @media (min-width: 480px) {
+            .notification {
+                left: auto;
+                right: 24px;
+                max-width: 380px;
+                text-align: left;
+            }
+        }
+
         @keyframes notifSlideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
         .notification.removing {
@@ -772,16 +786,15 @@
         }
 
         @keyframes notifSlideOut {
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
+            to { transform: translateX(100%); opacity: 0; }
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE: TABLET & MOBILE ===== */
         @media (max-width: 820px) {
             .menu-toggle {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .nav-menu {
@@ -789,10 +802,10 @@
                 width: 100%;
                 flex-direction: column;
                 align-items: stretch;
-                padding: 12px 0 4px;
-                gap: 4px;
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
-                margin-top: 10px;
+                padding: 12px 0 8px;
+                gap: 6px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 8px;
             }
 
             .nav-menu.show {
@@ -803,19 +816,15 @@
                 width: 100%;
                 text-align: center;
                 justify-content: center;
-                padding: 10px 16px;
+                padding: 12px 16px;
+                font-size: 1rem;
             }
 
-            .progress-bar .progress-track {
-                width: 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 0.95rem;
+            .progress-bar {
+                width: 100%;
+                justify-content: center;
+                margin-top: 8px;
+                padding: 8px 16px;
             }
 
             .komponen-header {
@@ -830,7 +839,7 @@
 
             .upload-buttons .btn {
                 width: 100%;
-                justify-content: center;
+                min-width: 100%;
             }
 
             .nav-prev-next {
@@ -839,23 +848,6 @@
 
             .nav-prev-next .nav-btn {
                 width: 100%;
-                justify-content: center;
-            }
-
-            .indikator-header {
-                padding: 14px 18px;
-            }
-
-            .komponen-detail {
-                padding: 0 16px 18px;
-            }
-
-            .komponen-card {
-                padding: 16px 16px;
-            }
-
-            .category-overview {
-                padding: 20px 18px;
             }
         }
 
@@ -864,36 +856,20 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .stat-box h3 {
-                font-size: 1.5rem;
-            }
-
             .komponen-num {
-                width: 36px;
-                height: 36px;
-                font-size: 0.85rem;
-            }
-
-            .komponen-name {
-                font-size: 0.92rem;
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
             }
 
             .struktur-preview {
                 font-size: 0.65rem;
-                padding: 14px 14px;
-            }
-
-            .notification {
-                right: 12px;
-                left: 12px;
-                max-width: none;
-                font-size: 0.9rem;
-                padding: 12px 18px;
+                padding: 14px;
             }
 
             .file-list li {
                 font-size: 0.85rem;
-                padding: 6px 10px;
+                padding: 8px 10px;
             }
         }
 
@@ -902,12 +878,22 @@
                 grid-template-columns: 1fr;
             }
 
-            .indikator-title {
-                font-size: 0.95rem;
-            }
-
             .nav-brand span {
                 font-size: 0.85rem;
+            }
+            
+            .indikator-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ===== RESPONSIVE: LARGE SCREENS ===== */
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1400px;
+            }
+            .komponen-card {
+                padding: 28px 32px;
             }
         }
     </style>
@@ -919,7 +905,7 @@
     <nav class="navbar" role="navigation" aria-label="Navigasi utama">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo SMK 17 Agustus 1945 Tegaldlimo" loading="lazy" />
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo SMK 17 Agustus 1945 Tegaldlimo" loading="lazy" width="38" height="38" />
                 <span>KATEGORI 4: SARPRAS</span>
             </div>
 
@@ -980,78 +966,78 @@
             </div>
 
             <!-- Struktur Folder -->
-            <h3 style="margin-top: 22px; color: var(--primary); font-size: 1.1rem;">📁 Struktur Folder yang Diharapkan:</h3>
+            <h3 style="margin-top: 28px; color: var(--primary); font-size: 1.1rem;">📁 Struktur Folder yang Diharapkan:</h3>
             <div class="struktur-preview" role="img" aria-label="Struktur folder untuk kategori prasarana dan sarana">
-                <span class="folder">📂 04_PRASARANA_DAN_SARANA/</span><br />
-                │<br />
-                ├── <span class="folder">📂 17_SARPRAS_SEBAGAI_LINGKUNGAN_PEMBELAJARAN/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 01_RPP_Modul_Terintegrasi_Lingkungan/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 02_Matriks_Pemetaan_Sarpras_5_Aspek_Lingkungan.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Dokumentasi_Foto/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Dokumentasi_Video/</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 05_Keterangan_Dokumentasi.pdf</span><br />
-                │<br />
-                ├── <span class="folder">📂 18_SARPRAS_SANITASI/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 01_Inventaris_Sarpras_Sanitasi.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 02_Air_Bersih/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Toilet_dan_Cuci_Tangan/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Drainase_dan_Saluran_Air_Limbah/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 05_Septic_Tank/</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="subfolder">📁 06_Dokumentasi_Sarpras_Sanitasi/</span><br />
-                │<br />
-                ├── <span class="folder">📂 19_SARPRAS_PENGELOLAAN_SAMPAH/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 01_Tempat_Sampah_Terpilah/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 02_Tempat_Pengomposan/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Bank_Sampah/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Sarpras_Pengelolaan_Sampah_Lainnya/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 05_Inventaris_Sarpras_Sampah.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="subfolder">📁 06_Dokumentasi_Sarpras/</span><br />
-                │<br />
-                ├── <span class="folder">📂 20_PENGURANGAN_TIMBULAN_SAMPAH/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 01_Data_Volume_Sampah_TA_2024_2025_atau_2025_2026.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 02_Data_Volume_Sampah_Sebelum_Adiwiyata.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 03_Profil_Sekolah_Terkini.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 04_Profil_Sekolah_Sebelum_Adiwiyata.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 05_Rekap_Perhitungan_Persentase.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 06_Bukti_Pembuangan_TPA_TPS3R.pdf</span><br />
-                │<br />
-                ├── <span class="folder">📂 21_SARPRAS_KEANEKARAGAMAN_HAYATI/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 01_Daftar_Inventaris_Sarpras.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 02_TOGA/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Ekosistem_Alami_Buatan/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Kebun_Pangan_Sayur/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 05_Tanaman_dan_Pohon/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 06_Mangrove_Ekosistem_Lainnya/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 07_Peta_Denah_Lokasi.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="subfolder">📁 08_Dokumentasi_Foto_Video/</span><br />
-                │<br />
-                ├── <span class="folder">📂 22_TANAMAN_DAN_POHON/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 01_Buku_Monitoring_Ceklis.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 02_Daftar_Jenis_dan_Jumlah_Tanaman.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 03_Daftar_Jenis_dan_Jumlah_Pohon.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Dokumentasi_Tanaman_dan_Pohon/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 05_Keterangan_Dokumentasi.pdf</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 06_Profil_Sekolah_Jumlah_Warga_Sekolah.pdf</span><br />
-                │<br />
-                ├── <span class="folder">📂 23_SARPRAS_HEMAT_KONSERVASI_ENERGI/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 01_Lampu_Hemat_Energi/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 02_Peralatan_Hemat_Energi/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Pencahayaan_Alami/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Ventilasi_Alami/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 05_Sarpras_Energi_Lainnya/</span><br />
-                │&nbsp;&nbsp;&nbsp;├── <span class="file">📊 06_Inventaris_Sarpras_Energi.xlsx</span><br />
-                │&nbsp;&nbsp;&nbsp;└── <span class="subfolder">📁 07_Dokumentasi_Foto_Video/</span><br />
-                │<br />
-                └── <span class="folder">📂 24_SARPRAS_HEMAT_KONSERVASI_AIR/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 01_Biopori_Embung_Sumur_Resapan/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 02_Penampungan_Air_Hujan/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 03_Daur_Ulang_Pemanfaatan_Air/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 04_Sarana_Penghemat_Air/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 05_Kran_dan_Pipa/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 06_Alat_Penyiram_Tanaman/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 07_Alat_Pengatur_Kran/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="subfolder">📁 08_Sarpras_Air_Lainnya/</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="subfolder">📁 09_Dokumentasi_Foto_Video/</span>
+<span class="folder">📂 04_PRASARANA_DAN_SARANA/</span>
+│
+├── <span class="folder">📂 17_SARPRAS_SEBAGAI_LINGKUNGAN_PEMBELAJARAN/</span>
+│   ├── <span class="subfolder">📁 01_RPP_Modul_Terintegrasi_Lingkungan/</span>
+│   ├── <span class="file">📄 02_Matriks_Pemetaan_Sarpras_5_Aspek_Lingkungan.pdf</span>
+│   ├── <span class="subfolder">📁 03_Dokumentasi_Foto/</span>
+│   ├── <span class="subfolder">📁 04_Dokumentasi_Video/</span>
+│   └── <span class="file">📄 05_Keterangan_Dokumentasi.pdf</span>
+│
+├── <span class="folder">📂 18_SARPRAS_SANITASI/</span>
+│   ├── <span class="file">📊 01_Inventaris_Sarpras_Sanitasi.xlsx</span>
+│   ├── <span class="subfolder">📁 02_Air_Bersih/</span>
+│   ├── <span class="subfolder">📁 03_Toilet_dan_Cuci_Tangan/</span>
+│   ├── <span class="subfolder">📁 04_Drainase_dan_Saluran_Air_Limbah/</span>
+│   ├── <span class="subfolder">📁 05_Septic_Tank/</span>
+│   └── <span class="subfolder">📁 06_Dokumentasi_Sarpras_Sanitasi/</span>
+│
+├── <span class="folder">📂 19_SARPRAS_PENGELOLAAN_SAMPAH/</span>
+│   ├── <span class="subfolder">📁 01_Tempat_Sampah_Terpilah/</span>
+│   ├── <span class="subfolder">📁 02_Tempat_Pengomposan/</span>
+│   ├── <span class="subfolder">📁 03_Bank_Sampah/</span>
+│   ├── <span class="subfolder">📁 04_Sarpras_Pengelolaan_Sampah_Lainnya/</span>
+│   ├── <span class="file">📊 05_Inventaris_Sarpras_Sampah.xlsx</span>
+│   └── <span class="subfolder">📁 06_Dokumentasi_Sarpras/</span>
+│
+├── <span class="folder">📂 20_PENGURANGAN_TIMBULAN_SAMPAH/</span>
+│   ├── <span class="file">📊 01_Data_Volume_Sampah_TA_2024_2025_atau_2025_2026.xlsx</span>
+│   ├── <span class="file">📊 02_Data_Volume_Sampah_Sebelum_Adiwiyata.xlsx</span>
+│   ├── <span class="file">📄 03_Profil_Sekolah_Terkini.pdf</span>
+│   ├── <span class="file">📄 04_Profil_Sekolah_Sebelum_Adiwiyata.pdf</span>
+│   ├── <span class="file">📊 05_Rekap_Perhitungan_Persentase.xlsx</span>
+│   └── <span class="file">📄 06_Bukti_Pembuangan_TPA_TPS3R.pdf</span>
+│
+├── <span class="folder">📂 21_SARPRAS_KEANEKARAGAMAN_HAYATI/</span>
+│   ├── <span class="file">📊 01_Daftar_Inventaris_Sarpras.xlsx</span>
+│   ├── <span class="subfolder">📁 02_TOGA/</span>
+│   ├── <span class="subfolder">📁 03_Ekosistem_Alami_Buatan/</span>
+│   ├── <span class="subfolder">📁 04_Kebun_Pangan_Sayur/</span>
+│   ├── <span class="subfolder">📁 05_Tanaman_dan_Pohon/</span>
+│   ├── <span class="subfolder">📁 06_Mangrove_Ekosistem_Lainnya/</span>
+│   ├── <span class="file">📄 07_Peta_Denah_Lokasi.pdf</span>
+│   └── <span class="subfolder">📁 08_Dokumentasi_Foto_Video/</span>
+│
+├── <span class="folder">📂 22_TANAMAN_DAN_POHON/</span>
+│   ├── <span class="file">📄 01_Buku_Monitoring_Ceklis.pdf</span>
+│   ├── <span class="file">📊 02_Daftar_Jenis_dan_Jumlah_Tanaman.xlsx</span>
+│   ├── <span class="file">📊 03_Daftar_Jenis_dan_Jumlah_Pohon.xlsx</span>
+│   ├── <span class="subfolder">📁 04_Dokumentasi_Tanaman_dan_Pohon/</span>
+│   ├── <span class="file">📄 05_Keterangan_Dokumentasi.pdf</span>
+│   └── <span class="file">📄 06_Profil_Sekolah_Jumlah_Warga_Sekolah.pdf</span>
+│
+├── <span class="folder">📂 23_SARPRAS_HEMAT_KONSERVASI_ENERGI/</span>
+│   ├── <span class="subfolder">📁 01_Lampu_Hemat_Energi/</span>
+│   ├── <span class="subfolder">📁 02_Peralatan_Hemat_Energi/</span>
+│   ├── <span class="subfolder">📁 03_Pencahayaan_Alami/</span>
+│   ├── <span class="subfolder">📁 04_Ventilasi_Alami/</span>
+│   ├── <span class="subfolder">📁 05_Sarpras_Energi_Lainnya/</span>
+│   ├── <span class="file">📊 06_Inventaris_Sarpras_Energi.xlsx</span>
+│   └── <span class="subfolder">📁 07_Dokumentasi_Foto_Video/</span>
+│
+└── <span class="folder">📂 24_SARPRAS_HEMAT_KONSERVASI_AIR/</span>
+    ├── <span class="subfolder">📁 01_Biopori_Embung_Sumur_Resapan/</span>
+    ├── <span class="subfolder">📁 02_Penampungan_Air_Hujan/</span>
+    ├── <span class="subfolder">📁 03_Daur_Ulang_Pemanfaatan_Air/</span>
+    ├── <span class="subfolder">📁 04_Sarana_Penghemat_Air/</span>
+    ├── <span class="subfolder">📁 05_Kran_dan_Pipa/</span>
+    ├── <span class="subfolder">📁 06_Alat_Penyiram_Tanaman/</span>
+    ├── <span class="subfolder">📁 07_Alat_Pengatur_Kran/</span>
+    ├── <span class="subfolder">📁 08_Sarpras_Air_Lainnya/</span>
+    └── <span class="subfolder">📁 09_Dokumentasi_Foto_Video/</span>
             </div>
         </section>
 
@@ -1068,8 +1054,6 @@
                 Apakah sekolah memiliki prasarana dan sarana yang dimanfaatkan sebagai lingkungan pembelajaran terkait aspek lingkungan?
             </div>
             <div class="komponen-detail show" id="detail1">
-
-                <!-- KOMPONEN 17 -->
                 <div class="komponen-card" id="komponen-17" data-komponen="17">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1112,7 +1096,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1129,8 +1112,6 @@
                 Apakah sekolah memiliki prasarana dan sarana sanitasi yang memadai (air bersih, toilet, drainase, septic tank)?
             </div>
             <div class="komponen-detail" id="detail2">
-
-                <!-- KOMPONEN 18 -->
                 <div class="komponen-card" id="komponen-18" data-komponen="18">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1182,7 +1163,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1199,8 +1179,6 @@
                 Apakah sekolah memiliki prasarana pengelolaan sampah (tempat sampah terpilah, pengomposan, bank sampah)?
             </div>
             <div class="komponen-detail" id="detail3">
-
-                <!-- KOMPONEN 19 -->
                 <div class="komponen-card" id="komponen-19" data-komponen="19">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1247,7 +1225,6 @@
                     </div>
                 </div>
 
-                <!-- KOMPONEN 20 -->
                 <div class="komponen-card" id="komponen-20" data-komponen="20">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1296,7 +1273,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1313,8 +1289,6 @@
                 Apakah sekolah memiliki prasarana keanekaragaman hayati (TOGA, kebun, ekosistem, mangrove)?
             </div>
             <div class="komponen-detail" id="detail4">
-
-                <!-- KOMPONEN 21 -->
                 <div class="komponen-card" id="komponen-21" data-komponen="21">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1367,7 +1341,6 @@
                     </div>
                 </div>
 
-                <!-- KOMPONEN 22 -->
                 <div class="komponen-card" id="komponen-22" data-komponen="22">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1416,7 +1389,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1433,8 +1405,6 @@
                 Apakah sekolah memiliki prasarana hemat energi (lampu LED, pencahayaan alami, ventilasi alami)?
             </div>
             <div class="komponen-detail" id="detail5">
-
-                <!-- KOMPONEN 23 -->
                 <div class="komponen-card" id="komponen-23" data-komponen="23">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1486,7 +1456,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1503,8 +1472,6 @@
                 Apakah sekolah memiliki prasarana konservasi air (biopori, penampungan air hujan, daur ulang air)?
             </div>
             <div class="komponen-detail" id="detail6">
-
-                <!-- KOMPONEN 24 -->
                 <div class="komponen-card" id="komponen-24" data-komponen="24">
                     <div class="komponen-header">
                         <div class="komponen-title">
@@ -1565,7 +1532,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1588,7 +1554,6 @@
         (function() {
             'use strict';
 
-            // ===== DOM REFS =====
             const navMenu = document.getElementById('navMenu');
             const menuToggle = document.getElementById('menuToggle');
             const progressFill = document.getElementById('progressFill');
@@ -1597,7 +1562,6 @@
             const COMPONENT_KEYS = ['17', '18', '19', '20', '21', '22', '23', '24'];
             const STORAGE_PREFIX = 'komponen-';
 
-            // ===== UTILITY =====
             function getCompleted() {
                 let count = 0;
                 COMPONENT_KEYS.forEach(key => {
@@ -1619,7 +1583,6 @@
                 return { done, total, pct };
             }
 
-            // ===== NOTIFICATION =====
             function showNotification(message, isError) {
                 const existing = document.querySelector('.notification');
                 if (existing) {
@@ -1648,7 +1611,6 @@
                 });
             }
 
-            // ===== MARK COMPLETE =====
             function markComplete(compId) {
                 const card = document.getElementById('komponen-' + compId);
                 const badge = document.getElementById('status-' + compId);
@@ -1671,7 +1633,6 @@
                 showNotification('✅ Komponen ' + compId + ' selesai! Progress ' + pct + '% (' + done + '/' + total + ')');
             }
 
-            // ===== COPY LINK =====
             function copyLink(url, name) {
                 if (!url) {
                     showNotification('⚠️ Link tidak tersedia.', true);
@@ -1708,7 +1669,6 @@
                 document.body.removeChild(ta);
             }
 
-            // ===== TOGGLE INDIKATOR =====
             function toggleIndikator(header) {
                 const detail = header.parentElement.querySelector('.komponen-detail');
                 if (!detail) return;
@@ -1725,16 +1685,13 @@
                 }
             }
 
-            // ===== EVENT DELEGATION =====
             document.addEventListener('click', function(e) {
-                // --- Indikator header toggle ---
                 const header = e.target.closest('.indikator-header');
                 if (header) {
                     toggleIndikator(header);
                     return;
                 }
 
-                // --- Copy button ---
                 const copyBtn = e.target.closest('.btn-copy');
                 if (copyBtn) {
                     const url = copyBtn.getAttribute('data-copy');
@@ -1743,7 +1700,6 @@
                     return;
                 }
 
-                // --- Complete button ---
                 const checkBtn = e.target.closest('.btn-check');
                 if (checkBtn) {
                     const compId = checkBtn.getAttribute('data-complete');
@@ -1754,7 +1710,6 @@
                 }
             });
 
-            // ===== MENU TOGGLE =====
             if (menuToggle) {
                 menuToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -1764,7 +1719,7 @@
             }
 
             document.addEventListener('click', function(e) {
-                if (!navMenu) return;
+                if (!navMenu || !menuToggle) return;
                 const isClickInside = navMenu.contains(e.target) || menuToggle.contains(e.target);
                 if (!isClickInside && navMenu.classList.contains('show')) {
                     navMenu.classList.remove('show');
@@ -1780,7 +1735,6 @@
                 }
             });
 
-            // ===== KEYBOARD SUPPORT =====
             document.querySelectorAll('.indikator-header').forEach(header => {
                 header.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -1790,7 +1744,6 @@
                 });
             });
 
-            // ===== LOAD SAVED STATE =====
             function loadSavedState() {
                 COMPONENT_KEYS.forEach(key => {
                     if (localStorage.getItem(STORAGE_PREFIX + key) === 'complete') {
@@ -1807,7 +1760,6 @@
                 updateProgress();
             }
 
-            // ===== INIT =====
             loadSavedState();
 
             document.querySelectorAll('.komponen-detail.show').forEach(detail => {
