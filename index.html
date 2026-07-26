@@ -128,9 +128,8 @@
             color: #fff;
         }
 
-        /* ----- HERO (DIPERBARUI DENGAN BACKGROUND FOTO) ----- */
+        /* ----- HERO ----- */
         .hero {
-            /* Gradient overlay hijau transparan di atas foto agar teks tetap terbaca jelas */
             background: linear-gradient(135deg, rgba(27, 94, 32, 0.92) 0%, rgba(46, 125, 50, 0.85) 100%), 
                         url('https://i.ibb.co.com/Gf3pFyQ8/KEPALA-SATUAN-PENDIDIKAN-DENGAN-BUPATI-BANYUWANGI.jpg');
             background-size: cover;
@@ -187,7 +186,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* ----- HERO CONTACT INFO (BARU) ----- */
         .hero-contact {
             margin-top: 25px;
             padding: 12px 24px;
@@ -210,7 +208,7 @@
         }
 
         .hero-contact strong {
-            color: var(--secondary); /* Warna kuning agar nomor HP menonjol */
+            color: var(--secondary);
             font-weight: 700;
         }
 
@@ -454,7 +452,7 @@
             background: var(--primary-dark);
             color: rgba(255, 255, 255, 0.85);
             text-align: center;
-            padding: 28px 20px;
+            padding: 32px 20px;
             margin-top: 20px;
             font-size: 0.95rem;
         }
@@ -467,6 +465,39 @@
         .footer p:last-child {
             opacity: 0.7;
             font-size: 0.85rem;
+        }
+
+        .footer-socials {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition);
+        }
+
+        .footer-socials a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-socials a span {
+            font-size: 1.2rem;
         }
 
         /* ----- RESPONSIVE ----- */
@@ -509,7 +540,7 @@
 
             .hero {
                 padding: 60px 16px 50px;
-                background-position: center 20%; /* Menyesuaikan posisi foto di HP */
+                background-position: center 20%;
             }
             .hero h1 { font-size: 1.8rem; }
             .hero .subtitle { font-size: 1rem; }
@@ -570,6 +601,17 @@
                 font-size: 1.1rem;
                 line-height: 1.9;
             }
+            
+            .footer-socials {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-socials a {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
         }
 
         /* ----- ANIMASI HALUS SAAT LOAD ----- */
@@ -616,15 +658,14 @@
         </div>
     </nav>
 
-    <!-- HERO (DIPERBARUI) -->
+    <!-- HERO -->
     <section class="hero">
         <h1>🌱 SEKOLAH ADIWIYATA</h1>
         <p class="subtitle">SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
         <div class="badge-adiwiyata">Peduli & Berbudaya Lingkungan</div>
         
-        <!-- Informasi Kontak Baru -->
         <div class="hero-contact">
-            <p>📞 Hubungi: <strong>0852-3676-5609</strong> (SAMUDI S.Pd)</p>
+            <p>📞 Hubungi: <strong>0852-3676-5609</strong> (SAMUDI S.Pd.I)</p>
         </div>
     </section>
 
@@ -639,7 +680,6 @@
                 <h3>Selamat Datang di Website Adiwiyata</h3>
                 <p class="jabatan">Kepala SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
                 
-                <!-- AYAT QS. AL-A'RAF 56 -->
                 <div class="ayat-container">
                     <span class="ayat-reference">QS. Al-A'raf Ayat 56:</span>
                     <p class="ayat-arabic">وَلَا تُفْسِدُوا فِي الْأَرْضِ بَعْدَ إِصْلَاحِهَا وَادْعُوهُ خَوْفًا وَطَمَعًا ۚ إِنَّ رَحْمَتَ اللَّهِ قَرِيبٌ مِّنَ الْمُحْسِنِينَ</p>
@@ -679,7 +719,7 @@
                 <a href="kategori3.html" class="btn-lihat">Lihat Program →</a>
             </div>
             <div class="prestasi-card">
-                <div class="prestasi-icon"></div>
+                <div class="prestasi-icon">🌱</div>
                 <h4>TOGA & Hayati</h4>
                 <p><strong>Taman Obat Keluarga</strong></p>
                 <p>Kebun TOGA sebagai media pembelajaran siswa.</p>
@@ -719,6 +759,16 @@
     <footer class="footer">
         <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
         <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
+        
+        <!-- Tambahan Link Media Sosial -->
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/smk17tgaldlimo" target="_blank" rel="noopener noreferrer">
+                <span>📘</span> Facebook
+            </a>
+            <a href="https://youtube.com/@smkagustustegaldlimo?si=pVT7_W-b0anpkVvM" target="_blank" rel="noopener noreferrer">
+                <span>▶️</span> YouTube
+            </a>
+        </div>
     </footer>
 
     <!-- JAVASCRIPT -->
