@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Dominasi SMK di Banyuwangi: Mengapa 54% Siswa Memilih Jalur Vokasi? | Admin Adiwiyata 2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ----- RESET & GLOBAL ----- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #f9a825;
+            --bg-light: #f1f8e9;
+            --bg-white: #ffffff;
+            --text-dark: #1e2a3a;
+            --text-muted: #546e7a;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: 0.3s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* ----- NAVBAR ----- */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 12px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+        }
+
+        .nav-menu { display: flex; gap: 6px; flex-wrap: wrap; }
+
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        /* ----- HERO (NO PHOTO, GRADIENT ONLY) ----- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🎓";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            right: -20px;
+            bottom: -40px;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto 24px;
+        }
+
+        .author-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ----- SECTION UMUM ----- */
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+            border-radius: 4px;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #37474f;
+        }
+
+        /* ----- STATS GRID ----- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+            transition: transform var(--transition);
+        }
+
+        .stat-card:hover { transform: translateY(-5px); }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ----- HIGHLIGHT BOX ----- */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 6px solid var(--secondary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box.green {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left-color: var(--primary);
+        }
+
+        /* ----- LIST STYLES ----- */
+        .reason-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .reason-list li {
+            padding: 16px 20px;
+            background: var(--bg-white);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--primary-light);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .reason-list li .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .reason-list li strong {
+            display: block;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+
+        /* ----- SPOTLIGHT CARD ----- */
+        .spotlight-card {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+        }
+
+        .spotlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .spotlight-item .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .spotlight-item .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .nav-menu { display: none; } /* Simplified for this snippet */
+            .section { padding: 30px 16px 20px; }
+            .section-title { font-size: 1.5rem; }
+            .stat-card .number { font-size: 2rem; }
+        }
+
+        /* ----- ANIMASI ----- */
+        .stat-card, .reason-list li, .spotlight-card {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .reason-list li:nth-child(1) { animation-delay: 0.2s; }
+        .reason-list li:nth-child(2) { animation-delay: 0.3s; }
+        .reason-list li:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>🌱 Admin Adiwiyata 2026</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="dominasi-smk-banyuwangi-2025.html" class="nav-link active">Artikel</a>
+                <a href="kontak.html" class="nav-link">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Dominasi SMK di Banyuwangi: Mengapa 54% Siswa Memilih Jalur Vokasi?</h1>
+        <p class="subtitle">Analisis Data Pendidikan Menengah 2025: Antara Kebutuhan Ekonomi, Kesiapan Kerja, dan Peran Vital Sekolah Swasta.</p>
+        
+        <div class="author-badge">
+            <i class="fas fa-user-edit"></i> Ditulis oleh: Tim Admin Adiwiyata 2026
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Pendahuluan -->
+        <section class="section">
+            <div class="article-content">
+                <p>Kabupaten Banyuwangi tengah mengalami pergeseran paradigma dalam pilihan pendidikan menengah. Data terbaru tahun 2025 menunjukkan fakta yang mencengangkan: <strong>lebih dari setengah (54,4%) siswa</strong> di kabupaten ini memilih melanjutkan pendidikan ke Sekolah Menengah Kejuruan (SMK), mengalahkan jumlah siswa di SMA dan Madrasah Aliyah (MA) secara signifikan.</p>
+                <p>Fenomena ini bukan terjadi secara kebetulan. Di balik angka tersebut, tersimpan cerita tentang adaptasi masyarakat terhadap tuntutan ekonomi, kesadaran akan pentingnya keterampilan praktis, serta peran masif lembaga pendidikan swasta dalam menjembatani kesenjangan akses pendidikan.</p>
+            </div>
+        </section>
+
+        <!-- Data Statistik -->
+        <section class="section">
+            <h2 class="section-title">Potret Data Pendidikan Menengah 2025</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">89</div>
+                    <div class="label">Total SMK<br><small>(9 Negeri, 80 Swasta)</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">36.561</div>
+                    <div class="label">Total Siswa SMK<br><small>(54,4% dari Total)</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">2.238</div>
+                    <div class="label">Total Guru SMK<br><small>(Rasio 1:16)</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">89,9%</div>
+                    <div class="label">Proporsi SMK Swasta<br><small>Dari Total SMK</small></div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4><i class="fas fa-lightbulb"></i> Fakta Kunci</h4>
+                <p style="margin:0; color: #37474f;">Dari total 67.251 siswa pendidikan menengah di Banyuwangi, SMK menyerap 36.561 siswa. Bandingkan dengan SMA yang hanya memiliki 19.648 siswa dan MA dengan 11.042 siswa. Dominasi ini menunjukkan bahwa <strong>vokasi adalah tulang punggung</strong> pendidikan menengah di Bumi Blambangan.</p>
+            </div>
+        </section>
+
+        <!-- Analisis Alasan -->
+        <section class="section">
+            <h2 class="section-title">Mengapa Jalur Vokasi Menjadi Pilihan Utama?</h2>
+            <div class="article-content">
+                <ul class="reason-list">
+                    <li>
+                        <div class="icon">💼</div>
+                        <div>
+                            <strong>Kesiapan Kerja & Realitas Ekonomi</strong>
+                            Berdasarkan data BPS (2023), Rata-rata Lama Sekolah (RLS) penduduk Banyuwangi usia 15+ tahun adalah 8,17 tahun (setara kelas 2 SMP). Ini mengindikasikan bahwa banyak keluarga memprioritaskan anak-anak mereka untuk segera memiliki keterampilan yang bisa menghasilkan uang, daripada melanjutkan ke jalur akademis panjang yang belum tentu berujung pada perguruan tinggi.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">🏫</div>
+                        <div>
+                            <strong>Dominasi & Peran Vital Sekolah Swasta</strong>
+                            Dari 89 SMK yang ada, 80 di antaranya (89,9%) adalah sekolah swasta. Ini membuktikan bahwa masyarakat dan dunia usaha secara organik menciptakan permintaan (demand) akan pendidikan vokasi. Sekolah swasta ini lebih lincah dalam membuka jurusan yang sesuai dengan kebutuhan industri lokal, seperti otomotif, perhotelan, dan perikanan.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">🛡️</div>
+                        <div>
+                            <strong>Strategi Mencegah <em>Drop Out</em></strong>
+                            Angka Partisipasi Sekolah (APS) untuk usia 16-18 tahun di Banyuwangi pada 2023 adalah 74,45%. Artinya, sekitar 25% remaja usia ini tidak bersekolah. Kehadiran SMK yang tersebar di berbagai kecamatan (bahkan yang terpencil) menjadi jaring pengaman agar remaja tetap berada dalam sistem pendidikan formal sambil belajar keterampilan hidup (<em>life skill</em>).
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Spotlight Tegaldlimo -->
+        <section class="section">
+            <div class="spotlight-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Sorotan Lokal: Kecamatan Tegaldlimo</h3>
+                <p style="margin-bottom: 24px; opacity: 0.9;">Sebagai rumah bagi SMK 17 Agustus 1945, Kecamatan Tegaldlimo merupakan mikro-kosmos dari tren ini. Dengan total 9 sekolah menengah, sektor vokasi memainkan peran yang sangat seimbang dan krusial.</p>
+                
+                <div class="spotlight-grid">
+                    <div class="spotlight-item">
+                        <div class="value">3</div>
+                        <div class="label">SMA<br><small>1.105 Siswa</small></div>
+                    </div>
+                    <div class="spotlight-item" style="border-left: 2px solid rgba(255,255,255,0.3); border-right: 2px solid rgba(255,255,255,0.3);">
+                        <div class="value" style="color: var(--secondary);">4</div>
+                        <div class="label">SMK<br><small>944 Siswa</small></div>
+                    </div>
+                    <div class="spotlight-item">
+                        <div class="value">2</div>
+                        <div class="label">MA<br><small>129 Siswa</small></div>
+                    </div>
+                </div>
+                <p style="margin-top: 24px; font-size: 0.95rem; opacity: 0.9;"><em>Catatan: Di Tegaldlimo, rasio siswa SMK hampir menyamai siswa SMA, menunjukkan bahwa pilihan vokasi di tingkat kecamatan sudah sangat normal dan diterima sebagai jalur utama masa depan.</em></p>
+            </div>
+        </section>
+
+        <!-- Kaitan Adiwiyata -->
+        <section class="section">
+            <div class="highlight-box green">
+                <h4><i class="fas fa-leaf"></i> Tantangan & Peluang: SMK Berwawasan Lingkungan</h4>
+                <p style="color: #1b5e20; margin-bottom: 12px;">Dominasi jumlah siswa SMK adalah peluang emas untuk menanamkan nilai-nilai Adiwiyata sejak dini. Bengkel dan laboratorium SMK bukan hanya tempat belajar mesin atau komputer, tetapi harus menjadi laboratorium hidup pengelolaan lingkungan.</p>
+                <ul style="margin-left: 20px; color: #2e7d32;">
+                    <li>Penerapan manajemen limbah B3 (oli, aki, bahan kimia) yang ketat di bengkel TKR/TSM.</li>
+                    <li>Program daur ulang dan bank sampah yang melibatkan ribuan siswa sebagai agen perubahan di rumah masing-masing.</li>
+                    <li>Pengembangan teknologi tepat guna ramah lingkungan sebagai proyek tugas akhir siswa.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="section">
+            <h2 class="section-title">Kesimpulan</h2>
+            <div class="article-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>Pilihan 54% siswa Banyuwangi terhadap SMK bukanlah tanda rendahnya minat pada pendidikan akademis, melainkan <strong>strategi adaptasi yang cerdas</strong> terhadap realitas sosial-ekonomi. SMK adalah jembatan tercepat menuju kemandirian.</p>
+                <p>Tugas kita bersama, terutama sebagai institusi pendidikan seperti SMK 17 Agustus 1945 Tegaldlimo, adalah memastikan bahwa dominasi kuantitas ini diimbangi dengan <strong>kualitas kompetensi</strong> dan <strong>karakter peduli lingkungan</strong>, sehingga lulusan yang dihasilkan bukan hanya siap kerja, tetapi juga siap menjaga keberlanjutan Bumi Blambangan.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Admin Adiwiyata - Mencetak Generasi Peduli Lingkungan & Berkompeten</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
+            <p>Sumber Data: BPS Kabupaten Banyuwangi (Statistik Pendidikan 2023) &<br>Data Sekolah Kemenkag & Kemendikbudristek Kab. Banyuwangi 2025.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .reason-list li, .spotlight-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
