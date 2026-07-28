@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Infografis: Potret Pendidikan Menengah Banyuwangi 2025</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ----- RESET & GLOBAL ----- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #f9a825;
+            --bg-light: #f1f8e9;
+            --bg-white: #ffffff;
+            --text-dark: #1e2a3a;
+            --text-muted: #546e7a;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ----- NAVBAR ----- */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 12px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            height: 44px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+            display: none;
+            padding: 4px 8px;
+            line-height: 1;
+            transition: transform var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: background var(--transition), color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .hero {
+            background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(46, 125, 50, 0.90) 100%), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "📊";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            right: -20px;
+            bottom: -40px;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Author Box Styling */
+        .author-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+            transition: transform var(--transition);
+        }
+
+        .author-box:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .author-box span:first-child {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .author-box a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary);
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--secondary);
+        }
+
+        /* ----- SECTION UMUM ----- */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px 30px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+            border-radius: 4px;
+        }
+
+        /* ----- INFOGRAPHIC CARDS ----- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+            transition: transform var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .stat-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Breakdown Section */
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .breakdown-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--primary-light);
+        }
+
+        .breakdown-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .breakdown-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-top: 8px;
+            padding-top: 12px;
+            border-top: 2px solid var(--primary-light);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 6px solid var(--secondary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Top Districts List */
+        .district-list {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        .district-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .district-item:last-child {
+            border-bottom: none;
+        }
+
+        .district-rank {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .district-rank.top-1 { background: #ffd700; color: #333; }
+        .district-rank.top-2 { background: #c0c0c0; color: #333; }
+        .district-rank.top-3 { background: #cd7f32; color: #fff; }
+
+        .district-info {
+            flex: 1;
+        }
+
+        .district-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .district-detail {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .district-students {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Tegaldlimo Spotlight */
+        .spotlight-card {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+        }
+
+        .spotlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .spotlight-item .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .spotlight-item .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        .footer p:first-child {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .footer-socials {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition);
+        }
+
+        .footer-socials a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-white);
+                padding: 16px 12px 20px;
+                border-radius: 0 0 var(--radius) var(--radius);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                margin-top: 12px;
+                gap: 4px;
+            }
+
+            .nav-menu.active { display: flex; }
+
+            .nav-link {
+                padding: 12px 16px;
+                width: 100%;
+                border-radius: 12px;
+                font-size: 1rem;
+                background: var(--bg-light);
+                margin-bottom: 2px;
+            }
+
+            .hero { padding: 60px 16px 50px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .subtitle { font-size: 1rem; }
+            
+            .author-box {
+                flex-direction: column;
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .section { padding: 30px 16px 20px; }
+            .section-title { font-size: 1.6rem; }
+            
+            .stat-card .number { font-size: 2.2rem; }
+        }
+
+        /* ----- ANIMASI ----- */
+        .stat-card, .breakdown-card, .district-list, .spotlight-card {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo SMK 17 Agustus 1945" />
+                <span>SMK 17 AGUSTUS 1945</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">🏠 Beranda</a>
+                <a href="infografis-pendidikan-banyuwangi-2025.html" class="nav-link active">📊 Infografis</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">🖼️ Galeri</a>
+                <a href="kontak.html" class="nav-link">📞 Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>📊 Infografis: Potret Pendidikan Menengah Banyuwangi 2025</h1>
+        <p class="subtitle">Analisis Komprehensif Data SMA, SMK, dan MA di Bumi Blambangan</p>
+        
+        <div class="author-box">
+            <span>Oleh:</span>
+            <a href="https://ibb.co.com/hJPrpz3w" target="_blank" rel="noopener noreferrer">
+                <img src="https://i.ibb.co.com/hJPrpz3w/Samudi-S-Pd-I.jpg" alt="Samudi S.Pd.I" class="author-img" />
+                <span class="author-name">Samudi, S.Pd.I</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Ringkasan Umum -->
+        <section class="section">
+            <h2 class="section-title">Ringkasan Umum</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="icon">🏫</div>
+                    <div class="number">232</div>
+                    <div class="label">Total Sekolah<br><small>(SMA, SMK, MA)</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">👨‍🏫</div>
+                    <div class="number">4.692</div>
+                    <div class="label">Total Guru<br><small>Pendidik Aktif</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">🎓</div>
+                    <div class="number">67.251</div>
+                    <div class="label">Total Murid<br><small>Siswa Aktif</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">📐</div>
+                    <div class="number">1:14</div>
+                    <div class="label">Rasio Guru:Murid<br><small>Rata-rata Ideal</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breakdown per Jenjang -->
+        <section class="section">
+            <h2 class="section-title">Distribusi per Jenjang Pendidikan</h2>
+            <div class="breakdown-grid">
+                <!-- SMA -->
+                <div class="breakdown-card">
+                    <h3>📘 Sekolah Menengah Atas (SMA)</h3>
+                    <div class="breakdown-row">
+                        <span>Jumlah Sekolah</span>
+                        <span>50 (17 Negeri, 33 Swasta)</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Guru</span>
+                        <span>1.244</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Murid</span>
+                        <span>19.648 (29.2%)</span>
+                    </div>
+                </div>
+
+                <!-- SMK -->
+                <div class="breakdown-card" style="border-left-color: var(--secondary);">
+                    <h3>🛠️ Sekolah Menengah Kejuruan (SMK)</h3>
+                    <div class="breakdown-row">
+                        <span>Jumlah Sekolah</span>
+                        <span>89 (9 Negeri, 80 Swasta)</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Guru</span>
+                        <span>2.238</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Murid</span>
+                        <span>36.561 (54.4%)</span>
+                    </div>
+                </div>
+
+                <!-- MA -->
+                <div class="breakdown-card" style="border-left-color: #1e88e5;">
+                    <h3>🕌 Madrasah Aliyah (MA)</h3>
+                    <div class="breakdown-row">
+                        <span>Jumlah Sekolah</span>
+                        <span>93 (4 Negeri, 89 Swasta)</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Guru</span>
+                        <span>1.210</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Jumlah Murid</span>
+                        <span>11.042 (16.4%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💡 Fakta Kunci: Dominasi Pendidikan Vokasi & Swasta</h4>
+                <p>SMK menyerap lebih dari setengah (54,4%) total siswa pendidikan menengah di Banyuwangi, menunjukkan kuatnya orientasi daerah terhadap penyiapan tenaga kerja terampil. Selain itu, <strong>89,9% SMK</strong> dan <strong>95,7% MA</strong> adalah sekolah swasta, menegaskan peran vital masyarakat dan lembaga keagamaan dalam menopang akses pendidikan.</p>
+            </div>
+        </section>
+
+        <!-- Top Kecamatan -->
+        <section class="section">
+            <h2 class="section-title">5 Besar Kecamatan dengan Siswa Terbanyak</h2>
+            <div class="district-list">
+                <div class="district-item">
+                    <div class="district-rank top-1">1</div>
+                    <div class="district-info">
+                        <div class="district-name">Kecamatan Genteng</div>
+                        <div class="district-detail">20 Sekolah • 562 Guru</div>
+                    </div>
+                    <div class="district-students">8.738</div>
+                </div>
+                <div class="district-item">
+                    <div class="district-rank top-2">2</div>
+                    <div class="district-info">
+                        <div class="district-name">Kecamatan Tegalsari</div>
+                        <div class="district-detail">13 Sekolah • 402 Guru</div>
+                    </div>
+                    <div class="district-students">6.223</div>
+                </div>
+                <div class="district-item">
+                    <div class="district-rank top-3">3</div>
+                    <div class="district-info">
+                        <div class="district-name">Kecamatan Muncar</div>
+                        <div class="district-detail">16 Sekolah • 380 Guru</div>
+                    </div>
+                    <div class="district-students">5.619</div>
+                </div>
+                <div class="district-item">
+                    <div class="district-rank">4</div>
+                    <div class="district-info">
+                        <div class="district-name">Kecamatan Giri</div>
+                        <div class="district-detail">7 Sekolah • 274 Guru</div>
+                    </div>
+                    <div class="district-students">4.658</div>
+                </div>
+                <div class="district-item">
+                    <div class="district-rank">5</div>
+                    <div class="district-info">
+                        <div class="district-name">Kecamatan Glagah</div>
+                        <div class="district-detail">3 Sekolah • 196 Guru</div>
+                    </div>
+                    <div class="district-students">3.541</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spotlight Tegaldlimo -->
+        <section class="section">
+            <div class="spotlight-card">
+                <h3>📍 Sorotan Khusus: Kecamatan Tegaldlimo</h3>
+                <p style="margin-bottom: 24px; opacity: 0.9;">Sebagai rumah bagi SMK 17 Agustus 1945, Kecamatan Tegaldlimo menunjukkan komitmen nyata dalam penyediaan akses pendidikan menengah yang merata dengan total 9 sekolah.</p>
+                
+                <div class="spotlight-grid">
+                    <div class="spotlight-item">
+                        <div class="value">3</div>
+                        <div class="label">SMA<br><small>78 Guru • 1.105 Murid</small></div>
+                    </div>
+                    <div class="spotlight-item">
+                        <div class="value">4</div>
+                        <div class="label">SMK<br><small>77 Guru • 944 Murid</small></div>
+                    </div>
+                    <div class="spotlight-item">
+                        <div class="value">2</div>
+                        <div class="label">MA<br><small>25 Guru • 129 Murid</small></div>
+                    </div>
+                    <div class="spotlight-item" style="border-left: 2px solid rgba(255,255,255,0.3);">
+                        <div class="value" style="color: var(--secondary);">2.178</div>
+                        <div class="label">Total Murid<br><small>180 Total Guru</small></div>
+                    </div
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan</p>
+        
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/smk17tgaldlimo" target="_blank" rel="noopener noreferrer">
+                <span>📘</span> Facebook
+            </a>
+            <a href="https://youtube.com/@smkagustustegaldlimo?si=pVT7_W-b0anpkVvM" target="_blank" rel="noopener noreferrer">
+                <span>▶️</span> YouTube
+            </a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            document.addEventListener('click', function(e) {
+                const navbar = document.querySelector('.navbar');
+                if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        menuToggle.textContent = '☰';
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.stat-card, .breakdown-card, .district-list, .spotlight-card').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+    </script>
+
+</body>
+</html>
