@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Dari Bengkel ke Lingkungan: Peran TKR SMK dalam Transisi EV di Banyuwangi</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ----- RESET & GLOBAL ----- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #f9a825;
+            --bg-light: #f1f8e9;
+            --bg-white: #ffffff;
+            --text-dark: #1e2a3a;
+            --text-muted: #546e7a;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 120px; /* Offset untuk sticky nav */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ----- NAVBAR ----- */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 12px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            height: 44px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+            display: none;
+            padding: 4px 8px;
+            line-height: 1;
+            transition: transform var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: background var(--transition), color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        /* ----- ARTICLE SUB-NAV ----- */
+        .article-nav {
+            background: var(--primary-dark);
+            position: sticky;
+            top: 68px;
+            z-index: 998;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .article-nav .nav-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0 20px;
+            scrollbar-width: none;
+        }
+
+        .article-nav .nav-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .article-nav-link {
+            display: inline-block;
+            padding: 14px 16px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .article-nav-link:hover, .article-nav-link.active {
+            color: #fff;
+            border-bottom-color: var(--secondary);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(46, 125, 50, 0.90) 100%), 
+                        url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "⚡";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.06;
+            right: -20px;
+            bottom: -40px;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge-adiwiyata {
+            display: inline-block;
+            background: var(--secondary);
+            color: #1e2a3a;
+            padding: 8px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 18px rgba(249, 168, 37, 0.4);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-contact {
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-contact p {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            margin: 0;
+        }
+
+        .hero-contact strong {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        /* ----- SECTION UMUM ----- */
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+            border-radius: 4px;
+        }
+
+        /* ----- ARTICLE CONTENT STYLES ----- */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid var(--primary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left-color: var(--secondary);
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+            transition: transform var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin: 2.5rem 0;
+            border: 2px solid var(--primary-light);
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-light);
+            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h4 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .profile-info .position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .profile-info .school {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .profile-info ul {
+            margin-top: 16px;
+        }
+
+        /* Impact Calculator */
+        .impact-calculator {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 28px;
+            margin: 2.5rem 0;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+        }
+
+        .impact-calculator h4 {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 8px;
+            color: var(--secondary);
+        }
+
+        /* District Stats */
+        .district-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .district-stat-item {
+            background: var(--bg-light);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #c8e6c9;
+        }
+
+        .district-stat-item .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .district-stat-item .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        .footer p:first-child {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+
+        .footer-socials {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition);
+        }
+
+        .footer-socials a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media screen and (max-width: 992px) {
+            .hero h1 { font-size: 2rem; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-white);
+                padding: 16px 12px 20px;
+                border-radius: 0 0 var(--radius) var(--radius);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                margin-top: 12px;
+                gap: 4px;
+            }
+
+            .nav-menu.active { display: flex; }
+
+            .nav-link {
+                padding: 12px 16px;
+                width: 100%;
+                border-radius: 12px;
+                font-size: 1rem;
+                background: var(--bg-light);
+                margin-bottom: 2px;
+            }
+
+            .hero {
+                padding: 60px 16px 50px;
+            }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .subtitle { font-size: 1rem; }
+            
+            .article-nav {
+                top: 60px;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 24px;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-info ul {
+                text-align: left;
+            }
+
+            .calc-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav-brand span { font-size: 0.85rem; }
+            .nav-brand img { height: 36px; }
+            .hero h1 { font-size: 1.4rem; }
+            .section { padding: 30px 16px 20px; }
+            .section-title { font-size: 1.5rem; }
+        }
+
+        /* ----- ANIMASI ----- */
+        .stat-card, .profile-card, .highlight-box {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://i.ibb.co.com/Z1TMbwbC/1111.png" alt="Logo SMK 17 Agustus 1945" />
+                <span>SMK 17 AGUSTUS 1945</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">🏠 Beranda</a>
+                <a href="dari-bengkel-ke-lingkungan-tkr-smk-banyuwangi-2025.html" class="nav-link active">📝 Artikel</a>
+                <a href="kategori1.html" class="nav-link">📋 Kebijakan</a>
+                <a href="kategori2.html" class="nav-link">📚 Pembelajaran</a>
+                <a href="kategori3.html" class="nav-link">🤝 Partisipatif</a>
+                <a href="kategori4.html" class="nav-link">🏗️ Sarpras</a>
+                <a href="galeri.html" class="nav-link">🖼️ Galeri</a>
+                <a href="kontak.html" class="nav-link">📞 Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ARTICLE SUB-NAVIGATION -->
+    <nav class="article-nav">
+        <div class="nav-container">
+            <a href="#pendahuluan" class="article-nav-link">Pendahuluan</a>
+            <a href="#potensi" class="article-nav-link">Potensi SMK</a>
+            <a href="#tantangan" class="article-nav-link">Tantangan</a>
+            <a href="#strategi" class="article-nav-link">Strategi & Tegaldlimo</a>
+            <a href="#dampak" class="article-nav-link">Dampak Lingkungan</a>
+            <a href="#rekomendasi" class="article-nav-link">Rekomendasi</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>🔌 Dari Bengkel ke Lingkungan</h1>
+        <p class="subtitle">Peran Jurusan Teknik Kendaraan Ringan (TKR) SMK dalam Mendukung Transisi Kendaraan Listrik di Kabupaten Banyuwangi</p>
+        <div class="badge-adiwiyata">Analisis Data & Strategi Vokasi 2025</div>
+        
+        <div class="hero-contact">
+            <p>📍 Fokus Studi: <strong>Kecamatan Tegaldlimo & Kabupaten Banyuwangi</strong></p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Pendahuluan -->
+        <section id="pendahuluan" class="section article-section">
+            <h2 class="section-title">Pendahuluan: Ketika Otomotif Bertemu Lingkungan</h2>
+            <div class="article-content">
+                <p>Di era transisi energi global, industri otomotif Indonesia tengah mengalami transformasi besar. Kendaraan listrik (Electric Vehicle/EV) bukan lagi sekadar wacana, melainkan realitas yang mulai menghiasi jalanan Banyuwangi. Namun, di balik gemerlap teknologi ramah lingkungan ini, tersimpan pertanyaan kritis: <strong>Siapa yang akan merawat, memperbaiki, dan mengembangkan ekosistem kendaraan listrik di masa depan?</strong></p>
+                
+                <p>Jawabannya terletak pada ruang-ruang bengkel di Sekolah Menengah Kejuruan (SMK), khususnya jurusan <strong>Teknik Kendaraan Ringan (TKR)</strong>. Dengan <strong>89 SMK</strong> yang tersebar di 25 kecamatan di Kabupaten Banyuwangi dan menaungi <strong>36.561 siswa</strong> pada tahun 2025, SMK memiliki potensi strategis untuk menjadi kawah candradimuka bagi teknisi kendaraan listrik masa depan.</p>
+                
+                <div class="highlight-box">
+                    <h4><i class="fas fa-bullseye"></i> Tujuan Artikel</h4>
+                    <p style="margin:0;">Mengulas bagaimana jurusan TKR di SMK Banyuwangi dapat bertransformasi dari sekadar pencetak mekanik konvensional menjadi garda terdepan dalam mendukung transisi kendaraan listrik yang berkelanjutan, dengan sorotan khusus pada kontribusi nyata di Kecamatan Tegaldlimo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Potensi SMK -->
+        <section id="potensi" class="section article-section">
+            <h2 class="section-title">Potensi SMK Banyuwangi: Sebaran dan Kapasitas</h2>
+            <div class="article-content">
+                <p>Berdasarkan data tahun 2025, SMK di Banyuwangi menunjukkan dominasi yang signifikan dalam landscape pendidikan menengah vokasi:</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">89</div>
+                        <div class="label">Total SMK<br><small>(9 Negeri, 80 Swasta)</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">2.238</div>
+                        <div class="label">Total Guru<br><small>(730 Negeri, 1.508 Swasta)</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">36.561</div>
+                        <div class="label">Total Siswa<br><small>(12.747 Negeri, 23.814 Swasta)</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">1:16</div>
+                        <div class="label">Rasio Guru : Siswa<br><small>(Sangat Ideal)</small></div>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Fakta Penting</h4>
+                    <p style="margin:0;"><strong>89.9% SMK di Banyuwangi adalah sekolah swasta</strong>. Ini menunjukkan peran vital masyarakat dan dunia usaha dalam pendidikan vokasi, namun juga menjadi tantangan dalam standarisasi fasilitas untuk adaptasi teknologi EV yang membutuhkan investasi tinggi.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tantangan -->
+        <section id="tantangan" class="section article-section">
+            <h2 class="section-title">Tantangan Transisi: Dari Bensin ke Listrik</h2>
+            <div class="article-content">
+                <h3><i class="fas fa-balance-scale"></i> Kesenjangan Kompetensi</h3>
+                <p>Jurusan TKR tradisional di SMK saat ini masih berfokus pada:</p>
+                <ul>
+                    <li>Mesin pembakaran dalam (internal combustion engine)</li>
+                    <li>Sistem bahan bakar bensin/solar dan mekanika konvensional</li>
+                </ul>
+
+                <p>Sementara kendaraan listrik membutuhkan kompetensi baru yang mendesak:</p>
+                <ul>
+                    <li><strong>Sistem kelistrikan tegangan tinggi</strong> (high-voltage systems)</li>
+                    <li><strong>Manajemen baterai</strong> (Battery Management System/BMS)</li>
+                    <li><strong>Motor listrik</strong>, inverter, dan sistem charging</li>
+                    <li><strong>Diagnostik digital</strong> dan software-based troubleshooting</li>
+                </ul>
+
+                <h3><i class="fas fa-chart-line"></i> Data Pendidikan yang Perlu Diperhatikan</h3>
+                <p>Berdasarkan Statistik Pendidikan Kabupaten Banyuwangi 2023, Rata-rata Lama Sekolah (RLS) penduduk usia 15+ tahun adalah <strong>8,17 tahun</strong> (setara kelas 2 SMP). Ini menunjukkan bahwa SMK harus mengisi celah inovasi teknologi dengan menghasilkan lulusan yang tidak hanya terampil secara manual, tetapi juga adaptif terhadap teknologi disruptif.</p>
+            </div>
+        </section>
+
+        <!-- Strategi & Tegaldlimo -->
+        <section id="strategi" class="section article-section">
+            <h2 class="section-title">Strategi Transformasi & Kontribusi Tegaldlimo</h2>
+            <div class="article-content">
+                <p>Membangun ekosistem TKR Hijau memerlukan kurikulum berbasis kompetensi EV, infrastruktur bengkel modern, dan link-and-match dengan industri. Salah satu contoh nyata komitmen ini dapat dilihat di Kecamatan Tegaldlimo.</p>
+
+                <div class="highlight-box">
+                    <h4><i class="fas fa-map-marked-alt"></i> Profil Pendidikan Kecamatan Tegaldlimo (2025)</h4>
+                    <p>Tegaldlimo menunjukkan komitmen nyata dalam pengembangan pendidikan vokasi dengan total <strong>9 sekolah menengah</strong> yang mendidik <strong>2.178 siswa</strong>:</p>
+                    <div class="district-stats">
+                        <div class="district-stat-item">
+                            <div class="value">3</div>
+                            <div class="label">SMA<br><small>78 Guru • 1.105 Siswa</small></div>
+                        </div>
+                        <div class="district-stat-item">
+                            <div class="value">4</div>
+                            <div class="label">SMK<br><small>77 Guru • 944 Siswa</small></div>
+                        </div>
+                        <div class="district-stat-item">
+                            <div class="value">2</div>
+                            <div class="label">MA<br><small>25 Guru • 129 Siswa</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co.com/FkqSKKH7/Pandu-Prakoso-S-Pd.jpg" alt="Pandu Prakoso S.Pd">
+                    </div>
+                    <div class="profile-info">
+                        <h4>Pandu Prakoso, S.Pd</h4>
+                        <div class="position">Kepala Program Teknik Kendaraan Ringan (TKR)</div>
+                        <div class="school">SMK 17 Agustus 1945 Tegaldlimo</div>
+                        
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Sebagai ujung tombak pendidikan vokasi di tingkat kecamatan, beliau berperan aktif dalam:</p>
+                        <ul>
+                            <li>Mengembangkan kurikulum TKR yang adaptif dengan kebutuhan industri otomotif modern dan ramah lingkungan.</li>
+                            <li>Membimbing siswa dalam praktik perawatan kendaraan konvensional serta persiapan teknologi hybrid/listrik.</li>
+                            <li>Membangun kerjasama dengan bengkel-bengkel lokal untuk program magang dan teaching factory.</li>
+                            <li>Mendorong kesadaran lingkungan melalui praktik bengkel yang ramah lingkungan (<em>proper waste management</em>).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4><i class="fas fa-lightbulb"></i> Potensi Pengembangan EV di Tegaldlimo</h4>
+                    <ul style="margin:0;">
+                        <li>Menjadi pusat pelatihan dasar kelistrikan kendaraan untuk kecamatan sekitarnya.</li>
+                        <li>Mengembangkan program konversi motor listrik skala kecil untuk kebutuhan transportasi lokal.</li>
+                        <li>Menyiapkan bengkel-bengkel lokal dalam menghadapi transisi kendaraan listrik.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dampak Lingkungan -->
+        <section id="dampak" class="section article-section">
+            <h2 class="section-title">Dampak Lingkungan: Menghitung Jejak Karbon</h2>
+            <div class="article-content">
+                <p>Jika setiap tahun <strong>36.561 siswa SMK</strong> Banyuwangi menghasilkan lulusan yang kompeten dalam perawatan kendaraan listrik, dampak jangka panjangnya terhadap lingkungan akan sangat signifikan.</p>
+
+                <div class="impact-calculator">
+                    <h4><i class="fas fa-calculator"></i> Simulasi Dampak Pengurangan Emisi</h4>
+                    <p style="margin-bottom: 16px; opacity: 0.9; font-size: 0.95rem;"><strong>Asumsi:</strong> 30% lulusan TKR bekerja di sektor otomotif, setiap teknisi merawat 100 EV/tahun, dan 1 EV mengurangi 2.4 ton CO₂/tahun dibanding bensin.</p>
+                    
+                    <div class="calc-row">
+                        <span>36.561 siswa × 30%</span>
+                        <span>10.968 teknisi potensial/tahun</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>10.968 teknisi × 100 kendaraan</span>
+                        <span>1.096.800 kendaraan terawat</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>1.096.800 × 2.4 ton CO₂</span>
+                        <span>2.632.320 ton CO₂ berkurang/tahun</span>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4><i class="fas fa-tree"></i> Dampak Setara</h4>
+                    <p style="margin:0;">Pengurangan emisi ini setara dengan <strong>menanam 43 juta pohon</strong> atau <strong>menghilangkan emisi dari 570.000 mobil bensin</strong> selama setahun!</p>
+                </div>
+
+                <h3><i class="fas fa-recycle"></i> Program SMK Go Green</h3>
+                <ul>
+                    <li><strong>Bengkel zero-waste:</strong> Daur ulang oli, ban bekas, dan komponen logam.</li>
+                    <li><strong>Charging station bertenaga surya:</strong> Memanfaatkan atap sekolah untuk panel surya.</li>
+                    <li><strong>Program konversi:</strong> Mengubah motor/mobil bensin tua menjadi listrik.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Rekomendasi -->
+        <section id="rekomendasi" class="section article-section">
+            <h2 class="section-title">Rekomendasi Kebijakan</h2>
+            <div class="article-content">
+                <div class="highlight-box">
+                    <h4><i class="fas fa-landmark"></i> Untuk Pemerintah Kabupaten Banyuwangi:</h4>
+                    <ol style="margin-top: 12px;">
+                        <li><strong>Regulasi Insentif:</strong> Subsidi pelatihan guru dan pembelian peralatan bengkel EV untuk SMK.</li>
+                        <li><strong>Infrastruktur Pendukung:</strong> Pembangunan charging station di setiap kecamatan yang memiliki SMK.</li>
+                        <li><strong>Program Percontohan:</strong> Konversi kendaraan dinas pemerintah menjadi listrik dan wajibkan 20% armada angkutan umum baru adalah EV pada 2030.</li>
+                    </ol>
+                </div>
+
+                <div class="highlight-box warning">
+                    <h4><i class="fas fa-industry"></i> Untuk SMK dan Dunia Usaha:</h4>
+                    <ol style="margin-top: 12px;">
+                        <li><strong>Kurikulum Adaptif:</strong> Update kurikulum setiap 2 tahun mengikuti perkembangan teknologi dan sertifikasi kompetensi.</li>
+                        <li><strong>Kerjasama Triple Helix:</strong> Kolaborasi SMK - Industri - Pemerintah dalam riset dan program beasiswa ikatan dinas.</li>
+                        <li><strong>Kewirausahaan Hijau:</strong> Inkubator bisnis dan akses modal lunak untuk lulusan yang ingin membuka bengkel EV.</li>
+                    </ol>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow);">
+                    <h3 style="justify-content: center; color: var(--primary-dark);">Pertanyaan Kritis</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-dark);">
+                        "Pertanyaannya bukan lagi <em>'apakah mungkin'</em>, tetapi <em>'seberapa cepat kita akan bergerak?'</em>"
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 SMK 17 AGUSTUS 1945 TEGALDLIMO</p>
+        <p>Sekolah Adiwiyata - Mencetak Generasi Peduli Lingkungan & Teknologi</p>
+        
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/smk17tgaldlimo" target="_blank" rel="noopener noreferrer">
+                <span>📘</span> Facebook
+            </a>
+            <a href="https://youtube.com/@smkagustustegaldlimo?si=pVT7_W-b0anpkVvM" target="_blank" rel="noopener noreferrer">
+                <span>▶️</span> YouTube
+            </a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            document.addEventListener('click', function(e) {
+                const navbar = document.querySelector('.navbar');
+                if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        menuToggle.textContent = '☰';
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            // Active Article Nav on Scroll
+            const articleSections = document.querySelectorAll('.article-section');
+            const articleNavLinks = document.querySelectorAll('.article-nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                articleSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Offset 150px untuk memperhitungkan tinggi navbar dan article-nav
+                    if (pageYOffset >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                articleNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
